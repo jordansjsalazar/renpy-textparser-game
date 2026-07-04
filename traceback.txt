@@ -1,38 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 175, in script
-    $ renpy.say(e, inp("test"))
-  File "game/script.rpy", line 175, in <module>
-    $ renpy.say(e, inp("test"))
-  File "game/script.rpy", line 28, in inp
-    return parse_input(act)
-  File "game/script.rpy", line 40, in parse_input
-    return find_label(check_input(lst))
-  File "game/script.rpy", line 62, in find_label
-    st += i[0]
-TypeError: can only concatenate str (not "RevertableList") to str
+  File "game/script.rpy", line 215, in script
+    $ renpy.jump(e, inp("test"))
+  File "game/script.rpy", line 215, in <module>
+    $ renpy.jump(e, inp("test"))
+TypeError: jump() takes 1 positional argument but 2 were given
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 175, in script
-    $ renpy.say(e, inp("test"))
+  File "game/script.rpy", line 215, in script
+    $ renpy.jump(e, inp("test"))
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 175, in <module>
-    $ renpy.say(e, inp("test"))
-  File "game/script.rpy", line 28, in inp
-    return parse_input(act)
-  File "game/script.rpy", line 40, in parse_input
-    return find_label(check_input(lst))
-  File "game/script.rpy", line 62, in find_label
-    st += i[0]
-TypeError: can only concatenate str (not "RevertableList") to str
+  File "game/script.rpy", line 215, in <module>
+    $ renpy.jump(e, inp("test"))
+TypeError: jump() takes 1 positional argument but 2 were given
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sun Jul  5 01:13:09 2026
+Sun Jul  5 01:52:24 2026

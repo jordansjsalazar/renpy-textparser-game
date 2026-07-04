@@ -13,12 +13,16 @@ init python:
     time = 0
     inventory = []
     last_label = "test"
-    possible_actions = {"north":"n", "n":"n", "south":"s", "s":"s", "west":"w", "w":"w", "east":"e", "e":"e",
+    possible_actions = {
+    "north":"n", "n":"n", "south":"s", "s":"s", "west":"w", "w":"w", "east":"e", "e":"e",
     "progress":"progress",
-    "enter":"enter",
+    "enter":"enter", "go":"enter",
     "look":"look",
     "use":"use",
-    "take":"take"}
+    "take":"take",
+    "inventory":"inv", "inv":"inv",
+    "cmd":"cmd", "help":"cmd", "h":"cmd"
+    }
 
 # INPUT FUNCTIONS
 
@@ -40,14 +44,13 @@ init python:
         return find_label(check_input(lst))
     
     def check_input(lst):
-        tag = [area.name, str(time)]
         if len(lst) < 2:
             if lst[0] == "":
-                return ["progress"] + tag
+                return ["progress"]
             else:
                 for p in possible_actions:
                     if lst[0] == p:
-                        return [possible_actions[lst[0]]] + tag
+                        return [possible_actions[lst[0]]]
                 else:
                     if lst[0] in inventory or area.has_exit(lst[0]) or area.has_object(lst[0]) or area.has_interact(lst[0]):
                         return [lst[0]]
@@ -57,22 +60,67 @@ init python:
             return check_input([lst[0]]) + check_input(lst[1:])
     
     def find_label(command):
-        return str(command)
+        if debug:
+            renpy.say(narrator, str(command))
+        if "enter" in command:
+            for i in command:
+                if area.has_exit(i):
+                    return i
+                else:
+                    return "enter_fail"
+        if "use" in command:
+            for i in command:
+                if area.has_object(i):
+                    return "use_" + i
+                elif area.has_interact(i):
+                    for x in command:
+                        if area.get_interact(i).has_key(x):
+                            return "use_" + x + "_on_" + i
+                    return "interact_fail"
+            return "use_fail"
+        if "take" in command:
+            for i in command:
+                if area.has_object(i):
+                    return "take" + "_" + i
+        if "progress" in command:
+            return "progress_" + str(time)
+        if "look" in command:
+            for i in command:
+                if area.has_object(i):
+                    return "look_at_" + i
+            return "look_" + area
+        if "inv" in command:
+            return "inv"
+        if "cmd" in command:
+            return "cmd"
+        return "fail"
     
 # CLASSES
+# Interactable
+
+    class Interactable:
+        name = ""
+        keys = []
+        
+        def __init__(self, name):
+            self.name = name
+        
+        def add_key(self, key):
+            self.keys.append(key)
+
 # Area
 
     class Area:
         name = ""
         exits = []
         objects = []
-        interactables = []
+        interactables = {}
         
         def __init__(self, name):
             self.name = name
             self.exits = []
             self.objects = []
-            self.interactables = []
+            self.interactables = {}
         
         def add_exit(self, a2):
             self.exits.append(a2)
@@ -95,8 +143,15 @@ init python:
                     return True
             return False
         
+        def get_interact(self, e):
+            if self.has_interact(e):
+                return interactables[e]
+        
         def add_exit(self, a2):
             self.exits.append(a2)
+        
+        def add_interactable(self, name):
+            self.interactables.add(name, Interactable(name))
     
     def create_path(a1, a2):
         a1.add_exit(a2)
@@ -104,18 +159,18 @@ init python:
 
 # GAME SETUP
     areas = {"backyard":Area("backyard"),
-    "shop_1":Area("shop_1"),
+    "shop_1":Area("shop"),
     "kitchen":Area("kitchen"),
     "upstairs":Area("upstairs"),
     "bathroom":Area("bathroom"),
     "bedroom":Area("bedroom"),
-    "path_1":Area("path_1"),
-    "path_2":Area("path_2"),
-    "food_stall":Area("food_stall"),
-    "shop_2":Area("shop_2"),
+    "path_1":Area("path"),
+    "path_2":Area("path"),
+    "food_stall":Area("food stall"),
+    "shop_2":Area("shop"),
     "storage":Area("storage"),
-    "secret_path_0":Area("secret_path_0"),
-    "cave_1":Area("cave_1"),
+    "secret_path_0":Area("path"),
+    "cave_1":Area("cave"),
     "waterfall":Area("waterfall")
     }
     
@@ -142,6 +197,8 @@ init python:
             st += x.name
             st += " "
         return st
+    
+    debug = True
 
 define e = Character("Eileen")
 
@@ -165,10 +222,8 @@ label start:
     # These display lines of dialogue.
 
 label test:
-    
-    $ renpy.say(e, test_paths("backyard"))
-    $ renpy.say(e, test_paths("shop_1"))
-    $ renpy.say(e, inp("test"))
+
+    $ renpy.jump(inp("test"))
 
     e "You've created a new Ren'Py game."
 

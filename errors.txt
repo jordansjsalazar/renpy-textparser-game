@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 57: is not terminated with a newline. (Check strings and parenthesis.)
-                return check_input([lst[0]])] + [check_input(lst[1:])
+File "game/script.rpy", line 20: invalid syntax
+        "look":"look",
+               ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jul  5 01:15:20 2026
+Sun Jul  5 01:49:23 2026
