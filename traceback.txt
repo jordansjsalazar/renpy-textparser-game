@@ -1,28 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 129, in script
+  File "game/script.rpy", line 141, in script
     $ renpy.say(e, inp("test"))
-  File "game/script.rpy", line 129, in <module>
+  File "game/script.rpy", line 141, in <module>
     $ renpy.say(e, inp("test"))
-TypeError: unsupported operand type(s) for %: 'int' and 'TagQuotingDict'
+  File "game/script.rpy", line 24, in inp
+    return parse_input(act)
+  File "game/script.rpy", line 36, in parse_input
+    return check_input(lst)
+  File "game/script.rpy", line 53, in check_input
+    return check_input(lst[0]) + check_input(lst[:1])
+  File "game/script.rpy", line 53, in check_input
+    return check_input(lst[0]) + check_input(lst[:1])
+  File "game/script.rpy", line 46, in check_input
+    return possible_actions[lst[0]] + tag
+KeyError: 'u'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 129, in script
+  File "game/script.rpy", line 141, in script
     $ renpy.say(e, inp("test"))
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 129, in <module>
+  File "game/script.rpy", line 141, in <module>
     $ renpy.say(e, inp("test"))
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/exports/sayexports.py", line 121, in say
-    what = what % tag_quoting_dict
-TypeError: unsupported operand type(s) for %: 'int' and 'TagQuotingDict'
+  File "game/script.rpy", line 24, in inp
+    return parse_input(act)
+  File "game/script.rpy", line 36, in parse_input
+    return check_input(lst)
+  File "game/script.rpy", line 53, in check_input
+    return check_input(lst[0]) + check_input(lst[:1])
+  File "game/script.rpy", line 53, in check_input
+    return check_input(lst[0]) + check_input(lst[:1])
+  File "game/script.rpy", line 46, in check_input
+    return possible_actions[lst[0]] + tag
+KeyError: 'u'
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sun Jul  5 00:16:09 2026
+Sun Jul  5 00:35:53 2026

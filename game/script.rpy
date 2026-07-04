@@ -10,9 +10,11 @@ init python:
 
 # VARS
 
-    area = ""
     time = 0
-    possible_actions = [["north", "n"], ["south", "s"], ["west", "w"], ["east", "e"]]
+    inventory = []
+    possible_actions = {"north":"n", "n":"n", "south":"s", "s":"s", "west":"w", "w":"w", "east":"e", "e":"e",
+    "progress":"progress",
+    "enter":"enter"}
 
 # INPUT FUNCTIONS
 
@@ -34,13 +36,21 @@ init python:
         return check_input(lst)
     
     def check_input(lst):
+        tag = "_" + area.name + "_" + str(time)
         if len(lst) < 2:
             if lst[0] == "":
-                return "0"
+                return "progress" + tag
             else:
-                return "1"
+                for p in possible_actions:
+                    if lst[0] == p:
+                        return possible_actions[lst[0]] + tag
+                else:
+                    if lst[0] in inventory or lst[0] in area.exits:
+                        return lst[0]
+                    else:
+                        return ""
         else:
-            return "> 1"
+            return check_input(lst[0]) + check_input(lst[:1])
     
 # CLASSES
 # Area
@@ -94,6 +104,8 @@ init python:
     create_path(areas["shop_2"], areas["storage"])
     create_path(areas["waterfall"], areas["secret_path_0"])
     create_path(areas["cave_1"], areas["secret_path_0"])
+    
+    area = areas["backyard"]
 
 # TESTER FUNCTIONS
     def test_paths(area):

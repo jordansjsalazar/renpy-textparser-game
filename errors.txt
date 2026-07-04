@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 19: invalid syntax
-    def in(s):
-         ^
-
-File "game/script.rpy", line 130: invalid syntax
-    renpy.jump(in("test"))
-                ^
+File "game/script.rpy", line 16: invalid syntax
+    possible_actions = {"north":"n", "n":"n": "south":"s", "s":"s", "west":"w", "w":"w", "east":"e", "e":"e",
+                                             ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jul  5 00:11:07 2026
+Sun Jul  5 00:33:57 2026
