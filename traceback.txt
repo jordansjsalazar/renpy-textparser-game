@@ -1,46 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 141, in script
+  File "game/script.rpy", line 167, in script
     $ renpy.say(e, inp("test"))
-  File "game/script.rpy", line 141, in <module>
+  File "game/script.rpy", line 167, in <module>
     $ renpy.say(e, inp("test"))
-  File "game/script.rpy", line 24, in inp
+  File "game/script.rpy", line 27, in inp
     return parse_input(act)
-  File "game/script.rpy", line 36, in parse_input
+  File "game/script.rpy", line 39, in parse_input
     return check_input(lst)
-  File "game/script.rpy", line 53, in check_input
-    return check_input(lst[0]) + check_input(lst[:1])
-  File "game/script.rpy", line 53, in check_input
-    return check_input(lst[0]) + check_input(lst[:1])
-  File "game/script.rpy", line 46, in check_input
-    return possible_actions[lst[0]] + tag
-KeyError: 'u'
+  File "game/script.rpy", line 58, in check_input
+    return check_input(lst[1:])
+  File "game/script.rpy", line 52, in check_input
+    if lst[0] in inventory or area.has_exit(lst[0]) or area.has_object(lst[0]) or area.has_interact(lst[0]):
+  File "game/script.rpy", line 82, in has_exit
+    return false
+NameError: name 'false' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 141, in script
+  File "game/script.rpy", line 167, in script
     $ renpy.say(e, inp("test"))
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 141, in <module>
+  File "game/script.rpy", line 167, in <module>
     $ renpy.say(e, inp("test"))
-  File "game/script.rpy", line 24, in inp
+  File "game/script.rpy", line 27, in inp
     return parse_input(act)
-  File "game/script.rpy", line 36, in parse_input
+  File "game/script.rpy", line 39, in parse_input
     return check_input(lst)
-  File "game/script.rpy", line 53, in check_input
-    return check_input(lst[0]) + check_input(lst[:1])
-  File "game/script.rpy", line 53, in check_input
-    return check_input(lst[0]) + check_input(lst[:1])
-  File "game/script.rpy", line 46, in check_input
-    return possible_actions[lst[0]] + tag
-KeyError: 'u'
+  File "game/script.rpy", line 58, in check_input
+    return check_input(lst[1:])
+  File "game/script.rpy", line 52, in check_input
+    if lst[0] in inventory or area.has_exit(lst[0]) or area.has_object(lst[0]) or area.has_interact(lst[0]):
+  File "game/script.rpy", line 82, in has_exit
+    return false
+NameError: name 'false' is not defined
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sun Jul  5 00:35:53 2026
+Sun Jul  5 00:47:54 2026
