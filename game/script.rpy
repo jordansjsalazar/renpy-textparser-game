@@ -12,6 +12,7 @@ init python:
 
     time = 0
     inventory = []
+    last_label = "test"
     possible_actions = {"north":"n", "n":"n", "south":"s", "s":"s", "west":"w", "w":"w", "east":"e", "e":"e",
     "progress":"progress",
     "enter":"enter",
@@ -36,30 +37,27 @@ init python:
                 index = 0
             index += 1
         lst.append(act)
-        return check_input(lst)
-        #return find_label(check_input(lst))
+        return find_label(check_input(lst))
     
     def check_input(lst):
-        #tag = "_" + area.name + "_" + str(time)
-        #tag = "_" + area.name
+        tag = [area.name, str(time)]
         if len(lst) < 2:
             if lst[0] == "":
-                return "progress" + tag
+                return ["progress"] + tag
             else:
                 for p in possible_actions:
                     if lst[0] == p:
-                        #return possible_actions[lst[0]] + tag
-                        return possible_actions[lst[0]]
+                        return [possible_actions[lst[0]]] + tag
                 else:
                     if lst[0] in inventory or area.has_exit(lst[0]) or area.has_object(lst[0]) or area.has_interact(lst[0]):
-                        return lst[0]
+                        return [lst[0]]
                     else:
-                        return ""
+                        return ["fail"]
         else:
-            return check_input([lst[0]]) + "_" + check_input([lst[1:]])
+            return check_input([lst[0]]) + check_input(lst[1:])
     
     def find_label(command):
-        pass
+        return str(command)
     
 # CLASSES
 # Area
@@ -165,6 +163,8 @@ label start:
     show eileen happy
 
     # These display lines of dialogue.
+
+label test:
     
     $ renpy.say(e, test_paths("backyard"))
     $ renpy.say(e, test_paths("shop_1"))
