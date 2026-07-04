@@ -7,14 +7,44 @@ init:
         xzoom 1.0
 
 init python:
-    
+
+# VARS
+
     area = ""
     time = 0
-    
-    def input(s):
+    possible_actions = [["north", "n"], ["south", "s"], ["west", "w"], ["east", "e"]]
+
+# INPUT FUNCTIONS
+
+    def inp(s):
         act = renpy.input(prompt=s)
         act = act.lower()
-        
+        return parse_input(act)
+
+    def parse_input(act):
+        lst = []
+        index = 0;
+        while (act != "" and index<len(act)):
+            if (act[index]==" "):
+                lst.append(act[:index])
+                act = act[index+1:]
+                index = 0
+            index += 1
+        lst.append(act)
+        return check_input(lst)
+    
+    def check_input(lst):
+        if len(lst) < 2:
+            if lst[0] == "":
+                return "0"
+            else:
+                return "1"
+        else:
+            return "> 1"
+    
+# CLASSES
+# Area
+
     class Area:
         name = ""
         exits = []
@@ -34,6 +64,7 @@ init python:
         a1.add_exit(a2)
         a2.add_exit(a1)
 
+# GAME SETUP
     areas = {"backyard":Area("backyard"),
     "shop_1":Area("shop_1"),
     "kitchen":Area("kitchen"),
@@ -63,7 +94,8 @@ init python:
     create_path(areas["shop_2"], areas["storage"])
     create_path(areas["waterfall"], areas["secret_path_0"])
     create_path(areas["cave_1"], areas["secret_path_0"])
-    
+
+# TESTER FUNCTIONS
     def test_paths(area):
         st = areas[area].name + ": "
         for x in areas[area].exits:
@@ -92,8 +124,9 @@ label start:
 
     # These display lines of dialogue.
     
-    $renpy.say(e, test_paths("backyard"))
-    $renpy.say(e, test_paths("shop_1"))
+    $ renpy.say(e, test_paths("backyard"))
+    $ renpy.say(e, test_paths("shop_1"))
+    $ renpy.say(e, inp("test"))
 
     e "You've created a new Ren'Py game."
 
