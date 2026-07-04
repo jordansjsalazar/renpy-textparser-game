@@ -6,8 +6,8 @@ While running game code:
   File "game/script.rpy", line 18, in <module>
     class Area:
   File "game/script.rpy", line 19, in Area
-    self.name = ""
-NameError: name 'self' is not defined
+    name
+NameError: name 'name' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -21,10 +21,10 @@ Full traceback:
   File "game/script.rpy", line 18, in <module>
     class Area:
   File "game/script.rpy", line 19, in Area
-    self.name = ""
-NameError: name 'self' is not defined
+    name
+NameError: name 'name' is not defined
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sat Jul  4 23:53:57 2026
+Sun Jul  5 00:00:26 2026

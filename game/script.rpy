@@ -23,6 +23,9 @@ init python:
         
         def __init__(self, name):
             self.name = name
+            self.exits = []
+            self.objects = []
+            self.interactables = []
         
         def add_exit(self, a2):
             self.exits.append(a2)
@@ -61,12 +64,11 @@ init python:
     create_path(areas["waterfall"], areas["secret_path_0"])
     create_path(areas["cave_1"], areas["secret_path_0"])
     
-    def test_paths():
-        st = ""
-        for a in areas:
-            st += areas[a].name
-            for x in areas[a].exits:
-                st += x.name
+    def test_paths(area):
+        st = areas[area].name + ": "
+        for x in areas[area].exits:
+            st += x.name
+            st += " "
         return st
 
 define e = Character("Eileen")
@@ -90,7 +92,8 @@ label start:
 
     # These display lines of dialogue.
     
-    $renpy.say(e, test_paths())
+    $renpy.say(e, test_paths("backyard"))
+    $renpy.say(e, test_paths("shop_1"))
 
     e "You've created a new Ren'Py game."
 
