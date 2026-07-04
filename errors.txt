@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 61: invalid syntax
+    def test_paths:
+                   ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Sat Jul  4 23:44:27 2026

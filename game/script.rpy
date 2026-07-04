@@ -7,12 +7,30 @@ init:
         xzoom 1.0
 
 init python:
-
-    import functools
     
     area = ""
     time = 0
     
+    def input(s):
+        act = renpy.input(prompt=s)
+        act = act.lower()
+        
+    class Area:
+        name = ""
+        exits = []
+        objects = []
+        interactables = []
+        
+        def __init__(self, name):
+            self.name = name
+        
+        def add_exit(self, a2):
+            self.exits.append(a2)
+    
+    def create_path(a1, a2):
+        a1.add_exit(a2)
+        a2.add_exit(a1)
+
     areas = {"backyard":Area("backyard"),
     "shop_1":Area("shop_1"),
     "kitchen":Area("kitchen"),
@@ -43,23 +61,13 @@ init python:
     create_path(areas["waterfall"], areas["secret_path_0"])
     create_path(areas["cave_1"], areas["secret_path_0"])
     
-    def input(s):
-        act = renpy.input(prompt=s)
-        act = act.lower()
-        
-    class Area:
-        name = ""
-        exits = []
-        objects = []
-        interactables = []
-        
-        def __init__(name):
-            self.name = name
-    
-    def create_path(a1, a2):
-        a1.exits.append(a2)
-        a2.exits.append(a1)
-        
+    def test_paths():
+        st = ""
+        for a in areas:
+            st += areas[a].name
+            for x in areas[a].exits:
+                st += x.name
+        return st
 
 define e = Character("Eileen")
 
@@ -81,6 +89,8 @@ label start:
     show eileen happy
 
     # These display lines of dialogue.
+    
+    $renpy.say(e, test_paths())
 
     e "You've created a new Ren'Py game."
 
