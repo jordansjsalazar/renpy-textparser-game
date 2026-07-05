@@ -62,6 +62,7 @@ init python:
     def find_label(command):
         if debug:
             renpy.say(narrator, str(command))
+            renpy.say(narrator, areas[area].name)
         if "enter" in command:
             for i in command:
                 if areas[area].has_exit(i):
@@ -134,13 +135,13 @@ init python:
         
         def has_object(self, e):
             for x in self.objects:
-                if e == x.name:
+                if e == x:
                     return True
             return False
         
         def has_interact(self, e):
             for x in self.interactables:
-                if e == x.name:
+                if e == self.interactables[x].name:
                     return True
             return False
         
@@ -213,7 +214,7 @@ init python:
             st += " "
         return st
     
-    debug = True
+    debug = False
 
 define e = Character("Eileen")
 
@@ -235,10 +236,6 @@ label start:
     show eileen happy
 
     # These display lines of dialogue.
-    
-    $ renpy.say(e, test_paths(area))
-    
-    $ renpy.say(e, str(areas[area].has_exit("shop")))
 
     e "You've created a new Ren'Py game."
 
