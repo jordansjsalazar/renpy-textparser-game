@@ -37,23 +37,26 @@ label cmd:
 label backyard:
     scene bg backyard
     $ area = "backyard"
+    $ last_label = "backyard"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label shop:
     scene bg shop_1
     $ area = "shop_1"
+    $ last_label = "shop"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label kitchen:
     scene bg kitchen
     $ area = "kitchen"
+    $ last_label = "kitchen"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label take_Glass:
+label take_glass:
     "Took the glass."
     $ areas[area].take_object("Glass")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label interact_Gold:
+label interact_bag_of_gold:
     "You debated the ethics of stealing gold from your cousin."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))

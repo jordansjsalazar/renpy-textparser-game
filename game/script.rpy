@@ -62,7 +62,7 @@ init python:
     def find_label(command):
         if debug:
             renpy.say(narrator, str(command))
-            renpy.say(narrator, areas[area].name)
+            #renpy.say(narrator, areas[area].name)
         if "enter" in command:
             for i in command:
                 if areas[area].has_exit(i):
@@ -102,13 +102,24 @@ init python:
 
     class Interactable:
         name = ""
+        names = []
         keys = []
         
         def __init__(self, name):
             self.name = name
+            self.names.append(name)
         
         def add_key(self, key):
             self.keys.append(key)
+        
+        def has_key(self, key):
+            for x in self.keys:
+                if e == x.name:
+                    return True
+            return False
+        
+        def add_name(self, name):
+            self.names.append(name)
 
 # Area
 
@@ -147,7 +158,7 @@ init python:
         
         def get_interact(self, e):
             if self.has_interact(e):
-                return interactables[e]
+                return self.interactables[e]
         
         def add_exit(self, a2):
             self.exits.append(a2)
@@ -159,12 +170,17 @@ init python:
             if self.has_interact(e):
                 self.interactables[e].add_key(k)
         
+        def add_name(self, e, name):
+            self.interactables[e].add_name(name)
+        
         def add_object(self, name):
             self.objects.append(name)
         
         def take_object(self, name):
+            renpy.say(narrator, str(self.objects))
             if name in self.objects:
                 self.objects.remove(name)
+                inventory.append(name)
     
     def create_path(a1, a2):
         a1.add_exit(a2)
@@ -201,8 +217,11 @@ init python:
     create_path(areas["waterfall"], areas["secret_path_0"])
     create_path(areas["cave_1"], areas["secret_path_0"])
     
-    areas["kitchen"].add_object("Glass")
-    areas["shop_1"].add_interactable("Bag of Gold")
+    areas["kitchen"].add_object("glass")
+    
+    areas["shop_1"].add_interactable("bag_of_gold")
+    areas["shop_1"].add_name("bag_of_gold", "bag of gold")
+    areas["shop_1"].add_name("bag_of_gold", "gold")
     
     area = "backyard"
 
@@ -214,7 +233,7 @@ init python:
             st += " "
         return st
     
-    debug = False
+    debug = True
 
 define e = Character("Eileen")
 
@@ -223,25 +242,9 @@ define e = Character("Eileen")
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    $ renpy.say(narrator, str(areas["shop_1"].get_interact("bag_of_gold").names))
     
-    jump backyard
+    jump kitchen
 
     # This ends the game.
 

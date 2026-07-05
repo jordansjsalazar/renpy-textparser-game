@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/commands.rpy", line 40, in script
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-ScriptError: could not find label 'progress_0'.
+  File "game/script.rpy", line 9, in script
+    init python:
+  File "game/script.rpy", line 223, in <module>
+    areas["shop_1"].add_name("bag_of_gold", "bag of gold")
+  File "game/script.rpy", line 174, in add_name
+    self.interactables[e].add_name(name)
+TypeError: add_name() takes 1 positional argument but 2 were given
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/main.py", line 652, in main
-    run(restart)
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/execution.py", line 958, in run_context
-    context.run()
-  File "game/commands.rpy", line 40, in script
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'progress_0'.
+  File "game/script.rpy", line 9, in script
+    init python:
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 223, in <module>
+    areas["shop_1"].add_name("bag_of_gold", "bag of gold")
+  File "game/script.rpy", line 174, in add_name
+    self.interactables[e].add_name(name)
+TypeError: add_name() takes 1 positional argument but 2 were given
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sun Jul  5 02:52:40 2026
+Sun Jul  5 03:36:16 2026
