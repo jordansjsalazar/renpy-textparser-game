@@ -1,3 +1,4 @@
+#GENERAL
 label use_fail:
     "Use what?"
     $ renpy.jump(last_label)
@@ -20,8 +21,12 @@ label inv:
             python:
                 invString = ""
                 for i in inventory:
-                    invString += i+"\n"
-                renpy.say(inv, invString)
+                    if i in objects_texts:
+                        renpy.say(narrator, objects_texts[i])
+                    else:
+                        invString += i+"\n"
+                if invString != "\n":
+                    renpy.say(narrator, invString)
         else:
             "Inventory is empty!"
         $ renpy.jump(last_label)
@@ -34,18 +39,30 @@ label cmd:
     "You can choose to progress time by simply pressing enter."
     $ renpy.jump(last_label)
 
+#BACKYARD
 label backyard:
     scene bg backyard
     $ area = "backyard"
     $ last_label = "backyard"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label take_hammer:
+    "Took the hammer."
+    $ areas[area].take_object("hammer")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#SHOP
 label shop:
     scene bg shop_1
     $ area = "shop_1"
     $ last_label = "shop"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label interact_bag_of_gold:
+    "You debated the ethics of stealing gold from your cousin."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#KITCHEN
 label kitchen:
     scene bg kitchen
     $ area = "kitchen"
@@ -54,9 +71,11 @@ label kitchen:
 
 label take_glass:
     "Took the glass."
-    $ areas[area].take_object("Glass")
+    $ areas[area].take_object("glass")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label interact_bag_of_gold:
-    "You debated the ethics of stealing gold from your cousin."
+label take_bread:
+    "Took the bread."
+    $ areas[area].take_object("bread")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+

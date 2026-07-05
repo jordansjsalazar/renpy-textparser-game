@@ -173,7 +173,6 @@ init python:
             self.objects.append(name)
         
         def take_object(self, name):
-            renpy.say(narrator, str(self.objects))
             if name in self.objects:
                 self.objects.remove(name)
                 inventory.append(name)
@@ -213,11 +212,18 @@ init python:
     create_path(areas["waterfall"], areas["secret_path_0"])
     create_path(areas["cave_1"], areas["secret_path_0"])
     
+    areas["backyard"].add_object("hammer")
+    
     areas["kitchen"].add_object("glass")
+    areas["kitchen"].add_object("bread")
     
     areas["shop_1"].add_interactable("bag_of_gold")
     areas["shop_1"].add_name("bag_of_gold", "bag")
     areas["shop_1"].add_name("bag_of_gold", "gold")
+    
+    objects_texts = {
+        "glass":"Glass\nAn empty glass for water."
+    }
     
     area = "backyard"
 
@@ -229,16 +235,12 @@ init python:
             st += " "
         return st
     
-    debug = True
-
-define e = Character("Eileen")
+    debug = False
 
 
 # The game starts here.
 
 label start:
-
-    $ renpy.say(narrator, str(areas["shop_1"].interactables.keys()))
     
     jump kitchen
 
