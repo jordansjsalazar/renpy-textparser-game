@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 215, in script
-    $ renpy.jump(e, inp("test"))
-  File "game/script.rpy", line 215, in <module>
-    $ renpy.jump(e, inp("test"))
-TypeError: jump() takes 1 positional argument but 2 were given
+  File "game/commands.rpy", line 35, in script
+    $ renpy.jump(lastArea)
+  File "game/commands.rpy", line 35, in <module>
+    $ renpy.jump(lastArea)
+NameError: name 'lastArea' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 215, in script
-    $ renpy.jump(e, inp("test"))
+  File "game/commands.rpy", line 35, in script
+    $ renpy.jump(lastArea)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 215, in <module>
-    $ renpy.jump(e, inp("test"))
-TypeError: jump() takes 1 positional argument but 2 were given
+  File "game/commands.rpy", line 35, in <module>
+    $ renpy.jump(lastArea)
+NameError: name 'lastArea' is not defined
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sun Jul  5 01:52:24 2026
+Sun Jul  5 02:29:07 2026

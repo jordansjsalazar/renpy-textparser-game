@@ -12,7 +12,7 @@ init python:
 
     time = 0
     inventory = []
-    last_label = "test"
+    last_label = "backyard"
     possible_actions = {
     "north":"n", "n":"n", "south":"s", "s":"s", "west":"w", "w":"w", "east":"e", "e":"e",
     "progress":"progress",
@@ -52,7 +52,7 @@ init python:
                     if lst[0] == p:
                         return [possible_actions[lst[0]]]
                 else:
-                    if lst[0] in inventory or area.has_exit(lst[0]) or area.has_object(lst[0]) or area.has_interact(lst[0]):
+                    if lst[0] in inventory or areas[area].has_exit(lst[0]) or areas[area].has_object(lst[0]) or areas[area].has_interact(lst[0]):
                         return [lst[0]]
                     else:
                         return ["fail"]
@@ -64,29 +64,30 @@ init python:
             renpy.say(narrator, str(command))
         if "enter" in command:
             for i in command:
-                if area.has_exit(i):
+                if areas[area].has_exit(i):
                     return i
                 else:
                     return "enter_fail"
         if "use" in command:
             for i in command:
-                if area.has_object(i):
+                if areas[area].has_object(i):
                     return "use_" + i
-                elif area.has_interact(i):
+                elif areas[area].has_interact(i):
                     for x in command:
-                        if area.get_interact(i).has_key(x):
+                        if areas[area].get_interact(i).has_key(x):
                             return "use_" + x + "_on_" + i
-                    return "interact_fail"
+                    return "interact_" + i
             return "use_fail"
         if "take" in command:
             for i in command:
-                if area.has_object(i):
+                if areas[area].has_object(i):
                     return "take" + "_" + i
+            return "take_fail"
         if "progress" in command:
             return "progress_" + str(time)
         if "look" in command:
             for i in command:
-                if area.has_object(i):
+                if areas[area].has_object(i):
                     return "look_at_" + i
             return "look_" + area
         if "inv" in command:
@@ -151,7 +152,18 @@ init python:
             self.exits.append(a2)
         
         def add_interactable(self, name):
-            self.interactables.add(name, Interactable(name))
+            self.interactables[name] = Interactable(name)
+        
+        def add_key(self, e, k):
+            if self.has_interact(e):
+                self.interactables[e].add_key(k)
+        
+        def add_object(self, name):
+            self.objects.append(name)
+        
+        def take_object(self, name):
+            if name in self.objects:
+                self.objects.remove(name)
     
     def create_path(a1, a2):
         a1.add_exit(a2)
@@ -188,7 +200,10 @@ init python:
     create_path(areas["waterfall"], areas["secret_path_0"])
     create_path(areas["cave_1"], areas["secret_path_0"])
     
-    area = areas["backyard"]
+    areas["kitchen"].add_object("Glass")
+    areas["shop_1"].add_interactable("Bag of Gold")
+    
+    area = "backyard"
 
 # TESTER FUNCTIONS
     def test_paths(area):
@@ -220,14 +235,14 @@ label start:
     show eileen happy
 
     # These display lines of dialogue.
-
-label test:
-
-    $ renpy.jump(inp("test"))
+    
+    $ renpy.say(e, test_paths(area))
 
     e "You've created a new Ren'Py game."
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
+    
+    jump backyard
 
     # This ends the game.
 
