@@ -66,8 +66,8 @@ init python:
             for i in command:
                 if areas[area].has_exit(i):
                     return i
-                else:
-                    return "enter_fail"
+            else:
+                return "enter_fail"
         if "use" in command:
             for i in command:
                 if areas[area].has_object(i):
@@ -237,6 +237,8 @@ label start:
     # These display lines of dialogue.
     
     $ renpy.say(e, test_paths(area))
+    
+    $ renpy.say(e, str(areas[area].has_exit("shop")))
 
     e "You've created a new Ren'Py game."
 
