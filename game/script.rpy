@@ -77,7 +77,7 @@ init python:
                     for x in command:
                         if areas[area].get_interact(i).has_key(x):
                             return "use_" + x + "_on_" + i
-                    return "interact_" + i
+                    return "interact_" + areas[area].get_interact(i).name
             return "use_fail"
         if "take" in command:
             for i in command:
@@ -102,12 +102,10 @@ init python:
 
     class Interactable:
         name = ""
-        names = []
         keys = []
         
         def __init__(self, name):
             self.name = name
-            self.names.append(name)
         
         def add_key(self, key):
             self.keys.append(key)
@@ -117,9 +115,6 @@ init python:
                 if e == x.name:
                     return True
             return False
-        
-        def add_name(self, name):
-            self.names.append(name)
 
 # Area
 
@@ -152,7 +147,7 @@ init python:
         
         def has_interact(self, e):
             for x in self.interactables:
-                if e == self.interactables[x].name:
+                if e == x:
                     return True
             return False
         
@@ -171,7 +166,8 @@ init python:
                 self.interactables[e].add_key(k)
         
         def add_name(self, e, name):
-            self.interactables[e].add_name(name)
+            if self.has_interact(e):
+                self.interactables[name] = self.interactables[e]
         
         def add_object(self, name):
             self.objects.append(name)
@@ -220,7 +216,7 @@ init python:
     areas["kitchen"].add_object("glass")
     
     areas["shop_1"].add_interactable("bag_of_gold")
-    areas["shop_1"].add_name("bag_of_gold", "bag of gold")
+    areas["shop_1"].add_name("bag_of_gold", "bag")
     areas["shop_1"].add_name("bag_of_gold", "gold")
     
     area = "backyard"
@@ -242,7 +238,7 @@ define e = Character("Eileen")
 
 label start:
 
-    $ renpy.say(narrator, str(areas["shop_1"].get_interact("bag_of_gold").names))
+    $ renpy.say(narrator, str(areas["shop_1"].interactables.keys()))
     
     jump kitchen
 
