@@ -23,6 +23,10 @@ init python:
     "inventory":"inv", "inv":"inv",
     "cmd":"cmd", "help":"cmd", "h":"cmd"
     }
+    
+    def use_item(name):
+        if name in inventory:
+            inventory.remove(name)
 
 # INPUT FUNCTIONS
 
@@ -112,7 +116,7 @@ init python:
         
         def has_key(self, key):
             for x in self.keys:
-                if e == x.name:
+                if key == x:
                     return True
             return False
 
@@ -214,6 +218,8 @@ init python:
     
     areas["backyard"].add_object("hammer")
     
+    areas["kitchen"].add_interactable("sink")
+    areas["kitchen"].add_key("sink", "glass")
     areas["kitchen"].add_object("glass")
     areas["kitchen"].add_object("bread")
     

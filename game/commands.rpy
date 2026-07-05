@@ -79,3 +79,13 @@ label take_bread:
     $ areas[area].take_object("bread")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label interact_sink:
+    "You don't want to waste water."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label use_glass_on_sink:
+    $ use_item("glass")
+    "Filled up the glass."
+    $ areas["kitchen"].add_object("full_glass")
+    $ areas["kitchen"].take_object("full_glass")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))

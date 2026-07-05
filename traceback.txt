@@ -1,9 +1,9 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/commands.rpy", line 59, in script
+  File "game/commands.rpy", line 75, in script
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-ScriptError: could not find label 'progress_0'.
+ScriptError: could not find label 'use_glass_on_sink'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,13 +16,13 @@ Full traceback:
     renpy.execution.run_context(True)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/execution.py", line 958, in run_context
     context.run()
-  File "game/commands.rpy", line 59, in script
+  File "game/commands.rpy", line 75, in script
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'progress_0'.
+ScriptError: could not find label 'use_glass_on_sink'.
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sun Jul  5 03:51:04 2026
+Sun Jul  5 03:54:29 2026

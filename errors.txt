@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 246: expected statement.
-    renpy.say(narrator, str(areas["shop_1"].get_interact("bag_of_gold").names))
-                                                                               ^
+File "game/commands.rpy", line 87: expected statement.
+    use_item("glass")
+                     ^
+
+File "game/commands.rpy", line 89: expected statement.
+    areas["kitchen"].add_object("full_glass")
+                                             ^
+
+File "game/commands.rpy", line 90: expected statement.
+    areas["kitchen"].take_object("full_glass")
+                                              ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jul  5 03:33:53 2026
+Sun Jul  5 03:58:15 2026
