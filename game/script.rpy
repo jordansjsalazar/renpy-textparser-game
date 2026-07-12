@@ -242,13 +242,33 @@ init python:
         return st
     
     debug = False
-
+    define s = Character("Shera", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
+    define s_int = Character("Shera", what_prefix='(', what_suffix=')')
+    define o = Character("Old Heron", callback=voice, cb_file="bleep011.ogg", what_prefix='\"', what_suffix='\"')
+    define b = Character("Bia", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
+    define m = Character("Moa", callback=voice, cb_file="bleep009.ogg", what_prefix='\"', what_suffix='\"')
+    define c = Character("Chel", callback=voice, cb_file="bleep019.ogg", what_prefix='\"', what_suffix='\"')
+    define y = Character("Young Namara", callback=voice, cb_file="bleep017.ogg", what_prefix='\"', what_suffix='\"')
 
 # The game starts here.
 
 label start:
     
+    "asdfdasfasdf"
     jump kitchen
+
+label progress_0:
+
+    "Progress time?"
+    menu:
+        "Yes":
+            jump afternoon_1
+        "No":
+            $ renpy.jump(last_label)
+
+label afternoon_1:
+
+    s "asdfdasfasd"
 
     # This ends the game.
 
