@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/commands.rpy", line 87: expected statement.
-    use_item("glass")
-                     ^
-
-File "game/commands.rpy", line 89: expected statement.
-    areas["kitchen"].add_object("full_glass")
-                                             ^
-
-File "game/commands.rpy", line 90: expected statement.
-    areas["kitchen"].take_object("full_glass")
-                                              ^
+File "game/script.rpy", line 246: invalid syntax
+    define s = Character("Shera", what_prefix='\"', what_suffix='\"')
+            ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jul  5 03:58:15 2026
+Mon Jul 13 18:24:50 2026
