@@ -284,7 +284,15 @@ label start:
     show moa:
         faceright
         left
+    show old:
+        faceleft
+        right
     "test 4"
+    hide moa
+    show old:
+        faceright
+        left
+    "test 5"
     
     jump kitchen
 
