@@ -260,6 +260,8 @@ define y = Character("Young Namara", what_prefix='\"', what_suffix='\"')
 # The game starts here.
 
 label start:
+
+    scene bg backyard
     
     show bia:
         faceleft
@@ -284,17 +286,25 @@ label start:
     show moa:
         faceright
         left
-    show old:
+    show young:
         faceleft
         right
     "test 4"
     hide moa
+    show young:
+        faceright
+        left
+    show old:
+        faceleft
+        right
+    "test 5"
+    hide young
     show old:
         faceright
         left
-    "test 5"
+    "test 6"
     
-    jump kitchen
+    jump backyard
 
 label progress_0:
 
