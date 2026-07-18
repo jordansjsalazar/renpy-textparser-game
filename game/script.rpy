@@ -8,6 +8,19 @@ init:
 
 init python:
 
+# VOICE
+
+    renpy.music.register_channel("beep", mixer="voice")
+    
+    def voice(event, interact=True, file="audio/bleep001.ogg", **kwargs):
+        if not interact:
+            return
+
+        if event == "show_done":
+            renpy.sound.play(file, loop=True, channel="beep")
+        elif event == "slow_done":
+            renpy.sound.stop(fadeout=1, channel="beep")
+
 # VARS
 
     time = 0
@@ -243,19 +256,19 @@ init python:
     
     debug = False
 
-#define s = Character("Shera", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
-define s = Character("Shera", what_prefix='\"', what_suffix='\"')
-define s_int = Character("Shera", what_prefix='(', what_suffix=')')
-#define o = Character("Old Heron", callback=voice, cb_file="bleep011.ogg", what_prefix='\"', what_suffix='\"')
-#define b = Character("Bia", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
-#define m = Character("Moa", callback=voice, cb_file="bleep009.ogg", what_prefix='\"', what_suffix='\"')
-#define c = Character("Chel", callback=voice, cb_file="bleep019.ogg", what_prefix='\"', what_suffix='\"')
-#define y = Character("Young Namara", callback=voice, cb_file="bleep017.ogg", what_prefix='\"', what_suffix='\"')
-define o = Character("Old Heron", what_prefix='\"', what_suffix='\"')
-define b = Character("Bia", what_prefix='\"', what_suffix='\"')
-define m = Character("Moa", what_prefix='\"', what_suffix='\"')
-define c = Character("Chel", what_prefix='\"', what_suffix='\"')
-define y = Character("Young Namara", what_prefix='\"', what_suffix='\"')
+define l = Character("Lani", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
+#define l = Character("Lani", what_prefix='\"', what_suffix='\"')
+define l_int = Character("Shera", what_prefix='(', what_suffix=')')
+define o = Character("Old Heron", callback=voice, cb_file="bleep011.ogg", what_prefix='\"', what_suffix='\"')
+define b = Character("Bia", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
+define m = Character("Moa", callback=voice, cb_file="bleep009.ogg", what_prefix='\"', what_suffix='\"')
+define c = Character("Chel", callback=voice, cb_file="bleep019.ogg", what_prefix='\"', what_suffix='\"')
+define y = Character("Young Namara", callback=voice, cb_file="bleep017.ogg", what_prefix='\"', what_suffix='\"')
+#define o = Character("Old Heron", what_prefix='\"', what_suffix='\"')
+#define b = Character("Bia", what_prefix='\"', what_suffix='\"')
+#define m = Character("Moa", what_prefix='\"', what_suffix='\"')
+#define c = Character("Chel", what_prefix='\"', what_suffix='\"')
+#define y = Character("Young Namara", what_prefix='\"', what_suffix='\"')
 
 # The game starts here.
 
@@ -266,14 +279,14 @@ label start:
     show bia:
         faceleft
         right
-    "test 1"
+    b "test 1"
     show chel:
         faceleft
         right
     show bia:
         faceright
         left
-    "test 2"
+    c "test 2"
     hide bia
     show chel:
         faceright
@@ -281,7 +294,7 @@ label start:
     show moa:
         faceleft
         right
-    "test 3"
+    m "test 3"
     hide chel
     show moa:
         faceright
@@ -289,7 +302,7 @@ label start:
     show young:
         faceleft
         right
-    "test 4"
+    y "test 4"
     hide moa
     show young:
         faceright
@@ -297,12 +310,20 @@ label start:
     show old:
         faceleft
         right
-    "test 5"
+    o "test 5"
     hide young
     show old:
         faceright
         left
-    "test 6"
+    show lani:
+        faceleft
+        right
+    l "test 6"
+    hide old
+    show lani:
+        faceright
+        left
+    l_int "test 7"
     
     jump backyard
 

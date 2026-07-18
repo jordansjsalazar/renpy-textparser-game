@@ -1,28 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/commands.rpy", line 75, in script
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-ScriptError: could not find label 'use_glass_on_sink'.
+  File "game/script.rpy", line 273, in script
+    b "test 1"
+TypeError: voice() got an unexpected keyword argument 'type'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/main.py", line 652, in main
-    run(restart)
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/execution.py", line 958, in run_context
-    context.run()
-  File "game/commands.rpy", line 75, in script
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'use_glass_on_sink'.
+  File "game/script.rpy", line 273, in script
+    b "test 1"
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 2586, in execute
+    Say.execute(self)
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/exports/sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/character.py", line 1117, in do_display
+    display_say(who,
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/character.py", line 627, in display_say
+    callback("begin")
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/character.py", line 91, in __call__
+    c(*args, **kwargs)
+TypeError: voice() got an unexpected keyword argument 'type'
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sun Jul  5 03:54:29 2026
+Sat Jul 18 02:10:14 2026
