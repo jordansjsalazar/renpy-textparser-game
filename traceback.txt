@@ -1,44 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/commands.rpy", line 154, in script
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-  File "game/commands.rpy", line 154, in <module>
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-  File "game/script.rpy", line 49, in inp
-    return parse_input(act)
-  File "game/script.rpy", line 61, in parse_input
-    return find_label(check_input(lst))
-  File "game/script.rpy", line 102, in find_label
-    time_check(time)
-  File "game/script.rpy", line 141, in time_check
-    renpy.say(narrator, time)
-TypeError: unsupported operand type(s) for %: 'int' and 'TagQuotingDict'
+  File "game/script.rpy", line 9, in script
+    init python:
+  File "game/script.rpy", line 357, in <module>
+    areas["farmhouse"].add_east(areas["farmhouse_bedroom"])
+KeyError: 'farmhouse_bedroom'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/commands.rpy", line 154, in script
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+  File "game/script.rpy", line 9, in script
+    init python:
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/commands.rpy", line 154, in <module>
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-  File "game/script.rpy", line 49, in inp
-    return parse_input(act)
-  File "game/script.rpy", line 61, in parse_input
-    return find_label(check_input(lst))
-  File "game/script.rpy", line 102, in find_label
-    time_check(time)
-  File "game/script.rpy", line 141, in time_check
-    renpy.say(narrator, time)
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/exports/sayexports.py", line 121, in say
-    what = what % tag_quoting_dict
-TypeError: unsupported operand type(s) for %: 'int' and 'TagQuotingDict'
+  File "game/script.rpy", line 357, in <module>
+    areas["farmhouse"].add_east(areas["farmhouse_bedroom"])
+KeyError: 'farmhouse_bedroom'
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Wed Jul 29 01:10:41 2026
+Wed Jul 29 01:19:39 2026

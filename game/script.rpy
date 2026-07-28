@@ -185,15 +185,19 @@ init python:
         
         def add_north(self, x):
             self.north = x
+            x.south = self
         
         def add_east(self, x):
             self.east = x
+            x.west = self
         
         def add_west(self, x):
             self.west = x
+            x.east = self
         
         def add_south(self, x):
             self.south = x
+            x.north = self
         
         def has_north(self):
             return self.north
@@ -345,8 +349,15 @@ init python:
     create_path(areas["fields"], areas["farmhouse"])
     create_path(areas["bedroom_farmhouse"], areas["farmhouse"])
     
+    areas["entry"].add_south(areas["path_manor"])
     areas["path_manor"].add_south(areas["path_town_1"])
     areas["path_town_1"].add_south(areas["path_town_2"])
+    areas["path_town_2"].add_south(areas["fields"])
+    areas["fields"].add_east(areas["farmhouse"])
+    areas["farmhouse"].add_east(areas["bedroom_farmhouse"])
+    
+    areas["guest_cabin"].add_west(areas["path_manor"])
+    areas["guest_cabin"].add_east(areas["cabin_backyard"])
     
     areas["backyard_chel"].add_object("hammer")
     
