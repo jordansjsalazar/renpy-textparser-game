@@ -111,6 +111,13 @@ label path_town_1:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+#PATH 1
+label path_town_2:
+    scene bg path_town_2
+    $ area = "path_town_2"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #PATH MANOR
 label path_manor:
     scene bg path_manor

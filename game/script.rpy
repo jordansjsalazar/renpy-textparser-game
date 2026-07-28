@@ -80,6 +80,18 @@ init python:
         if debug:
             renpy.say(narrator, str(command))
             #renpy.say(narrator, areas[area].name)
+        if "n" in command:
+            if areas[area].has_north():
+                return areas[area].north.get_label_name()
+        if "e" in command:
+            if areas[area].has_east():
+                return areas[area].east.get_label_name()
+        if "w" in command:
+            if areas[area].has_west():
+                return areas[area].west.get_label_name()
+        if "s" in command:
+            if areas[area].has_south():
+                return areas[area].south.get_label_name()
         if "enter" in command:
             for i in command:
                 if areas[area].has_exit(i):
@@ -142,6 +154,11 @@ init python:
         objects = []
         interactables = {}
         
+        north = False
+        east = False
+        west = False
+        south = False
+        
         def __init__(self, name, label_name):
             self.name = name
             self.label_name = label_name
@@ -151,6 +168,30 @@ init python:
         
         def add_exit(self, a2):
             self.exits.append(a2)
+        
+        def add_north(self, x):
+            self.north = x
+        
+        def add_east(self, x):
+            self.east = x
+        
+        def add_west(self, x):
+            self.west = x
+        
+        def add_south(self, x):
+            self.south = x
+        
+        def has_north(self):
+            return self.north
+        
+        def has_east(self):
+            return self.east
+        
+        def has_west(self):
+            return self.west
+        
+        def has_south(self):
+            return self.south
         
         def has_exit(self, e):
             for x in self.exits:
@@ -289,6 +330,9 @@ init python:
     
     create_path(areas["fields"], areas["farmhouse"])
     create_path(areas["bedroom_farmhouse"], areas["farmhouse"])
+    
+    areas["path_manor"].add_south(areas["path_town_1"])
+    areas["path_town_1"].add_south(areas["path_town_2"])
     
     areas["backyard_chel"].add_object("hammer")
     
