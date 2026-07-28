@@ -83,7 +83,7 @@ init python:
         if "enter" in command:
             for i in command:
                 if areas[area].has_exit(i):
-                    return i
+                    return areas[area].has_exit(i).get_label_name()
             else:
                 return "enter_fail"
         if "use" in command:
@@ -105,7 +105,7 @@ init python:
             return "progress_" + str(time)
         if "look" in command:
             for i in command:
-                if areas[area].has_object(i):
+                if areas[area].has_object(i) or areas[area].has_interact(i):
                     return "look_at_" + i
             return "look_" + area
         if "inv" in command:
@@ -130,19 +130,21 @@ init python:
         def has_key(self, key):
             for x in self.keys:
                 if key == x:
-                    return True
+                    return x
             return False
 
 # Area
 
     class Area:
         name = ""
+        label_name = ""
         exits = []
         objects = []
         interactables = {}
         
-        def __init__(self, name):
+        def __init__(self, name, label_name):
             self.name = name
+            self.label_name = label_name
             self.exits = []
             self.objects = []
             self.interactables = {}
@@ -153,27 +155,24 @@ init python:
         def has_exit(self, e):
             for x in self.exits:
                 if e == x.name:
-                    return True
+                    return x
             return False
         
         def has_object(self, e):
             for x in self.objects:
                 if e == x:
-                    return True
+                    return x
             return False
         
         def has_interact(self, e):
             for x in self.interactables:
                 if e == x:
-                    return True
+                    return x
             return False
         
         def get_interact(self, e):
             if self.has_interact(e):
                 return self.interactables[e]
-        
-        def add_exit(self, a2):
-            self.exits.append(a2)
         
         def add_interactable(self, name):
             self.interactables[name] = Interactable(name)
@@ -193,58 +192,120 @@ init python:
             if name in self.objects:
                 self.objects.remove(name)
                 inventory.append(name)
+        
+        def get_label_name(self):
+            return self.label_name
     
     def create_path(a1, a2):
         a1.add_exit(a2)
         a2.add_exit(a1)
 
 # GAME SETUP
-    areas = {"backyard":Area("backyard"),
-    "shop_1":Area("shop"),
-    "kitchen":Area("kitchen"),
-    "upstairs":Area("upstairs"),
-    "bathroom":Area("bathroom"),
-    "bedroom":Area("bedroom"),
-    "path_1":Area("path"),
-    "path_2":Area("path"),
-    "food_stall":Area("food stall"),
-    "shop_2":Area("shop"),
-    "storage":Area("storage"),
-    "secret_path_0":Area("path"),
-    "cave_1":Area("cave"),
-    "waterfall":Area("waterfall")
+    areas = {"backyard_chel":Area("backyard", "backyard_chel"),
+    "shop_chel":Area("shop", "shop_chel"),
+    "kitchen_chel":Area("kitchen", "kitchen_chel"),
+    "bathroom_chel":Area("bathroom", "bathroom_chel"),
+    "bedroom_chel":Area("bedroom", "bedroom_chel"),
+    
+    "shop_heron":Area("shop", "shop_heron"),
+    "kitchen_heron":Area("kitchen", "kitchen_heron"),
+    "storage":Area("storage", "storage"),
+    "bedroom_heron":Area("bedroom", "bedroom_heron"),
+    "bathroom_heron":Area("bathroom", "bathroom_heron"),
+    
+    "path_town_1":Area("path", "path_town_1"),
+    "path_town_2":Area("path", "path_town_2"),
+    "path_manor":Area("path", "path_manor"),
+    
+    "bar":Area("bar", "bar"),
+    "fields":Area("fields", "fields"),
+    "shop_flowers":Area("shop", "shop_flowers"),
+    "shop_carpentry":Area("shop", "shop_carpentry"),
+    "outhouse":Area("outhouse", "outhouse"),
+    
+    "farmhouse":Area("farmhouse", "farmhouse"),
+    "bedroom_farmhouse":Area("bedroom", "bedroom_farmhouse"),
+    
+    "forest_path":Area("path", "forest_path"),
+    "fp_1":Area("path", "fp_1"),
+    "fp_2":Area("path", "fp_2"),
+    "fp_3":Area("path", "fp_3"),
+    "fp_4":Area("path", "fp_4"),
+    "fp_5":Area("path", "fp_5"),
+    "cave":Area("cave", "cave"),
+    "waterfall":Area("waterfall", "waterfall"),
+    
+    "entry":Area("manor", "entry"),
+    "parlor":Area("parlor", "parlor"),
+    "hallway":Area("hallway", "hallway"),
+    "bedroom_namara":Area("bedroom", "bedroom_namara"),
+    "dining_room":Area("dining room", "dining_room"),
+    "kitchen_namara":Area("kitchen", "kitchen_namara"),
+    "upstairs":Area("upstairs", "upstairs"),
+    "bedroom_master":Area("bedroom", "bedroom_master"),
+    "bathroom_namara":Area("bathroom", "bathroom_namara"),
+    
+    "guest_cabin":Area("cabin", "guest_cabin"),
+    "cabin_backyard":Area("backyard", "cabin_backyard")
+    
     }
     
-    create_path(areas["backyard"], areas["shop_1"])
-    create_path(areas["kitchen"], areas["shop_1"])
-    create_path(areas["path_1"], areas["shop_1"])
-    create_path(areas["kitchen"], areas["upstairs"])
-    create_path(areas["bedroom"], areas["upstairs"])
-    create_path(areas["bathroom"], areas["upstairs"])
-    create_path(areas["path_1"], areas["path_2"])
-    create_path(areas["path_1"], areas["secret_path_0"])
-    create_path(areas["food_stall"], areas["path_2"])
-    create_path(areas["shop_2"], areas["path_2"])
-    create_path(areas["shop_2"], areas["storage"])
-    create_path(areas["waterfall"], areas["secret_path_0"])
-    create_path(areas["cave_1"], areas["secret_path_0"])
+    create_path(areas["forest_path"], areas["path_manor"])
+    create_path(areas["forest_path"], areas["cave"])
+    create_path(areas["forest_path"], areas["fp_1"])
     
-    areas["backyard"].add_object("hammer")
+    create_path(areas["guest_cabin"], areas["path_manor"])
+    create_path(areas["guest_cabin"], areas["cabin_backyard"])
     
-    areas["kitchen"].add_interactable("sink")
-    areas["kitchen"].add_key("sink", "glass")
-    areas["kitchen"].add_object("glass")
-    areas["kitchen"].add_object("bread")
+    create_path(areas["entry"], areas["path_manor"])
+    create_path(areas["parlor"], areas["path_manor"])
+    create_path(areas["entry"], areas["hallway"])
+    create_path(areas["upstairs"], areas["hallway"])
+    create_path(areas["bedroom_namara"], areas["hallway"])
+    create_path(areas["dining_room"], areas["hallway"])
+    create_path(areas["upstairs"], areas["bedroom_master"])
+    create_path(areas["upstairs"], areas["bathroom_namara"])
+    create_path(areas["dining_room"], areas["kitchen_namara"])
     
-    areas["shop_1"].add_interactable("bag_of_gold")
-    areas["shop_1"].add_name("bag_of_gold", "bag")
-    areas["shop_1"].add_name("bag_of_gold", "gold")
+    create_path(areas["backyard_chel"], areas["shop_chel"])
+    create_path(areas["kitchen_chel"], areas["shop_chel"])
+    create_path(areas["kitchen_chel"], areas["bathroom_chel"])
+    create_path(areas["kitchen_chel"], areas["bedroom_chel"])
+    
+    create_path(areas["kitchen_heron"], areas["shop_heron"])
+    create_path(areas["storage"], areas["shop_heron"])
+    create_path(areas["kitchen_heron"], areas["bedroom_heron"])
+    create_path(areas["bathroom_heron"], areas["bedroom_heron"])
+    
+    create_path(areas["path_town_1"], areas["path_manor"])
+    create_path(areas["path_town_1"], areas["shop_chel"])
+    create_path(areas["path_town_1"], areas["shop_heron"])
+    create_path(areas["path_town_1"], areas["path_town_2"])
+    
+    create_path(areas["bar"], areas["path_town_2"])
+    create_path(areas["fields"], areas["path_town_2"])
+    create_path(areas["shop_flowers"], areas["path_town_2"])
+    create_path(areas["shop_carpentry"], areas["path_town_2"])
+    
+    create_path(areas["fields"], areas["farmhouse"])
+    create_path(areas["bedroom_farmhouse"], areas["farmhouse"])
+    
+    areas["backyard_chel"].add_object("hammer")
+    
+    areas["kitchen_namara"].add_interactable("sink")
+    areas["kitchen_namara"].add_key("sink", "glass")
+    areas["kitchen_namara"].add_object("glass")
+    areas["kitchen_namara"].add_object("bread")
+    
+    areas["shop_chel"].add_interactable("bag_of_gold")
+    areas["shop_chel"].add_name("bag_of_gold", "bag")
+    areas["shop_chel"].add_name("bag_of_gold", "gold")
     
     objects_texts = {
         "glass":"Glass\nAn empty glass for water."
     }
     
-    area = "backyard"
+    area = "guest_cabin"
 
 # TESTER FUNCTIONS
     def test_paths(area):
@@ -325,7 +386,7 @@ label start:
         left
     l_int "test 7"
     
-    jump backyard
+    jump guest_cabin
 
 label progress_0:
 

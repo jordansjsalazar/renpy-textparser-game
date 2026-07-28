@@ -39,11 +39,11 @@ label cmd:
     "You can choose to progress time by simply pressing enter."
     $ renpy.jump(last_label)
 
-#BACKYARD
-label backyard:
+#CHEL BACKYARD
+label backyard_chel:
     scene bg backyard
-    $ area = "backyard"
-    $ last_label = "backyard"
+    $ area = "backyard_chel"
+    $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label take_hammer:
@@ -51,22 +51,22 @@ label take_hammer:
     $ areas[area].take_object("hammer")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-#SHOP
-label shop:
+#CHEL SHOP
+label shop_chel:
     scene bg shop_1
-    $ area = "shop_1"
-    $ last_label = "shop"
+    $ area = "shop_chel"
+    $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label interact_bag_of_gold:
     "You debated the ethics of stealing gold from your cousin."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-#KITCHEN
-label kitchen:
-    scene bg kitchen
-    $ area = "kitchen"
-    $ last_label = "kitchen"
+#CHEL KITCHEN
+label kitchen_chel:
+    scene bg kitchen_chel
+    $ area = "kitchen_chel"
+    $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label take_glass:
@@ -88,4 +88,46 @@ label use_glass_on_sink:
     "Filled up the glass."
     $ areas["kitchen"].add_object("full_glass")
     $ areas["kitchen"].take_object("full_glass")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#CHEL BATHROOM
+label bathroom_chel:
+    scene bg bathroom_chel
+    $ area = "bathroom_chel"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#CHEL BEDROOM
+label bedroom_chel:
+    scene bg bedroom_chel
+    $ area = "bedroom_chel"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#PATH 1
+label path_town_1:
+    scene bg path_town_1
+    $ area = "path_town_1"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#PATH MANOR
+label path_manor:
+    scene bg path_manor
+    $ area = "path_manor"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#GUEST CABIN
+label guest_cabin:
+    scene bg guest_cabin
+    $ area = "guest_cabin"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#CABIN BACKYARD
+label cabin_backyard:
+    scene bg cabin_backyard
+    $ area = "cabin_backyard"
+    $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
