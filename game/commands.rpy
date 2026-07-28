@@ -11,6 +11,10 @@ label take_fail():
     "Take what?"
     $ renpy.jump(last_label)
 
+label talk_fail():
+    "Talk to who?"
+    $ renpy.jump(last_label)
+
 label fail:
     "Unfortunately, you can't do that here."
     $ renpy.jump(last_label)
@@ -38,6 +42,41 @@ label cmd:
     "Additionally, you can sometimes {b}use{/b} some items from your {b}inventory{/b}."
     "You can choose to progress time by simply pressing enter."
     $ renpy.jump(last_label)
+
+#TALK TO CHEL
+label talk_chel:
+    show chel at center
+    c "asdf"
+    hide chel
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#TALK TO MOA
+label talk_moa:
+    show moa at center
+    m "asdf"
+    hide moa
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#TALK TO BIA
+label talk_bia:
+    show bia at center
+    b "asdf"
+    hide bia
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#TALK TO OLD HERON
+label talk_heron:
+    show old at center
+    o "asdf"
+    hide old
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#TALK TO YOUNG NAMARA
+label talk_namara:
+    show young normal at center
+    y "asdf"
+    hide young
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #CHEL BACKYARD
 label backyard_chel:
@@ -206,6 +245,13 @@ label shop_flowers:
 label shop_carpentry:
     scene bg shop_carpentry
     $ area = "shop_carpentry"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#CARPENTRY SHOP
+label shop_heron:
+    scene bg shop_heron
+    $ area = "shop_heron"
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 

@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 9, in script
-    init python:
-  File "game/script.rpy", line 357, in <module>
-    areas["farmhouse"].add_east(areas["farmhouse_bedroom"])
-KeyError: 'farmhouse_bedroom'
+  File "game/commands.rpy", line 54, in script
+    show moa normal at center
+Exception: Image 'moa' does not accept attributes 'normal'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 9, in script
-    init python:
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 357, in <module>
-    areas["farmhouse"].add_east(areas["farmhouse_bedroom"])
-KeyError: 'farmhouse_bedroom'
+  File "game/commands.rpy", line 54, in script
+    show moa normal at center
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 1124, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 1087, in show_imspec
+    renpy.config.show(name,
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/exports/displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/display/image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/display/displayable.py", line 249, in _duplicate
+    args.extraneous()
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/display/displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'moa' does not accept attributes 'normal'.
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Wed Jul 29 01:19:39 2026
+Wed Jul 29 01:51:15 2026

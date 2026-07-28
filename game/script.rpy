@@ -34,7 +34,8 @@ init python:
     "use":"use",
     "take":"take",
     "inventory":"inv", "inv":"inv",
-    "cmd":"cmd", "help":"cmd", "h":"cmd"
+    "cmd":"cmd", "help":"cmd", "h":"cmd",
+    "talk":"talk", "ask":"talk"
     }
     
     def use_item(name):
@@ -69,7 +70,7 @@ init python:
                     if lst[0] == p:
                         return [possible_actions[lst[0]]]
                 else:
-                    if lst[0] in inventory or areas[area].has_exit(lst[0]) or areas[area].has_object(lst[0]) or areas[area].has_interact(lst[0]):
+                    if lst[0] in inventory or areas[area].has_exit(lst[0]) or areas[area].has_object(lst[0]) or areas[area].has_interact(lst[0]) or areas[area].has_npc(lst[0]):
                         return [lst[0]]
                     else:
                         return ["fail"]
@@ -77,8 +78,8 @@ init python:
             return check_input([lst[0]]) + check_input(lst[1:])
     
     def find_label(command):
-        if debug:
-            renpy.say(narrator, str(command))
+        #if debug:
+            #renpy.say(narrator, str(command))
             #renpy.say(narrator, areas[area].name)
         if "n" in command:
             if areas[area].has_north():
@@ -121,6 +122,16 @@ init python:
                     time_check()
                     return "take" + "_" + i
             return "take_fail"
+        if "talk" in command:
+            for i in command:
+                if debug:
+                    renpy.say(narrator, i)
+                if areas[area].has_npc(i):
+                    for o in command:
+                        if areas[area].has_npc(i).has_topic(o):
+                            return "talk_" + i + "_about_" + o
+                    return "talk_" + i
+            return "talk_fail"
         if "progress" in command:
             return "progress_" + str(time)
         if "look" in command:
@@ -137,8 +148,8 @@ init python:
     
     def time_check():
         store.time += 1
-        if debug:
-            renpy.say(narrator, str(time))
+        #if debug:
+            #renpy.say(narrator, str(time))
     
 # CLASSES
 # Interactable
@@ -167,6 +178,7 @@ init python:
         exits = []
         objects = []
         interactables = {}
+        npcs = []
         
         north = False
         east = False
@@ -179,6 +191,7 @@ init python:
             self.exits = []
             self.objects = []
             self.interactables = {}
+            self.npcs = []
         
         def add_exit(self, a2):
             self.exits.append(a2)
@@ -229,6 +242,12 @@ init python:
                     return x
             return False
         
+        def has_npc(self, e):
+            for x in self.npcs:
+                if e == x.name:
+                    return x
+            return False
+        
         def get_interact(self, e):
             if self.has_interact(e):
                 return self.interactables[e]
@@ -247,6 +266,12 @@ init python:
         def add_object(self, name):
             self.objects.append(name)
         
+        def add_npc(self, npc):
+            self.npcs.append(npc)
+        
+        def remove_npc(self, npc):
+            self.npcs.remove(npc)
+        
         def take_object(self, name):
             if name in self.objects:
                 self.objects.remove(name)
@@ -259,7 +284,33 @@ init python:
         a1.add_exit(a2)
         a2.add_exit(a1)
 
+#NPC
+
+    class Npc:
+        
+        name = ""
+        topics = []
+        
+        def __init__(self, name):
+            self.name = name
+        
+        def has_topic(self, e):
+            for i in self.topics:
+                if i == e:
+                    return True
+            return False
+        
+        def add_topic(self, e):
+            self.topics.append(e)
+
 # GAME SETUP
+
+    npcs = {"Chel":Npc("chel"),
+    "Moa":Npc("moa"),
+    "Bia":Npc("bia"),
+    "Old Heron":Npc("heron"),
+    "Young Namara":Npc("namara")}
+    
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
     "shop_chel":Area("shop", "shop_chel"),
     "kitchen_chel":Area("kitchen", "kitchen_chel"),
@@ -290,7 +341,6 @@ init python:
     "fp_2":Area("path", "fp_2"),
     "fp_3":Area("path", "fp_3"),
     "fp_4":Area("path", "fp_4"),
-    "fp_5":Area("path", "fp_5"),
     "cave":Area("cave", "cave"),
     "waterfall":Area("waterfall", "waterfall"),
     
@@ -359,7 +409,22 @@ init python:
     areas["guest_cabin"].add_west(areas["path_manor"])
     areas["guest_cabin"].add_east(areas["cabin_backyard"])
     
+    areas["path_town_1"].add_west(areas["shop_chel"])
+    areas["path_town_1"].add_east(areas["shop_heron"])
+    
+    areas["shop_chel"].add_west(areas["backyard_chel"])
+    areas["shop_chel"].add_north(areas["kitchen_chel"])
+    
+    areas["forest_path"].add_west(areas["fp_1"])
+    areas["fp_1"].add_north(areas["fp_2"])
+    areas["fp_2"].add_west(areas["fp_3"])
+    areas["fp_2"].add_east(areas["fp_4"])
+    areas["fp_3"].add_west(areas["fp_4"])
+    areas["fp_4"].add_north(areas["waterfall"])
+    
+    
     areas["backyard_chel"].add_object("hammer")
+    
     
     areas["kitchen_namara"].add_interactable("sink")
     areas["kitchen_namara"].add_key("sink", "glass")
@@ -369,6 +434,14 @@ init python:
     areas["shop_chel"].add_interactable("bag_of_gold")
     areas["shop_chel"].add_name("bag_of_gold", "bag")
     areas["shop_chel"].add_name("bag_of_gold", "gold")
+    
+    
+    areas["backyard_chel"].add_npc(npcs["Chel"])
+    areas["parlor"].add_npc(npcs["Young Namara"])
+    areas["shop_heron"].add_npc(npcs["Moa"])
+    areas["shop_heron"].add_npc(npcs["Bia"])
+    areas["shop_heron"].add_npc(npcs["Old Heron"])
+    
     
     objects_texts = {
         "glass":"Glass\nAn empty glass for water."
@@ -384,7 +457,7 @@ init python:
             st += " "
         return st
     
-    debug = True
+    debug = False
 
 define l = Character("Lani", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
 #define l = Character("Lani", what_prefix='\"', what_suffix='\"')
