@@ -25,7 +25,7 @@ init python:
 
     time = 0
     inventory = []
-    last_label = "backyard"
+    last_label = "guest_cabin"
     possible_actions = {
     "north":"n", "n":"n", "south":"s", "s":"s", "west":"w", "w":"w", "east":"e", "e":"e",
     "progress":"progress",
@@ -82,35 +82,43 @@ init python:
             #renpy.say(narrator, areas[area].name)
         if "n" in command:
             if areas[area].has_north():
+                time_check()
                 return areas[area].north.get_label_name()
         if "e" in command:
             if areas[area].has_east():
+                time_check()
                 return areas[area].east.get_label_name()
         if "w" in command:
             if areas[area].has_west():
+                time_check()
                 return areas[area].west.get_label_name()
         if "s" in command:
             if areas[area].has_south():
+                time_check()
                 return areas[area].south.get_label_name()
         if "enter" in command:
             for i in command:
                 if areas[area].has_exit(i):
+                    time_check()
                     return areas[area].has_exit(i).get_label_name()
             else:
                 return "enter_fail"
         if "use" in command:
             for i in command:
                 if areas[area].has_object(i):
+                    time_check()
                     return "use_" + i
                 elif areas[area].has_interact(i):
                     for x in command:
                         if areas[area].get_interact(i).has_key(x):
+                            time_check()
                             return "use_" + x + "_on_" + i
                     return "interact_" + areas[area].get_interact(i).name
             return "use_fail"
         if "take" in command:
             for i in command:
                 if areas[area].has_object(i):
+                    time_check()
                     return "take" + "_" + i
             return "take_fail"
         if "progress" in command:
@@ -118,6 +126,7 @@ init python:
         if "look" in command:
             for i in command:
                 if areas[area].has_object(i) or areas[area].has_interact(i):
+                    time_check()
                     return "look_at_" + i
             return "look_" + area
         if "inv" in command:
@@ -125,6 +134,11 @@ init python:
         if "cmd" in command:
             return "cmd"
         return "fail"
+    
+    def time_check():
+        store.time += 1
+        if debug:
+            renpy.say(narrator, str(time))
     
 # CLASSES
 # Interactable
@@ -359,7 +373,7 @@ init python:
             st += " "
         return st
     
-    debug = False
+    debug = True
 
 define l = Character("Lani", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
 #define l = Character("Lani", what_prefix='\"', what_suffix='\"')

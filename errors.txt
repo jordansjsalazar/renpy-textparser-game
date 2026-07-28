@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 246: invalid syntax
-    define s = Character("Shera", what_prefix='\"', what_suffix='\"')
-            ^
+File "game/script.rpy", line 139: invalid syntax
+        global time += 1
+                     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Jul 13 18:24:50 2026
+Wed Jul 29 01:12:48 2026
