@@ -100,6 +100,10 @@ label shop_chel:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_shop_chel:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 label interact_bag_of_gold:
     "You debated the ethics of stealing gold from your cousin."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
@@ -109,6 +113,10 @@ label kitchen_chel:
     scene bg kitchen_chel
     $ area = "kitchen_chel"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_kitchen_chel:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label take_glass:
@@ -139,11 +147,19 @@ label bathroom_chel:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_bathroom_chel:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #CHEL BEDROOM
 label bedroom_chel:
     scene bg bedroom_chel
     $ area = "bedroom_chel"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_bedroom_chel:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #PATH 1
@@ -153,11 +169,19 @@ label path_town_1:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_path_town_1:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #PATH 2
 label path_town_2:
     scene bg path_town_2
     $ area = "path_town_2"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_path_town_2:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #PATH MANOR
@@ -167,11 +191,19 @@ label path_manor:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_path_manor:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #FOREST PATH
 label forest_path:
     scene bg forest_path
     $ area = "forest_path"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_forest_path:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #FOREST PATH PUZZLE ENTRY   
@@ -181,11 +213,52 @@ label fp_1:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_fp_1:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#FOREST PATH PUZZLE 2 
+label fp_2:
+    scene bg fp_2
+    $ area = "fp_2"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_fp_2:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#FOREST PATH PUZZLE 3
+label fp_3:
+    scene bg fp_3
+    $ area = "fp_3"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_fp_3:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#FOREST PATH PUZZLE 4
+label fp_4:
+    scene bg fp_4
+    $ area = "fp_4"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_fp_4:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #CAVE
 label cave:
     scene bg cave
     $ area = "cave"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_cave:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #GUEST CABIN
@@ -195,11 +268,19 @@ label guest_cabin:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_guest_cabin:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #CABIN BACKYARD
 label cabin_backyard:
     scene bg cabin_backyard
     $ area = "cabin_backyard"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_cabin_backyard:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #FIELDS
@@ -209,11 +290,19 @@ label fields:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_fields:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #FARMHOUSE
 label farmhouse:
     scene bg farmhouse
     $ area = "farmhouse"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_farmhouse:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #FARMHOUSE BEDROOM
@@ -223,11 +312,19 @@ label bedroom_farmhouse:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_bedroom_farmhouse:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #BAR
 label bar:
     scene bg bar
     $ area = "bar"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_bar:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #OUTHOUSE
@@ -237,11 +334,19 @@ label outhouse:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_outhouse:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #FLOWER SHOP
 label shop_flowers:
     scene bg shop_flowers
     $ area = "shop_flowers"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_shop_flowers:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #CARPENTRY SHOP
@@ -251,11 +356,19 @@ label shop_carpentry:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_shop_carpentry:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #CARPENTRY SHOP
 label shop_heron:
     scene bg shop_heron
     $ area = "shop_heron"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_shop_heron:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #HERON KITCHEN
@@ -265,11 +378,19 @@ label kitchen_heron:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_kitchen_heron:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #HERON BATHROOM
 label bathroom_heron:
     scene bg bathroom_heron
     $ area = "bathroom_heron"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_bathroom_heron:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #HERON BEDROOM
@@ -279,11 +400,19 @@ label bedroom_heron:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_bedroom_heron:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #STORAGE
 label storage:
     scene bg storage
     $ area = "storage"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_storage:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #ENTRY
@@ -293,11 +422,19 @@ label entry:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_entry:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #PARLOR
 label parlor:
     scene bg parlor
     $ area = "parlor"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_parlor:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #DINING ROOM
@@ -307,11 +444,19 @@ label dining_room:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_dining_room:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #MANOR KITCHEN
 label kitchen_namara:
     scene bg kitchen_namara
     $ area = "kitchen_namara"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_kitchen_namara:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #MANOR BATHROOM
@@ -321,6 +466,10 @@ label bathroom_namara:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_bathroom_namara:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #NAMARA BEDROOM
 label bedroom_namara:
     scene bg bedroom_namara
@@ -328,11 +477,28 @@ label bedroom_namara:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_bedroom_namara:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #UPSTAIRS
+label upstairs:
+    scene bg upstairs
+    $ area = "upstairs"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_bedroom_master:
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #MASTER BEDROOM
 label bedroom_master:
     scene bg bedroom_master
     $ area = "bedroom_master"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_bedroom_master:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
