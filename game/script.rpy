@@ -284,6 +284,13 @@ init python:
         a1.add_exit(a2)
         a2.add_exit(a1)
 
+    def look():
+        area = areas[store.area]
+        for i in area.objects:
+            renpy.say(narrator, "There is a " + i + " here.")
+        for i in area.npcs:
+            renpy.say(narrator, i.name.upper() + " is standing here.")
+
 #NPC
 
     class Npc:

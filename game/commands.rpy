@@ -20,20 +20,19 @@ label fail:
     $ renpy.jump(last_label)
 
 label inv:
-    label inventory:
-        if inventory:
-            python:
-                invString = ""
-                for i in inventory:
-                    if i in objects_texts:
-                        renpy.say(narrator, objects_texts[i])
-                    else:
-                        invString += i+"\n"
-                if invString != "\n":
-                    renpy.say(narrator, invString)
-        else:
-            "Inventory is empty!"
-        $ renpy.jump(last_label)
+    if inventory:
+        python:
+            invString = ""
+            for i in inventory:
+                if i in objects_texts:
+                    renpy.say(narrator, objects_texts[i])
+                else:
+                    invString += i+"\n"
+            if invString != "\n":
+                renpy.say(narrator, invString)
+    else:
+        "Inventory is empty!"
+    $ renpy.jump(last_label)
 
 label cmd:
     "Commands: {b}look, look at, use, take, enter, north, south, east, west, inventory.{/b}"
@@ -83,6 +82,10 @@ label backyard_chel:
     scene bg backyard
     $ area = "backyard_chel"
     $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_backyard_chel:
+    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label take_hammer:

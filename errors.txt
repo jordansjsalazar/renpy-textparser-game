@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 139: invalid syntax
-        global time += 1
-                     ^
+File "game/script.rpy", line 292: invalid syntax
+            renpy.say(narrator, i.upper() " is standing here.")
+                                           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jul 29 01:12:48 2026
+Wed Jul 29 01:59:53 2026
