@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/commands.rpy", line 47, in script
-    $ renpy.say(narrator, "Current time: " + time + " out of 100")
-  File "game/commands.rpy", line 47, in <module>
-    $ renpy.say(narrator, "Current time: " + time + " out of 100")
-TypeError: can only concatenate str (not "int") to str
+  File "game/commands.rpy", line 296, in script
+    $ look()
+  File "game/commands.rpy", line 296, in <module>
+    $ look()
+  File "game/script.rpy", line 301, in look
+    renpy.say(narrator, "There is a {b}" + i.name + "{/b} here.")
+AttributeError: 'str' object has no attribute 'name'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/commands.rpy", line 47, in script
-    $ renpy.say(narrator, "Current time: " + time + " out of 100")
+  File "game/commands.rpy", line 296, in script
+    $ look()
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/commands.rpy", line 47, in <module>
-    $ renpy.say(narrator, "Current time: " + time + " out of 100")
-TypeError: can only concatenate str (not "int") to str
+  File "game/commands.rpy", line 296, in <module>
+    $ look()
+  File "game/script.rpy", line 301, in look
+    renpy.say(narrator, "There is a {b}" + i.name + "{/b} here.")
+AttributeError: 'str' object has no attribute 'name'
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Thu Jul 30 16:26:14 2026
+Thu Jul 30 16:34:43 2026

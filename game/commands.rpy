@@ -35,10 +35,12 @@ label inv:
     $ renpy.jump(last_label)
 
 label cmd:
-    "Commands: {b}look, look at, use, take, enter, north, south, east, west, inventory.{/b}"
+    "Commands: {b}look, look at, use, take, talk to, enter, north, south, east, west, inventory.{/b}"
     "You can also simply type {b}n, s, e, w{/b} for directions and {b}inv{/b} to view inventory."
     "If you use the {b}\"look\"{/b} command, some interactable objects may be pointed out."
-    "Additionally, you can sometimes {b}use{/b} some items from your {b}inventory{/b}."
+    "You can {b}use{/b} objects in your inventory as well as objects in the environment."
+    "Additionally, you can {b}use{/b} objects from your {b}inventory{/b} on objects in the environment."
+    "NPCs in the area will not be visible on screen until you {b}talk to{/b} them, so you should {b}look{/b} to see who's around sometimes."
     "You can choose to progress time by simply pressing enter."
     $ renpy.jump(last_label)
 
@@ -115,6 +117,7 @@ label look_shop_chel:
     "There's a counter with some daily necessities for sale, probably the kinds of things the apprentice makes during downtime."
     "Nails, various sorts of knives, hammers and files..."
     "Leaning against the wall are some half-finished projects."
+    "Behind the counter is a {b}bag of gold.{/b}"
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 

@@ -10,12 +10,6 @@ label storage_1:
     b "And so what if I am?"
     m "You know you'll never have him! I already took Young Namara's hand in marriage!"
 
-label waterfall_2:
-
-label caves_1:
-
-label caves_2:
-
-label caves_3:
-
-label caves_4:
+label ending_1:
+    "Rollback to get a new ending."
+    $ renpy.jump("ending_1")

@@ -50,6 +50,10 @@ init python:
         return parse_input(act)
 
     def parse_input(act):
+        if debug:
+            if act == "end1":
+                store.time = 99
+                time_check()
         lst = []
         index = 0;
         while (act != "" and index<len(act)):
@@ -149,6 +153,8 @@ init python:
     
     def time_check():
         store.time += 1
+        if store.time == 100:
+            renpy.jump("ending_1")
         #if debug:
             #renpy.say(narrator, str(time))
     
@@ -287,18 +293,18 @@ init python:
 
     def look():
         area = areas[store.area]
-        if i.north:
-            renpy.say("To the north is " + north.name + ".")
-        if i.east:
-            renpy.say("To the east is " + east.name + ".")
-        if i.west:
-            renpy.say("To the west is " + west.name + ".")
-        if i.south:
-            renpy.say("To the south is " + south.name + ".")
+        if area.north:
+            renpy.say(narrator, "To the north is the " + area.north.name + ".")
+        if area.east:
+            renpy.say(narrator, "To the east is the " + area.east.name + ".")
+        if area.west:
+            renpy.say(narrator, "To the west is the " + area.west.name + ".")
+        if area.south:
+            renpy.say(narrator, "To the south is the " + area.south.name + ".")
         for i in area.objects:
-            renpy.say(narrator, "There is a " + i + " here.")
+            renpy.say(narrator, "There is a {b}" + i + "{/b} here.")
         for i in area.npcs:
-            renpy.say(narrator, i.name.upper() + " is standing here.")
+            renpy.say(narrator, "{b}" + i.name.upper()[0] + i.name[1:] + "{/b} is standing here.")
 
 #NPC
 
@@ -479,7 +485,7 @@ init python:
             st += " "
         return st
     
-    debug = False
+    debug = True
 
 define l = Character("Lani", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
 #define l = Character("Lani", what_prefix='\"', what_suffix='\"')
@@ -499,6 +505,11 @@ define y = Character("Young Namara", callback=voice, cb_file="bleep017.ogg", wha
 
 label start:
 
+    "This game uses a text prompt mechanic. You can always type {b}\"h\"{/b}, {b}\"help\"{/b}, or {b}\"cmd\"{/b} for a full list of commands."
+    "This is a mystery with multiple unique endings. Each new ending will reveal new information, so if you die, don't worry! You can always rollback to get another ending."
+    "You can always press enter without inputting a command to progress time."
+    "Please keep this in mind when playing! Have fun!"
+    
     python:
         if not debug:
             renpy.jump("guest_cabin")
