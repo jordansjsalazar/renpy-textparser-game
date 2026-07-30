@@ -392,6 +392,9 @@ label shop_flowers:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_shop_flowers:
+    "This is an upscale shop with plate glass windows."
+    "There are arrangements with gorgeous flowering shrubs in the window display."
+    "Along the walls stand smaller flowerpots with single flowers."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -403,6 +406,8 @@ label shop_carpentry:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_shop_carpentry:
+    "There are three workbenches towards the back of the room, and a few display pieces towards the front."
+    "On top of the larger furniture are some smaller wooden toys and other household items."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -414,6 +419,10 @@ label shop_heron:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_shop_heron:
+    "Old Heron runs this jewelry shop."
+    "The sample pieces are fenced in behind a mesh net to prevent stealing."
+    "To one side of the room is a nice little table set for two. It seems he hosts visitors in this room often."
+    "There's a workbench behind the counter with some tools for appraising gems."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -425,6 +434,7 @@ label kitchen_heron:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_kitchen_heron:
+    "The kitchen is open and sunny."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -436,6 +446,7 @@ label bathroom_heron:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bathroom_heron:
+    "The Herons' bathroom. It seems that the family has a very clear aesthetic for their house."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -447,6 +458,8 @@ label bedroom_heron:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bedroom_heron:
+    "The Herons' bed is neatly made. There's a stack of ornamental quilts on the chair in the corner."
+    "The art and tapestries on the wall look very unique. They don't look Saavi, but they're clearly not from around here, either."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -458,6 +471,7 @@ label storage:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_storage:
+    "The storage room is lined with shelves."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -469,6 +483,8 @@ label entry:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_entry:
+    "The Namara manor is so big it has its own entry hall."
+    "There are two coat racks and several pairs of snow boots on the floor."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -480,6 +496,8 @@ label parlor:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_parlor:
+    "The parlor has paper screen windows, making it a bit dim."
+    "The table in the middle is currently unset, but the cabinets of porcelain don't look dusty."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -491,6 +509,7 @@ label dining_room:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_dining_room:
+    "The room smells like dried flowers."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -502,6 +521,7 @@ label kitchen_namara:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_kitchen_namara:
+    "It seems Lady Namara doesn't have servants, so this nice kitchen is probably her own."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -543,6 +563,8 @@ label bathroom_namara:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bathroom_namara:
+    "The high window gives a beautiful view over the town."
+    "Kind of pointless since you can't see it during 95%% of the activities taking place in this room."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -554,6 +576,7 @@ label bedroom_namara:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bedroom_namara:
+    "There aren't any papers on or in the writing desk."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -565,6 +588,7 @@ label upstairs:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_upstairs:
+    "The window faces the forest, filtering in the smell of wet trees."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -576,5 +600,6 @@ label bedroom_master:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bedroom_master:
+    "Old Namara and Lady Namara must keep all their things together, because there's only one wardrobe and one trunk."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
