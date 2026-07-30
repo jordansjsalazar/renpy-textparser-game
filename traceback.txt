@@ -1,30 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 9, in script
-    init python:
-  File "game/script.rpy", line 330, in <module>
-    npcs = [Npc("chel"),
-  File "game/script.rpy", line 310, in __init__
-    self.setup_locations()
-TypeError: setup_locations() takes 0 positional arguments but 1 was given
+  File "game/commands.rpy", line 92, in script
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+  File "game/commands.rpy", line 92, in <module>
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+  File "game/script.rpy", line 50, in inp
+    return parse_input(act)
+  File "game/script.rpy", line 66, in parse_input
+    return find_label(check_input(lst))
+  File "game/script.rpy", line 142, in find_label
+    return "talk_" + npc
+TypeError: can only concatenate str (not "Npc") to str
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 9, in script
-    init python:
+  File "game/commands.rpy", line 92, in script
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 330, in <module>
-    npcs = [Npc("chel"),
-  File "game/script.rpy", line 310, in __init__
-    self.setup_locations()
-TypeError: setup_locations() takes 0 positional arguments but 1 was given
+  File "game/commands.rpy", line 92, in <module>
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+  File "game/script.rpy", line 50, in inp
+    return parse_input(act)
+  File "game/script.rpy", line 66, in parse_input
+    return find_label(check_input(lst))
+  File "game/script.rpy", line 142, in find_label
+    return "talk_" + npc
+TypeError: can only concatenate str (not "Npc") to str
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Thu Jul 30 18:13:54 2026
+Thu Jul 30 18:32:53 2026

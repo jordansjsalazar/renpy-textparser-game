@@ -74,10 +74,14 @@ init python:
                     if lst[0] == p:
                         return [possible_actions[lst[0]]]
                 else:
-                    if lst[0] in inventory or areas[area].has_exit(lst[0]) or areas[area].has_object(lst[0]) or areas[area].has_interact(lst[0]) or areas[area].has_npc(lst[0]):
+                    if lst[0] in inventory or areas[area].has_exit(lst[0]) or areas[area].has_object(lst[0]) or areas[area].has_interact(lst[0]):
                         return [lst[0]]
-                    else:
-                        return ["fail"]
+                    for npc in npcs:
+                        if areas[npc.current_location] == areas[area]:
+                            if npc.name == lst[0]:
+                                print("asdf")
+                                return [lst[0]]
+                    return ["fail"]
         else:
             return check_input([lst[0]]) + check_input(lst[1:])
     
@@ -134,8 +138,8 @@ init python:
                     if areas[npc.current_location] == areas[area]:
                         for o in command:
                             if npc.has_topic(o):
-                                return "talk_" + i + "_about_" + o
-                            return "talk_" + i
+                                return "talk_" + npc.name + "_about_" + o
+                            return "talk_" + npc.name
             return "talk_fail"
         if "progress" in command:
             #return "progress_" + str(time)
@@ -294,7 +298,7 @@ init python:
             renpy.say(narrator, "There is a {b}" + i + "{/b} here.")
         for npc in npcs:
             if areas[npc.current_location] == area:
-                renpy.say(narrator, "{b}" + i.name.upper()[0] + i.name[1:] + "{/b} is standing here.")
+                renpy.say(narrator, "{b}" + npc.name.upper()[0] + npc.name[1:] + "{/b} is standing here.")
 
 #NPC
 

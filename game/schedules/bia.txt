@@ -1,5 +1,5 @@
-farmhouse_bedroom
-farmhouse_bedroom
+bedroom_farmhouse
+bedroom_farmhouse
 farmhouse
 fields
 path_town_2

@@ -1,18 +1,35 @@
-2026-07-30 16:21:33 UTC
+2026-07-30 16:33:05 UTC
 macOS-15.3.1-arm64-arm-64bit
 Ren'Py 8.3.7.25031702
 
 Early init took 0.02s
 Loading error handling took 0.01s
-Loading script took 0.07s
+Loading script took 0.11s
 Loading save slot metadata took 0.01s
 Loading persistent took 0.00s
-
-File "game/script.rpy", line 334: unmatched ']'
-    ]
-     ^
+Running init code took 0.02s
+Loading analysis data took 0.00s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/ululation/Library/RenPy/backups/textparsergame':
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.01s
 DPI scale factor: 1.000000
-Interface start took 0.15s
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.22s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1800, 1169)
@@ -24,3 +41,4 @@ Version: b'2.1 Metal - 89.3'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1785, 1004) drawable=(3570, 2008)
 Maximum texture size: 4096x4096
+asdf
