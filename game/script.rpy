@@ -485,12 +485,13 @@ init python:
 
 define l = Character("Lani", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
 #define l = Character("Lani", what_prefix='\"', what_suffix='\"')
-define l_int = Character("Shera", what_prefix='(', what_suffix=')')
+define l_int = Character("Lani", what_prefix='(', what_suffix=')')
 define o = Character("Old Heron", callback=voice, cb_file="bleep011.ogg", what_prefix='\"', what_suffix='\"')
 define b = Character("Bia", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
 define m = Character("Moa", callback=voice, cb_file="bleep009.ogg", what_prefix='\"', what_suffix='\"')
 define c = Character("Chel", callback=voice, cb_file="bleep019.ogg", what_prefix='\"', what_suffix='\"')
 define y = Character("Young Namara", callback=voice, cb_file="bleep017.ogg", what_prefix='\"', what_suffix='\"')
+define h = Character("Lady Heron", callback=voice, cb_file="bleep001.ogg", what_prefix='\"', what_suffix='\"')
 #define o = Character("Old Heron", what_prefix='\"', what_suffix='\"')
 #define b = Character("Bia", what_prefix='\"', what_suffix='\"')
 #define m = Character("Moa", what_prefix='\"', what_suffix='\"')
@@ -559,7 +560,15 @@ label start:
     show lani:
         faceright
         left
+    show lady:
+        faceleft
+        right
     l_int "test 7"
+    hide lani
+    show lady:
+        faceright
+        left
+    h "test 8"
     
     jump guest_cabin
 
