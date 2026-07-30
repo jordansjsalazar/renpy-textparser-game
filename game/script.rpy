@@ -133,7 +133,8 @@ init python:
                     return "talk_" + i
             return "talk_fail"
         if "progress" in command:
-            return "progress_" + str(time)
+            #return "progress_" + str(time)
+            return "progress"
         if "look" in command:
             for i in command:
                 if areas[area].has_object(i) or areas[area].has_interact(i):

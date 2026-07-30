@@ -42,6 +42,11 @@ label cmd:
     "You can choose to progress time by simply pressing enter."
     $ renpy.jump(last_label)
 
+label progress:
+    $ time_check()
+    $ renpy.say(narrator, "Current time: " + str(time) + " out of 100")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #TALK TO CHEL
 label talk_chel:
     show chel at center
