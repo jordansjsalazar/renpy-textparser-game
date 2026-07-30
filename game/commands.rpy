@@ -85,7 +85,13 @@ label backyard_chel:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_backyard_chel:
+    "This is a covered backyard where Chel and his apprentice work."
+    "There are two anvils and some metal and tools laying around."
     $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_hammer:
+    "It's a hammer. Probably weighs about 3 pounds."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label take_hammer:
@@ -101,11 +107,18 @@ label shop_chel:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_shop_chel:
+    "There's a counter with some daily necessities for sale, probably the kinds of things the apprentice makes during downtime."
+    "Nails, various sorts of knives, hammers and files..."
+    "Leaning against the wall are some half-finished projects."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_at_bag_of_gold:
+    "It's pretty full."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 label interact_bag_of_gold:
-    "You debated the ethics of stealing gold from your cousin."
+    "You debated the logistics of stealing gold from the shop, but decided against it."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #CHEL KITCHEN
@@ -116,28 +129,17 @@ label kitchen_chel:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_kitchen_chel:
+    "The kitchen is narrow and crowded. Utensils and cooking pots line the shelves."
+    "There's a table and two chairs in the corner."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label take_glass:
-    "Took the glass."
-    $ areas[area].take_object("glass")
+label look_at_larder:
+    "You can open the larder using the handle."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label take_bread:
-    "Took the bread."
-    $ areas[area].take_object("bread")
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-
-label interact_sink:
-    "You don't want to waste water."
-    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
-
-label use_glass_on_sink:
-    $ use_item("glass")
-    "Filled up the glass."
-    $ areas["kitchen"].add_object("full_glass")
-    $ areas["kitchen"].take_object("full_glass")
+label use_larder:
+    "Inside the larder, there are a few cuts of meat and some fresh vegetables."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #CHEL BATHROOM
@@ -148,6 +150,7 @@ label bathroom_chel:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bathroom_chel:
+    "A pretty normal bathroom."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -159,6 +162,7 @@ label bedroom_chel:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bedroom_chel:
+    "The ceiling in this room is quite short. It's a bit uncomfortable to stand in, but might be cozy for sleeping."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -170,6 +174,7 @@ label path_town_1:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_path_town_1:
+    "The path continues uphill to the manor, and further downhill through the town."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -181,6 +186,7 @@ label path_town_2:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_path_town_2:
+    "The path continues uphill through town and downhill to the fields."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -192,6 +198,8 @@ label path_manor:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_path_manor:
+    "The path here diverges into a trail leading into the wilderness."
+    "Downhill, it leads you all the way through the main drag of the town."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -203,6 +211,8 @@ label forest_path:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_forest_path:
+    "The trail from the manor goes into a nice bit of forest."
+    "You suppose the nobles still enjoy a good hike from time to time."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -214,6 +224,7 @@ label fp_1:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_fp_1:
+    "Where are you?"
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -225,6 +236,7 @@ label fp_2:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_fp_2:
+    "Where are you?"
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -236,6 +248,7 @@ label fp_3:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_fp_3:
+    "Where are you?"
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -247,6 +260,7 @@ label fp_4:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_fp_4:
+    "Where are you?"
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -258,6 +272,9 @@ label cave:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_cave:
+    "It's not blocked off. You suppose the miners use another entrance."
+    "This part of the cave system might be a meeting point. Cool against the heat, and the sloped rock wall provides room for sitting."
+    "You imagine kids might play here, on a day when it isn't raining."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -269,7 +286,17 @@ label guest_cabin:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_guest_cabin:
+    "Your friend Young Namara graciously let you stay in this cabin for the duration of your visit."
+    "The main room is used for cooking, sleeping and eating, so there's not much else here."
     $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_wood_stove:
+    "There's a bit of wood still in the stove."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label use_wood_stove:
+    "The stove isn't lit."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #CABIN BACKYARD
@@ -280,7 +307,16 @@ label cabin_backyard:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_cabin_backyard:
+    "There's a little veggie garden in here, but none of the plants are in season right now."
     $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_backyard_outhouse:
+    "It's an outhouse. Nothing weird in there."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label use_backyard_outhouse:
+    "You use the outhouse."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #FIELDS
@@ -291,6 +327,9 @@ label fields:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_fields:
+    "The land here is flat, so you can see many fields and a few farmers at work."
+    "One cabin near the path stands out to you. The rest are far off on the horizon."
+    "There's a river flowing perpendicular to the path, ending the road through town."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -302,6 +341,8 @@ label farmhouse:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_farmhouse:
+    "The room is completely barren. An empty fire pit is built against one wall, but no cooking equipment is nearby."
+    "The short table in the corner of the room looks as though it hasn't been used recently."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -313,6 +354,9 @@ label bedroom_farmhouse:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bedroom_farmhouse:
+    "There are two twin beds against the walls."
+    "Snooping in the trunks, the only other piece of furniture, reveals that two women live here."
+    "One seems to like darker colors, while one wears light-colored robes."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -324,6 +368,7 @@ label bar:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_bar:
+    "The back of the bar is lined with kegs of ale. The room holds a few solemn guests and a few more sociable parties."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -335,6 +380,7 @@ label outhouse:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_outhouse:
+    "It's a relatively clean public outhouse."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -459,6 +505,36 @@ label look_kitchen_namara:
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_at_glass:
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_bread:
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_sink:
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_glass:
+    "Took the glass."
+    $ areas[area].take_object("glass")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_bread:
+    "Took the bread."
+    $ areas[area].take_object("bread")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label interact_sink:
+    "You don't want to waste water."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label use_glass_on_sink:
+    $ use_item("glass")
+    "Filled up the glass."
+    $ areas["kitchen"].add_object("full_glass")
+    $ areas["kitchen"].take_object("full_glass")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #MANOR BATHROOM
 label bathroom_namara:
     scene bg bathroom_namar
@@ -488,7 +564,7 @@ label upstairs:
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label look_bedroom_master:
+label look_upstairs:
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 

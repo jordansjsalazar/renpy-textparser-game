@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 292: invalid syntax
-            renpy.say(narrator, i.upper() " is standing here.")
-                                           ^
+The label look_bedroom_master is defined twice, at File "game/commands.rpy", line 491:
+label look_bedroom_master:
+and File "game/commands.rpy", line 502:
+label look_bedroom_master:
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jul 29 01:59:53 2026
+Thu Jul 30 14:20:49 2026

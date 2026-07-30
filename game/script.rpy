@@ -286,6 +286,14 @@ init python:
 
     def look():
         area = areas[store.area]
+        if i.north:
+            renpy.say("To the north is " + north.name + ".")
+        if i.east:
+            renpy.say("To the east is " + east.name + ".")
+        if i.west:
+            renpy.say("To the west is " + west.name + ".")
+        if i.south:
+            renpy.say("To the south is " + south.name + ".")
         for i in area.objects:
             renpy.say(narrator, "There is a " + i + " here.")
         for i in area.npcs:
@@ -431,7 +439,7 @@ init python:
     
     
     areas["backyard_chel"].add_object("hammer")
-    
+    areas["kitchen_chel"].add_interactable("larder")
     
     areas["kitchen_namara"].add_interactable("sink")
     areas["kitchen_namara"].add_key("sink", "glass")
@@ -441,6 +449,12 @@ init python:
     areas["shop_chel"].add_interactable("bag_of_gold")
     areas["shop_chel"].add_name("bag_of_gold", "bag")
     areas["shop_chel"].add_name("bag_of_gold", "gold")
+    
+    areas["guest_cabin"].add_interactable("wood_stove")
+    areas["guest_cabin"].add_name("wood_stove", "stove")
+    
+    areas["cabin_backyard"].add_interactable("backyard_outhouse")
+    areas["cabin_backyard"].add_name("backyard_outhouse", "outhouse")
     
     
     areas["backyard_chel"].add_npc(npcs["Chel"])
@@ -484,6 +498,10 @@ define y = Character("Young Namara", callback=voice, cb_file="bleep017.ogg", wha
 
 label start:
 
+    python:
+        if not debug:
+            renpy.jump("guest_cabin")
+    
     scene bg backyard
     
     show bia:
@@ -548,7 +566,7 @@ label progress_0:
 
 label afternoon_1:
 
-    s "asdfdasfasd"
+    l "asdfdasfasd"
 
     # This ends the game.
 
