@@ -1,4 +1,4 @@
-2026-07-30 14:45:57 UTC
+2026-07-30 16:07:31 UTC
 macOS-15.3.1-arm64-arm-64bit
 Ren'Py 8.3.7.25031702
 
@@ -26,10 +26,10 @@ Load screen analysis took 0.00s
 Analyze screens took 0.00s
 Save screen analysis took 0.01s
 Prepare screens took 0.02s
-Save pyanalysis. took 0.01s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.20s
+Interface start took 0.21s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1800, 1169)
@@ -39,7 +39,6 @@ Vendor: "b'Apple'"
 Renderer: b'Apple M4'
 Version: b'2.1 Metal - 89.3'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1800, 1022) drawable=(3600, 2044)
+Screen sizes: virtual=(1920, 1080) physical=(1785, 1004) drawable=(3570, 2008)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1800, 1022) drawable=(3600, 2044)
-Maximum texture size: 4096x4096
+['backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel']

@@ -130,11 +130,12 @@ init python:
             for i in command:
                 if debug:
                     renpy.say(narrator, i)
-                if areas[area].has_npc(i):
-                    for o in command:
-                        if areas[area].has_npc(i).has_topic(o):
-                            return "talk_" + i + "_about_" + o
-                    return "talk_" + i
+                for npc in npcs:
+                    if areas[npc.current_location] == areas[area]:
+                        for o in command:
+                            if npc.has_topic(o):
+                                return "talk_" + i + "_about_" + o
+                            return "talk_" + i
             return "talk_fail"
         if "progress" in command:
             #return "progress_" + str(time)
@@ -155,6 +156,8 @@ init python:
         store.time += 1
         if store.time == 100:
             renpy.jump("ending_1")
+        for npc in npcs:
+            npc.current_location = npc.locations[store.time]
         #if debug:
             #renpy.say(narrator, str(time))
     
@@ -185,7 +188,6 @@ init python:
         exits = []
         objects = []
         interactables = {}
-        npcs = []
         
         north = False
         east = False
@@ -198,7 +200,6 @@ init python:
             self.exits = []
             self.objects = []
             self.interactables = {}
-            self.npcs = []
         
         def add_exit(self, a2):
             self.exits.append(a2)
@@ -249,12 +250,6 @@ init python:
                     return x
             return False
         
-        def has_npc(self, e):
-            for x in self.npcs:
-                if e == x.name:
-                    return x
-            return False
-        
         def get_interact(self, e):
             if self.has_interact(e):
                 return self.interactables[e]
@@ -272,12 +267,6 @@ init python:
         
         def add_object(self, name):
             self.objects.append(name)
-        
-        def add_npc(self, npc):
-            self.npcs.append(npc)
-        
-        def remove_npc(self, npc):
-            self.npcs.remove(npc)
         
         def take_object(self, name):
             if name in self.objects:
@@ -303,18 +292,26 @@ init python:
             renpy.say(narrator, "To the south is the " + area.south.name + ".")
         for i in area.objects:
             renpy.say(narrator, "There is a {b}" + i + "{/b} here.")
-        for i in area.npcs:
-            renpy.say(narrator, "{b}" + i.name.upper()[0] + i.name[1:] + "{/b} is standing here.")
+        for npc in npcs:
+            if areas[npc.current_location] == area:
+                renpy.say(narrator, "{b}" + i.name.upper()[0] + i.name[1:] + "{/b} is standing here.")
 
 #NPC
 
     class Npc:
         
         name = ""
+        locations = []
+        current_location = ""
         topics = []
         
         def __init__(self, name):
             self.name = name
+            file = renpy.open_file("schedules/" + self.name + ".txt")
+            for word in file:
+                self.locations.append(word.decode("utf-8").strip())
+            file.close()
+            self.current_location = self.locations[0]
         
         def has_topic(self, e):
             for i in self.topics:
@@ -327,11 +324,12 @@ init python:
 
 # GAME SETUP
 
-    npcs = {"Chel":Npc("chel"),
-    "Moa":Npc("moa"),
-    "Bia":Npc("bia"),
-    "Old Heron":Npc("heron"),
-    "Young Namara":Npc("namara")}
+    npcs = [Npc("chel"),
+    #Npc("moa"),
+    #Npc("bia"),
+    #Npc("heron"),
+    #Npc("namara")]
+    ]
     
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
     "shop_chel":Area("shop", "shop_chel"),
@@ -462,13 +460,6 @@ init python:
     
     areas["cabin_backyard"].add_interactable("backyard_outhouse")
     areas["cabin_backyard"].add_name("backyard_outhouse", "outhouse")
-    
-    
-    areas["backyard_chel"].add_npc(npcs["Chel"])
-    areas["parlor"].add_npc(npcs["Young Namara"])
-    areas["shop_heron"].add_npc(npcs["Moa"])
-    areas["shop_heron"].add_npc(npcs["Bia"])
-    areas["shop_heron"].add_npc(npcs["Old Heron"])
     
     
     objects_texts = {
