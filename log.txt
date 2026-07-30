@@ -1,14 +1,14 @@
-2026-07-30 16:07:31 UTC
+2026-07-30 16:21:06 UTC
 macOS-15.3.1-arm64-arm-64bit
 Ren'Py 8.3.7.25031702
 
 Early init took 0.02s
-Loading error handling took 0.01s
-Loading script took 0.07s
+Loading error handling took 0.02s
+Loading script took 0.08s
 Loading save slot metadata took 0.01s
 Loading persistent took 0.00s
 Running init code took 0.02s
-Loading analysis data took 0.00s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.01s
 Index archives took 0.00s
@@ -26,7 +26,7 @@ Load screen analysis took 0.00s
 Analyze screens took 0.00s
 Save screen analysis took 0.01s
 Prepare screens took 0.02s
-Save pyanalysis. took 0.00s
+Save pyanalysis. took 0.01s
 Save bytecode. took 0.01s
 Running _start took 0.00s
 Interface start took 0.21s
@@ -42,3 +42,4 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1785, 1004) drawable=(3570, 2008)
 Maximum texture size: 4096x4096
 ['backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel', 'backyard_chel']
+['farmhouse_bedroom', 'farmhouse_bedroom', 'farmhouse', 'fields', 'path_town_2', 'path_town_1', 'path_manor', 'forest_path', 'fp_1', 'fp_2', 'fp_3', 'waterfall', 'waterfall', 'fp_3', 'fp_2', 'fp_1', 'forest_path', 'path_manor', 'path_town_1', 'shop_heron', 'shop_heron', 'storage', 'storage', 'storage', 'shop_heron', 'path_town_1', 'path_town_2', 'path_town_2', 'path_town_2', 'path_town_2', 'path_town_2', 'outhouse', 'outhouse', 'outhouse', 'path_town_2', 'path_town_1', 'shop_heron', 'storage', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'shop_heron', 'kitchen_heron', 'kitchen_heron', 'kitchen_heron', 'kitchen_heron', 'shop_heron', 'path_town_1', 'path_manor', 'forest_path', 'fp_1', 'fp_2', 'fp_3', 'waterfall', 'waterfall', 'waterfall', 'waterfall', 'fp_3', 'fp_2', 'fp_1', 'forest_path', 'path_manor', 'path_town_1', 'path_town_2', 'fields', 'fields', 'path_town_2', 'path_town_1', 'path_manor', 'forest_path', 'fp_1', 'fp_2', 'fp_3', 'waterfall', 'waterfall', 'waterfall', 'fp_3', 'fp_2', 'fp_1', 'forest_path', 'cave', 'cave', 'cave', 'forest_path', 'forest_path', 'cave', 'cave', 'cave', 'cave']

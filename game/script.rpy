@@ -307,6 +307,8 @@ init python:
         
         def __init__(self, name):
             self.name = name
+            self.locations = []
+            self.current_location = ""
             file = renpy.open_file("schedules/" + self.name + ".txt")
             for word in file:
                 self.locations.append(word.decode("utf-8").strip())
@@ -325,10 +327,10 @@ init python:
 # GAME SETUP
 
     npcs = [Npc("chel"),
-    #Npc("moa"),
-    #Npc("bia"),
-    #Npc("heron"),
-    #Npc("namara")]
+    Npc("bia"),
+    Npc("moa"),
+    Npc("heron"),
+    Npc("namara")]
     ]
     
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
