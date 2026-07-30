@@ -331,7 +331,6 @@ init python:
     Npc("moa"),
     Npc("heron"),
     Npc("namara")]
-    ]
     
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
     "shop_chel":Area("shop", "shop_chel"),
