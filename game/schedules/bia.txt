@@ -45,13 +45,6 @@ shop_heron
 shop_heron
 shop_heron
 shop_heron
-shop_heron
-shop_heron
-shop_heron
-shop_heron
-shop_heron
-shop_heron
-shop_heron
 kitchen_heron
 kitchen_heron
 kitchen_heron
@@ -99,3 +92,10 @@ cave
 cave
 cave
 cave
+forest_path
+fp_1
+fp_2
+fp_1
+path_manor
+entry
+hallway

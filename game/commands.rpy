@@ -107,18 +107,46 @@ label look_at_heron:
 
 #TALK TO YOUNG NAMARA
 label talk_namara:
-    show young normal at center
+    show young at center
     y "asdf"
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_at_namara:
-    show young normal at center
+    show young at center
     "Young Namara is the heir of Namara family, who run the mining operation."
     "He is tall, but you don't think he's got much muscle hiding under there."
     "You two went to secondary school together near his mother's hometown in Ba Hamavi."
     "He's cripplingly shy, and not a very interesting conversationalist, but he has his uses."
     hide young
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#TALK TO LADY HERON
+label talk_lady:
+    show lady at center
+    h "asdf"
+    hide lady
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_lady:
+    show lady at center
+    "Lady Heron is the owner of the jewelry store along with her husband. She's healthy for her age, but still not strong."
+    "She's respected by most of the townsfolk."
+    hide lady
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#TALK TO SHERA
+label talk_shera:
+    show shera at center
+    s "asdf"
+    hide shera
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_sher:
+    show shera at center
+    "Shera is Chel's apprentice. She's average height and pretty muscular."
+    "You think she's friends with Moa."
+    hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #CHEL BACKYARD
@@ -309,6 +337,18 @@ label look_fp_4:
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+#WATERFALL
+label waterfall:
+    scene bg waterfall
+    $ area = "fp_4"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_waterfall:
+    "The mountain water here is fresh and clear. Someone who's inclined to remark on such things might call it beautiful."
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #CAVE
 label cave:
     scene bg cave
@@ -444,15 +484,15 @@ label look_shop_flowers:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #CARPENTRY SHOP
-label shop_carpentry:
-    scene bg shop_carpentry
-    $ area = "shop_carpentry"
+label clinic:
+    scene bg clinic
+    $ area = "clinic"
     $ last_label = area
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label look_shop_carpentry:
-    "There are three workbenches towards the back of the room, and a few display pieces towards the front."
-    "On top of the larger furniture are some smaller wooden toys and other household items."
+label look_clinic:
+    "This doesn't appear to be a place for treating patients, but rather a place to buy various remedies."
+    ""
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 

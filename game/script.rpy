@@ -340,7 +340,10 @@ init python:
     Npc("bia"),
     Npc("moa"),
     Npc("heron"),
-    Npc("namara")]
+    Npc("namara"),
+    Npc("lady"),
+    Npc("shera")
+    ]
     
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
     "shop_chel":Area("shop", "shop_chel"),
@@ -361,7 +364,7 @@ init python:
     "bar":Area("bar", "bar"),
     "fields":Area("fields", "fields"),
     "shop_flowers":Area("shop", "shop_flowers"),
-    "shop_carpentry":Area("shop", "shop_carpentry"),
+    "clinic":Area("clinic", "clinic"),
     "outhouse":Area("outhouse", "outhouse"),
     
     "farmhouse":Area("farmhouse", "farmhouse"),
@@ -425,7 +428,7 @@ init python:
     create_path(areas["bar"], areas["path_town_2"])
     create_path(areas["fields"], areas["path_town_2"])
     create_path(areas["shop_flowers"], areas["path_town_2"])
-    create_path(areas["shop_carpentry"], areas["path_town_2"])
+    create_path(areas["clinic"], areas["path_town_2"])
     
     create_path(areas["fields"], areas["farmhouse"])
     create_path(areas["bedroom_farmhouse"], areas["farmhouse"])
