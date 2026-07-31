@@ -298,7 +298,6 @@ label fp_1:
 
 label look_fp_1:
     "Where are you?"
-    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #FOREST PATH PUZZLE 2 
@@ -310,7 +309,6 @@ label fp_2:
 
 label look_fp_2:
     "Where are you?"
-    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #FOREST PATH PUZZLE 3
@@ -322,7 +320,6 @@ label fp_3:
 
 label look_fp_3:
     "Where are you?"
-    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #FOREST PATH PUZZLE 4
@@ -334,7 +331,6 @@ label fp_4:
 
 label look_fp_4:
     "Where are you?"
-    $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #WATERFALL
