@@ -56,10 +56,24 @@ label talk_chel:
     hide chel
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_at_chel:
+    show chel at center
+    "Chel Arn is a journeyman blacksmith. He's short, but well muscled – thanks to his work, obviously."
+    "You don't know him very well, but you know he's a friend of Young Namara."
+    hide chel
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #TALK TO MOA
 label talk_moa:
     show moa at center
     m "asdf"
+    hide moa
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_moa:
+    show moa at center
+    "Moa is a local shop girl. She's pretty short and doesn't seem very muscular."
+    "You've gathered from your short time here that Moa has a good reputation in town."
     hide moa
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -70,6 +84,13 @@ label talk_bia:
     hide bia
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_at_bia:
+    show bia at center
+    "Bia is a local shop girl. She's tall, but not muscular."
+    "Bia seems to be a bit infamous for petty crime and leading young men astray."
+    hide bia
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #TALK TO OLD HERON
 label talk_heron:
     show old at center
@@ -77,10 +98,26 @@ label talk_heron:
     hide old
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_at_heron:
+    show old at center
+    "Old Heron is the owner of the jewelry store, along with his wife. He appears quite feeble."
+    "He's respected amongst the townsfolk."
+    hide old
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 #TALK TO YOUNG NAMARA
 label talk_namara:
     show young normal at center
     y "asdf"
+    hide young
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_namara:
+    show young normal at center
+    "Young Namara is the heir of Namara family, who run the mining operation."
+    "He is tall, but you don't think he's got much muscle hiding under there."
+    "You two went to secondary school together near his mother's hometown in Ba Hamavi."
+    "He's cripplingly shy, and not a very interesting conversationalist, but he has his uses."
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 

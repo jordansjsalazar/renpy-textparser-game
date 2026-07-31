@@ -132,14 +132,15 @@ init python:
             return "take_fail"
         if "talk" in command:
             for i in command:
-                if debug:
-                    renpy.say(narrator, i)
                 for npc in npcs:
                     if areas[npc.current_location] == areas[area]:
-                        for o in command:
-                            if npc.has_topic(o):
-                                return "talk_" + npc.name + "_about_" + o
-                            return "talk_" + npc.name
+                        if i == npc.name:
+                            for o in command:
+                                if npc.has_topic(o):
+                                    time_check()
+                                    return "talk_" + i + "_about_" + o
+                            time_check()
+                            return "talk_" + i
             return "talk_fail"
         if "progress" in command:
             #return "progress_" + str(time)
@@ -149,6 +150,11 @@ init python:
                 if areas[area].has_object(i) or areas[area].has_interact(i):
                     time_check()
                     return "look_at_" + i
+                for npc in npcs:
+                    if areas[npc.current_location] == areas[area]:
+                        if i == npc.name:
+                            time_check()
+                            return "look_at_" + i
             return "look_" + area
         if "inv" in command:
             return "inv"
