@@ -403,7 +403,7 @@ init python:
     create_path(areas["guest_cabin"], areas["cabin_backyard"])
     
     create_path(areas["entry"], areas["path_manor"])
-    create_path(areas["parlor"], areas["path_manor"])
+    create_path(areas["parlor"], areas["entry"])
     create_path(areas["entry"], areas["hallway"])
     create_path(areas["upstairs"], areas["hallway"])
     create_path(areas["bedroom_namara"], areas["hallway"])
@@ -437,6 +437,7 @@ init python:
     
     areas["entry"].add_south(areas["path_manor"])
     areas["path_manor"].add_south(areas["path_town_1"])
+    areas["path_manor"].add_west(areas["forest_path"])
     areas["path_town_1"].add_south(areas["path_town_2"])
     areas["path_town_2"].add_south(areas["fields"])
     areas["fields"].add_east(areas["farmhouse"])
@@ -492,7 +493,7 @@ init python:
             st += " "
         return st
     
-    debug = False
+    debug = True
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')
@@ -624,7 +625,7 @@ label start:
     
     scene bg path_manor with dissolve
     pause 0.2
-    scene entry with dissolve
+    scene bg entry with dissolve
     pause 0.2
     scene bg parlor with dissolve
     "You spent some time catching up with your friend over tea, and then he explained to you the situation."

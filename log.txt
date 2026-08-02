@@ -1,10 +1,10 @@
-2026-08-02 21:04:35 UTC
+2026-08-02 22:48:42 UTC
 macOS-15.3.1-arm64-arm-64bit
 Ren'Py 8.3.7.25031702
 
-Early init took 0.02s
+Early init took 0.03s
 Loading error handling took 0.02s
-Loading script took 0.13s
+Loading script took 0.10s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.03s
@@ -16,7 +16,7 @@ Backing up script files to '/Users/ululation/Library/RenPy/backups/textparsergam
 Dump and make backups took 0.02s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.01s
+Initial gc took 0.02s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
@@ -26,8 +26,8 @@ Load screen analysis took 0.00s
 Analyze screens took 0.00s
 Save screen analysis took 0.01s
 Prepare screens took 0.02s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Interface start took 0.32s
 
