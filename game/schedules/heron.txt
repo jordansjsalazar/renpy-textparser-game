@@ -29,10 +29,10 @@ bedroom_heron
 shop_heron
 path_town_1
 path_town_2
-flower_shop
-flower_shop
-flower_shop
-flower_shop
+shop_flowers
+shop_flowers
+shop_flowers
+shop_flowers
 path_town_2
 path_town_1
 shop_chel

@@ -293,13 +293,13 @@ init python:
     def look():
         area = areas[store.area]
         if area.north:
-            renpy.say(narrator, "To the north is the " + area.north.name + ".")
+            renpy.say(narrator, "To the north is the {b}" + area.north.name + "{/b}.")
         if area.east:
-            renpy.say(narrator, "To the east is the " + area.east.name + ".")
+            renpy.say(narrator, "To the east is the {b}" + area.east.name + "{/b}.")
         if area.west:
-            renpy.say(narrator, "To the west is the " + area.west.name + ".")
+            renpy.say(narrator, "To the west is the {b}" + area.west.name + "{/b}.")
         if area.south:
-            renpy.say(narrator, "To the south is the " + area.south.name + ".")
+            renpy.say(narrator, "To the south is the {b}" + area.south.name + "{/b}.")
         for i in area.objects:
             renpy.say(narrator, "There is a {b}" + i + "{/b} here.")
         for npc in npcs:
@@ -342,7 +342,9 @@ init python:
     Npc("heron"),
     Npc("namara"),
     Npc("lady"),
-    Npc("shera")
+    Npc("shera"),
+    Npc("sosi"),
+    Npc("doctor")
     ]
     
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
@@ -490,7 +492,7 @@ init python:
             st += " "
         return st
     
-    debug = True
+    debug = False
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')
@@ -508,10 +510,125 @@ define d = Character("Doctor", callback=voice, cb_file="bleep030.ogg", what_pref
 
 label start:
 
+    python:
+        if debug:
+            renpy.jump("guest_cabin")
+    
     "This game uses a text prompt mechanic. You can always type {b}\"h\"{/b}, {b}\"help\"{/b}, or {b}\"cmd\"{/b} for a full list of commands."
     "This is a mystery with multiple unique endings. Each new ending will reveal new information, so if you die, don't worry! You can always rollback to get another ending."
     "You can always press enter without inputting a command to progress time."
     "Please keep this in mind when playing! Have fun!"
+    
+    show lani at center
+    "Your name is Lani Choe."
+    "You're a researcher whose job is to investigate sites of magical importance."
+    "About a year after graduating magic school, you receive a letter from one of your former classmates."
+    
+    show lani:
+        faceright
+        left
+    show young:
+        faceleft
+        right
+    y "Hello, Lani."
+    y "My family is going to expand the mining operation soon."
+    y "I was hoping that you could come by and investigate the caves in our town..."
+    y "I know I never had your eye for magic stuff, and the mountain is really sacred. It would be good to get your opinion on it, if you're not too busy of course!"
+    y "If you come, you can stay in our guest cabin. Just show up to Ba Meniri and show anyone this letter, they'll direct you to the manor."
+    y "Thank you. Hope to see you soon!"
+    y "- Young Namara"
+    
+    scene bg fields
+    
+    show lani at center
+    l "Let's see..."
+    l "There! Hello, miss."
+    
+    show lani:
+        faceright
+        left
+    show moa:
+        faceleft
+        right
+    m "Oh, hello! It's rare to see travelers here."
+    l "Yeah, I'm Young Namara's friend. I was going to visit him."
+    m "Oh! A friend! From school, I guess?"
+    l "Yep. I've got this letter -"
+    m "Let's see... Oh, yeah! I can take you to the manor house if you want. He's probably there right now."
+    l "I wouldn't want to bother you."
+    m "Oh, don't be silly! I'm on my way up the mountain anyway."
+    l "I see. In that case, sure. Thank you."
+    m "Great! This way!"
+    
+    scene bg path_town_2
+    show lani:
+        faceright
+        left
+    show moa:
+        faceleft
+        right
+    m "I'm Moa, by the way."
+    l "Nice to meet you. I'm Lani."
+    m "Right. I saw on the letter, but I didn't know how to pronounce it!"
+    m "Oh, maybe I should give you a bit of a tour."
+    m "Up here is the flower shop, then on the other side is the bar and the clinic."
+    m "I'm actually working at the bar tonight."
+    
+    scene bg path_town_1
+    show lani:
+        faceright
+        left
+    show moa:
+        faceleft
+        right
+    m "On this side is the blacksmith's shop."
+    m "This is the jewelry store where my sister and I work. I mean, I'm only there some days."
+    
+    scene bg path_manor
+    show lani:
+        faceright
+        left
+    show moa:
+        faceleft
+        right
+    m "Well, here we are!"
+    l "Thanks for the tour."
+    m "No problem!"
+    m "You can stop by the bar later, if you want! I'll introduce you to whoever's there."
+    l "We'll see, I'm not sure what Young Namara wants from me tonight. But thanks for the invite."
+    m "Of course! Well, see you later!"
+    hide moa
+    "You knock on the door, and it opens almost instantly."
+    show young:
+        faceleft
+        right
+    y "Who is it?"
+    y "Oh, Lani! You came!"
+    l "Yep. Nice to see you, Namara."
+    y "Should I show you to the guest house? You can put down your bags first."
+    l "Okay, sounds good."
+    
+    scene bg guest_cabin
+    show young:
+        faceright
+        left
+    show lani:
+        faceleft
+        right
+    y "Here's the guest cabin. Sorry it's not much... There's a backyard with an outhouse. If you want, you can come to the main house to bathe and eat."
+    l "Perfectly fine. I'm used to worse, in my travels."
+    y "Oh, good! I mean - I'm sorry! But that's a relief for me."
+    "You set your bags down at the foot of the bed."
+    l "You probably want to go talk business elsewhere, right?"
+    y "I don't mind! I mean, we can go sit in the parlor, if you want?"
+    
+    scene bg path_manor with dissolve
+    pause 0.2
+    scene entry with dissolve
+    pause 0.2
+    scene bg parlor with dissolve
+    "You spent some time catching up with your friend over tea, and then he explained to you the situation."
+    y "So, if you could, just spend some time "
     
     python:
         if not debug:

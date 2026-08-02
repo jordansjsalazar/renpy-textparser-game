@@ -142,11 +142,39 @@ label talk_shera:
     hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label look_at_sher:
+label look_at_shera:
     show shera at center
     "Shera is Chel's apprentice. She's average height and pretty muscular."
     "You think she's friends with Moa."
     hide shera
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#TALK TO SOSI
+label talk_sosi:
+    show sosi at center
+    i "asdf"
+    hide sosi
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_sosi:
+    show sosi at center
+    "Sosi runs the flower shop, apparently. He's tall but pretty skinny."
+    "It seems like he doesn't get out much since he runs this place alone, so the only people he knows are the other shopkeepers, but they seem to like him okay."
+    hide sosi
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#TALK TO DOCTOR
+label talk_doctor:
+    show doctor at center
+    d "asdf"
+    hide doctor
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_doctor:
+    show doctor at center
+    "The doctor runs the clinic. He's short but quite muscular."
+    "He seems very busy here in the clinic, but you haven't heard a bad word about him."
+    hide doctor
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #CHEL BACKYARD
@@ -479,7 +507,7 @@ label look_shop_flowers:
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-#CARPENTRY SHOP
+#CLINIC
 label clinic:
     scene bg clinic
     $ area = "clinic"
@@ -492,7 +520,7 @@ label look_clinic:
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-#CARPENTRY SHOP
+#JEWELRY SHOP
 label shop_heron:
     scene bg shop_heron
     $ area = "shop_heron"
@@ -566,6 +594,18 @@ label entry:
 label look_entry:
     "The Namara manor is so big it has its own entry hall."
     "There are two coat racks and several pairs of snow boots on the floor."
+    $ look()
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+#HALLWAY
+label hallway:
+    scene bg hallway
+    $ area = "hallway"
+    $ last_label = area
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_hallway:
+    "The large entry funnels into a high-ceilinged hallway with several sets of sliding doors."
     $ look()
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 

@@ -138,7 +138,14 @@
     s "All right, let's go then!"
     
     scene lantern
-    
+    "You follow Shera as she strolls briskly through the caves, nearly as chipper as ever."
+    l "It keeps going that way."
+    s "Oh, I see."
+    s "Man, you don't even need me for this!"
+    l "Don't be stupid. I don't know how to tell which paths are safe."
+    s "Oh, right. Smart."
+    s "I wouldn't worry, though. I mean, the whole cave system is used for mining. It's pretty safe."
+    l ""
     
     "Rollback to get a new ending."
     $ renpy.jump("ending_1")
