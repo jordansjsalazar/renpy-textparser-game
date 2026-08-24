@@ -49,6 +49,7 @@ label progress:
     $ renpy.say(narrator, "Current time: " + str(time) + " out of 100")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+
 #TALK TO CHEL
 label talk_chel:
     show chel at center
@@ -140,6 +141,7 @@ label talk_chel_about_doctor:
     hide chel
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+
 #TALK TO MOA
 label talk_moa:
     show moa at center
@@ -220,6 +222,7 @@ label talk_moa_about_doctor:
     m "I hardly ever see him, he's always at the clinic. Seems like a really hardworking person!"
     hide moa
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 
 #TALK TO BIA
 label talk_bia:
@@ -414,63 +417,71 @@ label look_at_namara:
 label talk_namara_about_chel:
 
     show young at center
-    y "asdf"
+    y "Ah, yeah! Chel is really cool. I'm glad you two got to finally meet each other!"
+    y "It's like my two worlds colliding. My best school friend and my best home friend. It's a little weird for me, actually."
+    y "Not in a bad way or anything!"
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_bia:
 
     show young at center
-    y "asdf"
+    y "Oh, that's Moa's sister, right?"
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_moa:
 
     show young at center
-    y "asdf"
+    y "Yeah, I know her, she's very friendly."
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_heron:
 
     show young at center
-    y "asdf"
+    y "When I came back home, I was shocked that Old Heron is still running that shop! I thought for sure he would have retired by now."
+    y "I'm glad he at least has Moa and Bia to help him now!"
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_namara:
 
     show young at center
-    y "asdf"
+    menu:
+        "What have you been up to recently?":
+            y "Well, you know, I've been busy."
+            y "Lots to do for the mines. And my parents are away, too..."
+            y "I don't mind, though. It's nice to be needed."
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_lady:
 
     show young at center
-    y "asdf"
+    y "Oh, yes, she comes up here sometimes!"
+    y "I let her have access to some of our books."
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_shera:
 
     show young at center
-    y "asdf"
+    y "She's Moa's friend, right?"
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_sosi:
 
     show young at center
-    y "asdf"
+    y "Oh, yeah, him. I haven't really been to the flower shop, so I couldn't tell you much."
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_doctor:
 
     show young at center
-    y "asdf"
+    y "Let's see... I see him a couple times a year for a check-up. He seems very... professional?"
     hide young
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -492,63 +503,69 @@ label look_at_lady:
 label talk_lady_about_chel:
 
     show lady at center
-    h "asdf"
+    h "The blacksmith? He's a good kid and a great teacher. You wouldn't think it, but he's gotten a lot of good work out of Shera!"
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_bia:
 
     show lady at center
-    h "asdf"
+    h "Bia? Yes, she works at the shop sometimes."
+    h "She's been doing her job okay recently."
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_moa:
 
     show lady at center
-    h "asdf"
+    h "Yes, she works for us! A sweet girl. Good worker, too. Although you'd think tending our little shop would be the easiest job in the world..."
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_heron:
 
     show lady at center
-    h "asdf"
+    h "You know, we've been married for fifty years now!"
+    h "That's half a century! Time just flies, doesn't it?"
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_namara:
 
     show lady at center
-    h "asdf"
+    h "I'm sure I don't have to tell you, but that boy is not a very good conversationalist."
+    h "It's okay. Not everyone has to be a social butterfly!"
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_lady:
 
     show lady at center
-    h "asdf"
+    menu:
+        "What have you been up to recently?":
+            h "Not much. Cooking and reading, mostly!"
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_shera:
 
     show lady at center
-    h "asdf"
+    h "I like her. She's an odd one."
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_sosi:
 
     show lady at center
-    h "asdf"
+    h "Oh, my husband and I visit him often since he's just across the street!"
+    h "I remember back when he first moved in, we would bring him food all the time. I wish we could do things like that more often now, but, you know, being old."
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_doctor:
 
     show lady at center
-    h "asdf"
+    h "He's a handsome fellow! And we're lucky to have the clinic so close by. If anything ever happens, he's just right there!"
     hide lady
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -570,49 +587,53 @@ label look_at_shera:
 label talk_shera_about_chel:
 
     show shera at center
-    s "asdf"
+    s "Yeah, he's fine sometimes. And then some days he makes me do his job while he goes off to the waterfall or whatever."
     hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_shera_about_bia:
 
     show shera at center
-    s "asdf"
+    s "Moa's sister totally freaks me out... Like, yikes."
     hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_shera_about_moa:
 
     show shera at center
-    s "asdf"
+    s "She owes me lunch right now. But yeah, she's cool."
     hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_shera_about_heron:
 
     show shera at center
-    s "asdf"
+    s "He's great! Moa says he's the chillest boss ever."
+    s "Must be nice for her..."
     hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_shera_about_namara:
 
     show shera at center
-    s "asdf"
+    s "Oh, wow, it's been forever since I talked to Namara."
     hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_shera_about_lady:
 
     show shera at center
-    s "asdf"
+    s "She's a great cook."
     hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_shera_about_shera:
 
     show shera at center
-    s "asdf"
+    menu:
+        "What have you been up to recently?":
+            s "Work, work, work. Nothing more than that."
+            s "I guess the miners need equipment, so, whatever."
     hide shera
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
