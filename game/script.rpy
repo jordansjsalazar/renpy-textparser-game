@@ -347,6 +347,17 @@ init python:
     Npc("doctor")
     ]
     
+    for npc in npcs:
+        npc.add_topic("chel")
+        npc.add_topic("bia")
+        npc.add_topic("moa")
+        npc.add_topic("heron")
+        npc.add_topic("namara")
+        npc.add_topic("lady")
+        npc.add_topic("shera")
+        npc.add_topic("sosi")
+        npc.add_topic("doctor")
+    
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
     "shop_chel":Area("shop", "shop_chel"),
     "kitchen_chel":Area("kitchen", "kitchen_chel"),
@@ -520,25 +531,6 @@ label start:
     "You can always press enter without inputting a command to progress time."
     "Please keep this in mind when playing! Have fun!"
     
-    show lani at center
-    "Your name is Lani Choe."
-    "You're a researcher whose job is to investigate sites of magical importance."
-    "About a year after graduating magic school, you receive a letter from one of your former classmates."
-    
-    show lani:
-        faceright
-        left
-    show young:
-        faceleft
-        right
-    y "Hello, Lani."
-    y "My family is going to expand the mining operation soon."
-    y "I was hoping that you could come by and investigate the caves in our town..."
-    y "I know I never had your eye for magic stuff, and the mountain is really sacred. It would be good to get your opinion on it, if you're not too busy of course!"
-    y "If you come, you can stay in our guest cabin. Just show up to Ba Meniri and show anyone this letter, they'll direct you to the manor."
-    y "Thank you. Hope to see you soon!"
-    y "- Young Namara"
-    
     scene bg fields
     
     show lani at center
@@ -555,46 +547,9 @@ label start:
     l "Yeah, I'm Young Namara's friend. I was going to visit him."
     m "Oh! A friend! From school, I guess?"
     l "Yep. I've got this letter -"
-    m "Let's see... Oh, yeah! I can take you to the manor house if you want. He's probably there right now."
-    l "I wouldn't want to bother you."
-    m "Oh, don't be silly! I'm on my way up the mountain anyway."
-    l "I see. In that case, sure. Thank you."
-    m "Great! This way!"
-    
-    scene bg path_town_2
-    show lani:
-        faceright
-        left
-    show moa:
-        faceleft
-        right
-    m "I'm Moa, by the way."
-    l "Nice to meet you. I'm Lani."
-    m "Right. I saw on the letter, but I didn't know how to pronounce it!"
-    m "Oh, maybe I should give you a bit of a tour."
-    m "Up here is the flower shop, then on the other side is the bar and the clinic."
-    m "I'm actually working at the bar tonight."
-    
-    scene bg path_town_1
-    show lani:
-        faceright
-        left
-    show moa:
-        faceleft
-        right
-    m "On this side is the blacksmith's shop."
-    m "This is the jewelry store where my sister and I work. I mean, I'm only there some days."
-    
-    scene bg path_manor
-    show lani:
-        faceright
-        left
-    show moa:
-        faceleft
-        right
-    m "Well, here we are!"
-    l "Thanks for the tour."
-    m "No problem!"
+    m "Let's see... Oh, yeah! You can go all the way up the hill to the manor house. You can't miss it! It's the only building up there."
+    m "I would take you myself, but I need to hurry back home and cook dinner..."
+    l "It's no problem, I'm sure I can find it."
     m "You can stop by the bar later, if you want! I'll introduce you to whoever's there."
     l "We'll see, I'm not sure what Young Namara wants from me tonight. But thanks for the invite."
     m "Of course! Well, see you later!"
@@ -628,8 +583,11 @@ label start:
     scene bg entry with dissolve
     pause 0.2
     scene bg parlor with dissolve
-    "You spent some time catching up with your friend over tea, and then he explained to you the situation."
-    y "So, if you could, just spend some time "
+    "After you spend some time catching up with your friend over tea, he explains to you the situation."
+    y "As I mentioned in the letter, we're looking to expand the mining operation soon. Maybe in the fall."
+    y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
+    y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
+    y "Also, you're welcome to investigate the caves yourself. My friend Chel knows a girl who can help you go in there safely."
     
     python:
         if not debug:

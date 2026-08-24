@@ -12,7 +12,7 @@
     
     scene bg cave
     l "Huh."
-    l "Does anyone know the cave system well? It looks like the trail leads down here."
+    l "Does anyone here know the cave system well? It looks like the trail leads down here."
     c "Shera does. Should I go get her?"
     l "Yeah, actually, you should probably try to round up everyone who was in town today, if possible."
     o "What's happening? What did you find?"
