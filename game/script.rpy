@@ -471,13 +471,10 @@ init python:
     areas["fp_4"].add_north(areas["waterfall"])
     
     
-    areas["backyard_chel"].add_object("hammer")
     areas["kitchen_chel"].add_interactable("larder")
     
     areas["kitchen_namara"].add_interactable("sink")
     areas["kitchen_namara"].add_key("sink", "glass")
-    areas["kitchen_namara"].add_object("glass")
-    areas["kitchen_namara"].add_object("bread")
     
     areas["shop_chel"].add_interactable("bag_of_gold")
     areas["shop_chel"].add_name("bag_of_gold", "bag")
@@ -488,6 +485,12 @@ init python:
     
     areas["cabin_backyard"].add_interactable("backyard_outhouse")
     areas["cabin_backyard"].add_name("backyard_outhouse", "outhouse")
+    
+    areas["backyard_chel"].add_object("hammer")
+    areas["kitchen_namara"].add_object("glass")
+    areas["kitchen_namara"].add_object("bread")
+    areas["storage"].add_object("necklace")
+    
     
     
     objects_texts = {
@@ -531,63 +534,17 @@ label start:
     "You can always press enter without inputting a command to progress time."
     "Please keep this in mind when playing! Have fun!"
     
-    scene bg fields
-    
-    show lani at center
-    l "Let's see..."
-    l "There! Hello, miss."
-    
-    show lani:
-        faceright
-        left
-    show moa:
-        faceleft
-        right
-    m "Oh, hello! It's rare to see travelers here."
-    l "Yeah, I'm Young Namara's friend. I was going to visit him."
-    m "Oh! A friend! From school, I guess?"
-    l "Yep. I've got this letter -"
-    m "Let's see... Oh, yeah! You can go all the way up the hill to the manor house. You can't miss it! It's the only building up there."
-    m "I would take you myself, but I need to hurry back home and cook dinner..."
-    l "It's no problem, I'm sure I can find it."
-    m "You can stop by the bar later, if you want! I'll introduce you to whoever's there."
-    l "We'll see, I'm not sure what Young Namara wants from me tonight. But thanks for the invite."
-    m "Of course! Well, see you later!"
-    hide moa
-    "You knock on the door, and it opens almost instantly."
-    show young:
-        faceleft
-        right
-    y "Who is it?"
-    y "Oh, Lani! You came!"
-    l "Yep. Nice to see you, Namara."
-    y "Should I show you to the guest house? You can put down your bags first."
-    l "Okay, sounds good."
-    
-    scene bg guest_cabin
-    show young:
-        faceright
-        left
-    show lani:
-        faceleft
-        right
-    y "Here's the guest cabin. Sorry it's not much... There's a backyard with an outhouse. If you want, you can come to the main house to bathe and eat."
-    l "Perfectly fine. I'm used to worse, in my travels."
-    y "Oh, good! I mean - I'm sorry! But that's a relief for me."
-    "You set your bags down at the foot of the bed."
-    l "You probably want to go talk business elsewhere, right?"
-    y "I don't mind! I mean, we can go sit in the parlor, if you want?"
-    
-    scene bg path_manor with dissolve
-    pause 0.2
-    scene bg entry with dissolve
-    pause 0.2
     scene bg parlor with dissolve
-    "After you spend some time catching up with your friend over tea, he explains to you the situation."
-    y "As I mentioned in the letter, we're looking to expand the mining operation soon. Maybe in the fall."
+    y "So as you know, we're looking to expand the mining operation soon. Maybe in the fall."
     y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
     y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
-    y "Also, you're welcome to investigate the caves yourself. My friend Chel knows a girl who can help you go in there safely."
+    y "Also, you're welcome to investigate the caves yourself. My friend Chel knows a person who can help you go in there safely."
+    
+    scene bg entry with dissolve
+    pause 0.2
+    scene bg path_manor with dissolve
+    pause 0.2
+    scene bg guest_cabin with dissolve
     
     python:
         if not debug:
