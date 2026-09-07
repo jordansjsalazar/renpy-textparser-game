@@ -164,6 +164,18 @@ init python:
     
     def time_check():
         store.time += 1
+        if store.time == 22:
+            areas["storage"].remove_object("necklace")
+        if store.time == 29:
+            areas["path_town_1"].remove_interact("plant")
+        if store.time == 32:
+            areas["path_town_1"].add_object("gravel")
+        if store.time == 47:
+            areas["kitchen_heron"].remove_object("knife")
+        if store.time == 48:
+            areas["kitchen_heron"].remove_object("salt")
+        if store.time == 49:
+            areas["kitchen_heron"].remove_object("flint and steel")
         if store.time == 100:
             renpy.jump("ending_1")
         for npc in npcs:
@@ -267,6 +279,9 @@ init python:
         def add_interactable(self, name):
             self.interactables[name] = Interactable(name)
         
+        def remove_interactable(self, name):
+            self.interactables.remove(name)
+        
         def add_key(self, e, k):
             if self.has_interact(e):
                 self.interactables[e].add_key(k)
@@ -279,9 +294,14 @@ init python:
             self.objects.append(name)
         
         def take_object(self, name):
+            if self.remove_object(name):
+                inventory.append(name)
+        
+        def remove_object(self, name):
             if name in self.objects:
                 self.objects.remove(name)
-                inventory.append(name)
+                return True
+            return False
         
         def get_label_name(self):
             return self.label_name
@@ -486,10 +506,17 @@ init python:
     areas["cabin_backyard"].add_interactable("backyard_outhouse")
     areas["cabin_backyard"].add_name("backyard_outhouse", "outhouse")
     
+    areas["path_town_1"].add_interactable("gravel")
+    
+    areas["shop_flowers"].add_interactable("plant")
+    
     areas["backyard_chel"].add_object("hammer")
     areas["kitchen_namara"].add_object("glass")
     areas["kitchen_namara"].add_object("bread")
     areas["storage"].add_object("necklace")
+    areas["kitchen_heron"].add_object("salt")
+    areas["kitchen_heron"].add_object("knife")
+    areas["kitchen_heron"].add_object("flint and steel")
     
     
     
