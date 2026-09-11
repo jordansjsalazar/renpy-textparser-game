@@ -176,6 +176,14 @@ init python:
             areas["kitchen_heron"].remove_object("salt")
         if store.time == 49:
             areas["kitchen_heron"].remove_object("flint and steel")
+        if store.time == 60:
+            areas["waterfall"].add_object("body")
+        if store.time == 70:
+            areas["fields"].remove_interact("wheelbarrow")
+        if store.time == 79:
+            areas["waterfall"].remove_object("body")
+        if store.time == 87:
+            areas["cave"].add_interact("salt")
         if store.time == 100:
             renpy.jump("ending_1")
         for npc in npcs:
@@ -506,9 +514,14 @@ init python:
     areas["cabin_backyard"].add_interactable("backyard_outhouse")
     areas["cabin_backyard"].add_name("backyard_outhouse", "outhouse")
     
-    areas["path_town_1"].add_interactable("gravel")
+    areas["path_town_1"].add_interactable("path_gravel")
+    areas["path_town_1"].add_name("path_gravel", "gravel")
     
     areas["shop_flowers"].add_interactable("plant")
+    
+    areas["fields"].add_interactable("wheelbarrow")
+    
+    areas["forest_path"].add_interactable("twigs")
     
     areas["backyard_chel"].add_object("hammer")
     areas["kitchen_namara"].add_object("glass")
@@ -534,7 +547,7 @@ init python:
             st += " "
         return st
     
-    debug = True
+    debug = False
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')
@@ -562,10 +575,29 @@ label start:
     "Please keep this in mind when playing! Have fun!"
     
     scene bg parlor with dissolve
+    show y normal at center
     y "So as you know, we're looking to expand the mining operation soon. Maybe in the fall."
     y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
     y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
-    y "Also, you're welcome to investigate the caves yourself. My friend Chel knows a person who can help you go in there safely."
+    y "I mean, you were always much better at that kind of stuff than me."
+    menu:
+        "Investigating magic, you mean.":
+            y "Yeah, exactly."
+            l "Well, it is my job. No need to feel bad about calling the expert."
+        "Talking to people?":
+            y "Ah - Well, that too...."
+            y "I meant about investigating magic stuff, though."
+            l "I know, I know."
+    show l normal at left
+    show y normal at right
+    l "Hahhh... I was looking forward to a nice vacation, though. And now you're making me work..."
+    y "It's not exactly hard work. Just go around and talk to people, that's basically all I'm asking."
+    y "You can stay in the guest cabin. It's just South and then East of here."
+    l "All right, all right. I'll just put away my things and then get right on the case."
+    y "That's the spirit!"
+    l "Yeah, yeah."
+    hide l
+    hide y
     
     scene bg entry with dissolve
     pause 0.2
