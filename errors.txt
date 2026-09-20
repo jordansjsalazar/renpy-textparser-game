@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 344: invalid syntax
-            renpy.show("images/" + npcs[0] _ ".png")
-                                            ^
+File "game/script.rpy", line 342: unmatched ')'
+                renpy.say(narrator, npc.name))
+                                              ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Sep 20 21:40:23 2026
+Sun Sep 20 22:08:40 2026

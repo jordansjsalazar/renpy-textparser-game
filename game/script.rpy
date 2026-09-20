@@ -336,16 +336,17 @@ init python:
                 renpy.say(narrator, "{b}" + npc.name.upper()[0] + npc.name[1:] + "{/b} is standing here.")
     
     def rendernpc():
+        area = areas[store.area]
         lst = []
         for npc in npcs:
             if areas[npc.current_location] == area:
-                lst.append[npc.name]
-        renpy.say(narrator, str(len(lst)))
+                renpy.say(narrator, npc.name)
+                lst.append(npc.name)
         if len(lst) == 1:
-            renpy.show("images/" + npcs[0] + ".png")
+            renpy.show(lst[0] + ".png")
         if len(lst) == 2:
-            renpy.show("images/" + npcs[0] + ".png", at_list=("left"))
-            renpy.show("images/" + npcs[1] + ".png", at_list=("right"))
+            renpy.show(lst[0] + ".png", at_list=(left))
+            renpy.show(lst[1] + ".png", at_list=(right))
 
 #NPC
 
