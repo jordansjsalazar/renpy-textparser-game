@@ -344,8 +344,8 @@ init python:
         if len(lst) == 1:
             renpy.show(lst[0])
         if len(lst) == 2:
-            renpy.show(lst[0], at_list=(left))
-            renpy.show(lst[1], at_list=(right))
+            renpy.show(lst[0], at_list=[left])
+            renpy.show(lst[1], at_list=[right])
 
 #NPC
 
@@ -560,7 +560,7 @@ init python:
             st += " "
         return st
     
-    debug = False
+    debug = True
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')

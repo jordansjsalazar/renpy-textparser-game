@@ -5,9 +5,9 @@ While running game code:
     $ rendernpc()
   File "game/commands.rpy", line 735, in <module>
     $ rendernpc()
-  File "game/script.rpy", line 347, in rendernpc
-    renpy.show(lst[0], at_list=(left))
-TypeError: 'ATLTransform' object is not iterable
+  File "game/script.rpy", line 348, in rendernpc
+    renpy.show(lst[1], at_list=["right"])
+TypeError: 'str' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -20,13 +20,13 @@ Full traceback:
     exec(bytecode, globals, locals)
   File "game/commands.rpy", line 735, in <module>
     $ rendernpc()
-  File "game/script.rpy", line 347, in rendernpc
-    renpy.show(lst[0], at_list=(left))
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/exports/displayexports.py", line 485, in show
-    for i in at_list:
-TypeError: 'ATLTransform' object is not iterable
+  File "game/script.rpy", line 348, in rendernpc
+    renpy.show(lst[1], at_list=["right"])
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/exports/displayexports.py", line 489, in show
+    img = i(img) # type: ignore
+TypeError: 'str' object is not callable
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Mon Sep 21 01:01:21 2026
+Mon Sep 21 01:10:48 2026
