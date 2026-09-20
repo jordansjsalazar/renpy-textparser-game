@@ -340,13 +340,12 @@ init python:
         lst = []
         for npc in npcs:
             if areas[npc.current_location] == area:
-                renpy.say(narrator, npc.name)
                 lst.append(npc.name)
         if len(lst) == 1:
-            renpy.show(lst[0] + ".png")
+            renpy.show(lst[0])
         if len(lst) == 2:
-            renpy.show(lst[0] + ".png", at_list=(left))
-            renpy.show(lst[1] + ".png", at_list=(right))
+            renpy.show(lst[0], at_list=(left))
+            renpy.show(lst[1], at_list=(right))
 
 #NPC
 
@@ -590,7 +589,7 @@ label start:
     "Please keep this in mind when playing! Have fun!"
     
     scene bg parlor with dissolve
-    show young at center
+    show namara at center
     y "So as you know, we're looking to expand the mining operation soon. Maybe in the fall."
     y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
     y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
@@ -604,7 +603,7 @@ label start:
             y "I meant about investigating magic stuff, though."
             l "I know, I know."
     show lani at left
-    show young at right
+    show namara at right
     l "Hahhh... I was looking forward to a nice vacation, though. And now you're making me work..."
     y "It's not exactly hard work. Just go around and talk to people, that's basically all I'm asking."
     y "You can stay in the guest cabin. It's just South and then East of here."
