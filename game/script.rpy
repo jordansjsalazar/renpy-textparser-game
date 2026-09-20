@@ -183,7 +183,8 @@ init python:
         if store.time == 79:
             areas["waterfall"].remove_object("body")
         if store.time == 87:
-            areas["cave"].add_interact("salt")
+            areas["cave"].add_interact("cave_salt")
+            areas["cave"].add_name("cave_salt", "salt")
         if store.time == 100:
             renpy.jump("ending_1")
         for npc in npcs:
@@ -333,6 +334,18 @@ init python:
         for npc in npcs:
             if areas[npc.current_location] == area:
                 renpy.say(narrator, "{b}" + npc.name.upper()[0] + npc.name[1:] + "{/b} is standing here.")
+    
+    def rendernpc():
+        lst = []
+        for npc in npcs:
+            if areas[npc.current_location] == area:
+                lst.append[npc.name]
+        renpy.say(narrator, str(len(lst)))
+        if len(lst) == 1:
+            renpy.show("images/" + npcs[0] + ".png")
+        if len(lst) == 2:
+            renpy.show("images/" + npcs[0] + ".png", at_list=("left"))
+            renpy.show("images/" + npcs[1] + ".png", at_list=("right"))
 
 #NPC
 
@@ -529,7 +542,7 @@ init python:
     areas["storage"].add_object("necklace")
     areas["kitchen_heron"].add_object("salt")
     areas["kitchen_heron"].add_object("knife")
-    areas["kitchen_heron"].add_object("flint and steel")
+    areas["kitchen_heron"].add_object("flint")
     
     
     
@@ -571,11 +584,12 @@ label start:
     
     "This game uses a text prompt mechanic. You can always type {b}\"h\"{/b}, {b}\"help\"{/b}, or {b}\"cmd\"{/b} for a full list of commands."
     "This is a mystery with multiple unique endings. Each new ending will reveal new information, so if you die, don't worry! You can always rollback to get another ending."
+    "Playing with some note-taking method handy is encouraged."
     "You can always press enter without inputting a command to progress time."
     "Please keep this in mind when playing! Have fun!"
     
     scene bg parlor with dissolve
-    show y normal at center
+    show young at center
     y "So as you know, we're looking to expand the mining operation soon. Maybe in the fall."
     y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
     y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
@@ -588,8 +602,8 @@ label start:
             y "Ah - Well, that too...."
             y "I meant about investigating magic stuff, though."
             l "I know, I know."
-    show l normal at left
-    show y normal at right
+    show lani at left
+    show young at right
     l "Hahhh... I was looking forward to a nice vacation, though. And now you're making me work..."
     y "It's not exactly hard work. Just go around and talk to people, that's basically all I'm asking."
     y "You can stay in the guest cabin. It's just South and then East of here."

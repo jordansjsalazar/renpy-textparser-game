@@ -1,46 +1,115 @@
-2026-09-11 13:39:26 UTC
+2026-09-20 19:43:40 UTC
 macOS-15.3.1-arm64-arm-64bit
 Ren'Py 8.3.7.25031702
 
 Early init took 0.02s
-Loading error handling took 0.02s
+Loading error handling took 0.01s
 Loading script took 0.08s
-Loading save slot metadata took 0.02s
+Loading save slot metadata took 0.01s
 Loading persistent took 0.00s
-
-File "game/items.rpy", line 49: expected statement.
-    areas["path_town_1"].add_interactable("gravel")
-                                                   ^
-
-File "game/items.rpy", line 51: expected statement.
-    areas["shop_flowers"].add_interactable("plant")
-                                                   ^
-
-File "game/items.rpy", line 53: expected statement.
-    areas["fields"].add_interactable("wheelbarrow")
-                                                   ^
-
-File "game/items.rpy", line 55: expected statement.
-    areas["forest_path"].add_interactable("twigs")
-                                                  ^
-
-File "game/items.rpy", line 84: expected statement.
-    areas["storage"].add_object("necklace")
-                                           ^
-
-File "game/items.rpy", line 85: expected statement.
-    areas["kitchen_heron"].add_object("salt")
-                                             ^
-
-File "game/items.rpy", line 86: expected statement.
-    areas["kitchen_heron"].add_object("knife")
-                                              ^
-
-File "game/items.rpy", line 87: expected statement.
-    areas["kitchen_heron"].add_object("flint and steel")
-                                                        ^
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/ululation/Library/RenPy/backups/textparsergame':
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.01s
 DPI scale factor: 1.000000
-Interface start took 0.25s
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.20s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1800, 1169)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M4'
+Version: b'2.1 Metal - 89.3'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(2556, 1438)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 22.00s
+Loading error handling took 0.02s
+Loading script took 0.07s
+Loading save slot metadata took 0.01s
+Loading persistent took 0.00s
+Running init code took 0.01s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/ululation/Library/RenPy/backups/textparsergame':
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.02s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1800, 1169)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M4'
+Version: b'2.1 Metal - 89.3'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1278, 719) drawable=(2556, 1438)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 101.26s
+Loading error handling took 0.01s
+Loading script took 0.08s
+Loading save slot metadata took 0.01s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/ululation/Library/RenPy/backups/textparsergame':
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.02s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.11s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1800, 1169)

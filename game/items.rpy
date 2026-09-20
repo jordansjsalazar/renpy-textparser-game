@@ -72,14 +72,22 @@ label interact_wheelbarrow:
     "You test the wheelbarrow. It rolls easily and feels surprisingly light to push."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label look_path_gravel:
+label look_twigs:
     "There are a lot of twigs on the ground."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-label interact_path_gravel:
+label interact_twigs:
     "You pick up a few of the twigs."
     $ areas[area].add_object("twigs")
     $ areas[area].take_object("twigs")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+    
+label look_cave_salt:
+    "The salt scattered around the cave forms a circle."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label interact_cave_salt:
+    "You disturb the lines of the salt."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 #OBJECTS
@@ -109,10 +117,56 @@ label take_hammer:
     $ areas[area].take_object("hammer")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
-    areas["storage"].add_object("necklace")
-    areas["kitchen_heron"].add_object("salt")
-    areas["kitchen_heron"].add_object("knife")
-    areas["kitchen_heron"].add_object("flint and steel")
-    areas["path_town_1"].add_object("gravel")
-    areas["waterfall"].add_object("body")
-    areas["cave"].add_interact("salt")
+label look_at_necklace:
+    "The necklace consists of a gold chain and a long pendant inlaid with jewels. On the back of the pendant, some runes are carved."
+    "You can tell the runes spell a proper name in magical script, but you aren't familiar with the entity they invoke."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_necklace:
+    "You can't take that, at least not without permission from the Herons."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_salt:
+    "There's a bag of salt on the counter."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_salt:
+    "Took the salt."
+    $ areas[area].take_object("salt")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_knife:
+    "The knife is a general purpose one, around 10cm long with a pointed end, for chopping vegetables and such."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_knife:
+    "The Herons will probably notice their knife going missing, and you haven't asked them if you can take it."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+    
+label look_at_flint:
+    "A small flint and steel for firestarting."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_flint:
+    "Took the flint."
+    $ areas[area].take_object("flint")
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_gravel:
+    "Around the outhouse are some small stones of gravel. You eventually look down the chute and see that dumped on top of the usual waste, there's a pile of gravel."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_gravel:
+    "It's been dropped down the chute of the outhouse. You aren't touching that."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_body:
+    "The dead body clearly belongs to Moa Heron."
+    "She appears to have had her throat slit with a blade and bled out from the jugular."
+    "The body is otherwise undisturbed."
+    "The water around the corpse is stained red."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_body:
+    "Moa's body is too heavy for you to lift."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))

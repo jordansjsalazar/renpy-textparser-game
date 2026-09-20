@@ -2,37 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/items.rpy", line 49: expected statement.
-    areas["path_town_1"].add_interactable("gravel")
-                                                   ^
-
-File "game/items.rpy", line 51: expected statement.
-    areas["shop_flowers"].add_interactable("plant")
-                                                   ^
-
-File "game/items.rpy", line 53: expected statement.
-    areas["fields"].add_interactable("wheelbarrow")
-                                                   ^
-
-File "game/items.rpy", line 55: expected statement.
-    areas["forest_path"].add_interactable("twigs")
-                                                  ^
-
-File "game/items.rpy", line 84: expected statement.
-    areas["storage"].add_object("necklace")
-                                           ^
-
-File "game/items.rpy", line 85: expected statement.
-    areas["kitchen_heron"].add_object("salt")
-                                             ^
-
-File "game/items.rpy", line 86: expected statement.
-    areas["kitchen_heron"].add_object("knife")
-                                              ^
-
-File "game/items.rpy", line 87: expected statement.
-    areas["kitchen_heron"].add_object("flint and steel")
-                                                        ^
+File "game/script.rpy", line 344: invalid syntax
+            renpy.show("images/" + npcs[0] _ ".png")
+                                            ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Sep 11 15:39:26 2026
+Sun Sep 20 21:40:23 2026
