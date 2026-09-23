@@ -1,4 +1,91 @@
-﻿label ending_1:
+﻿label beginning:
+
+    scene bg parlor with dissolve
+    show namara at center
+    y "So as you know, we're looking to expand the mining operation soon. Maybe in the fall."
+    y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
+    y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
+    y "I mean, you were always much better at that kind of stuff than me."
+    menu:
+        "Investigating magic, you mean.":
+            y "Yeah, exactly."
+            l "Well, it is my job. No need to feel bad about calling the expert."
+        "Talking to people?":
+            y "Ah - Well, that too...."
+            y "I meant about investigating magic stuff, though."
+            l "I know, I know."
+    show lani at left
+    show namara at right
+    l "Hahhh... I was looking forward to a nice vacation, though. And now you're making me work..."
+    y "It's not exactly hard work. Just go around and talk to people, that's basically all I'm asking."
+    y "You can stay in the guest cabin. It's just South and then East of here."
+    l "All right, all right. I'll just put away my things and then get right on the case."
+    y "That's the spirit!"
+    l "Yeah, yeah."
+    hide l
+    hide y
+    
+    scene bg entry with dissolve
+    pause 0.2
+    scene bg path_manor with dissolve
+    pause 0.2
+    scene bg guest_cabin with dissolve
+    
+    jump guest_cabin
+
+label meet_bia:
+    
+    b "Oh, hello. Namara's friend, I take it?"
+    b "I'm Bia Heron. Pleased to meet you."
+    $ met.append("bia")
+    $ renpy.jump(area)
+
+label meet_shera:
+    
+    s "Hello! I haven't seen you before! New in town?"
+    l "No, I'm just here for a few days to help Namara with something."
+    s "How mysterious! Well, anyway, I'm Shera. Nice to meet you!"
+    $ met.append("shera")
+    $ renpy.jump(area)
+
+label meet_chel:
+    
+    c "Hey, Lani!"
+    c "Oh, sorry if I caught you off guard! Namara told me you'd probably be stopping by. Nice to meet you!"
+    $ met.append("chel")
+    $ renpy.jump(area)
+    
+label meet_sosi:
+    
+    i "Oh, hello."
+    i "I don't believe we've met... I'm Sosi. Can I help you find anything?"
+    $ met.append("sosi")
+    $ renpy.jump(area)
+
+label meet_doctor:
+    
+    d "Hello!"
+    d "Ah, you're not a local! That's okay. I'm the town's doctor."
+    d "In case you need any first-aid supplies or anything, I sell those, too!"
+    d "I hope you enjoy your stay in Ba Meniri!"
+    $ met.append("doctor")
+    $ renpy.jump(area)
+
+label meet_heron:
+    
+    o "Ah, an out-of-towner."
+    o "I wasn't aware we were having visitors! I'm Old Heron. Pleasure to meet you."
+    $ met.append("heron")
+    $ renpy.jump(area)
+
+label meet_lady:
+    
+    h "Oh, hello, dear."
+    h "It's nice to see a new face in town! I'm Lady Heron."
+    $ met.append("lady")
+    $ renpy.jump(area)
+
+label ending_1:
     "Suddenly you hear a long, resonant scream from up the mountain!"
     "Along with a throng of villagers, you run up to the source of the noise."
     "It seems that the group is heading up to the cave."

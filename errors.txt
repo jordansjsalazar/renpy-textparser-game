@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 342: unmatched ')'
-                renpy.say(narrator, npc.name))
-                                              ^
+File "game/events.rpy", line 34: expected statement.
+    renpy.jump("guest_cabin")
+                             ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Sep 20 22:08:40 2026
+Wed Sep 23 02:40:39 2026

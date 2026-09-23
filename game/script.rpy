@@ -343,9 +343,21 @@ init python:
                 lst.append(npc.name)
         if len(lst) == 1:
             renpy.show(lst[0])
-        if len(lst) == 2:
+            events_check(lst[0])
+        elif len(lst) == 2:
             renpy.show(lst[0], at_list=[left])
             renpy.show(lst[1], at_list=[right])
+            # change this later
+            events_check(lst[0])
+            events_check(lst[1])
+        elif len(lst) == 3:
+            renpy.show(lst[0], at_list=[left])
+            renpy.show(lst[1], at_list=[center])
+            renpy.show(lst[2], at_list=[right])
+            # change this later
+            events_check(lst[0])
+            events_check(lst[1])
+            events_check(lst[2])
 
 #NPC
 
@@ -374,6 +386,10 @@ init python:
         
         def add_topic(self, e):
             self.topics.append(e)
+
+    def events_check(npc):
+        if not npc in met:
+            renpy.jump("meet_" + npc)
 
 # GAME SETUP
 
@@ -552,7 +568,7 @@ init python:
     
     area = "guest_cabin"
 
-# TESTER FUNCTIONS
+# TESTER FUNCTIONS AND DEBUG VARS
     def test_paths(area):
         st = areas[area].name + ": "
         for x in areas[area].exits:
@@ -560,7 +576,9 @@ init python:
             st += " "
         return st
     
-    debug = True
+    met = ["namara"]
+    
+    debug = False
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')
@@ -588,36 +606,7 @@ label start:
     "You can always press enter without inputting a command to progress time."
     "Please keep this in mind when playing! Have fun!"
     
-    scene bg parlor with dissolve
-    show namara at center
-    y "So as you know, we're looking to expand the mining operation soon. Maybe in the fall."
-    y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
-    y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
-    y "I mean, you were always much better at that kind of stuff than me."
-    menu:
-        "Investigating magic, you mean.":
-            y "Yeah, exactly."
-            l "Well, it is my job. No need to feel bad about calling the expert."
-        "Talking to people?":
-            y "Ah - Well, that too...."
-            y "I meant about investigating magic stuff, though."
-            l "I know, I know."
-    show lani at left
-    show namara at right
-    l "Hahhh... I was looking forward to a nice vacation, though. And now you're making me work..."
-    y "It's not exactly hard work. Just go around and talk to people, that's basically all I'm asking."
-    y "You can stay in the guest cabin. It's just South and then East of here."
-    l "All right, all right. I'll just put away my things and then get right on the case."
-    y "That's the spirit!"
-    l "Yeah, yeah."
-    hide l
-    hide y
-    
-    scene bg entry with dissolve
-    pause 0.2
-    scene bg path_manor with dissolve
-    pause 0.2
-    scene bg guest_cabin with dissolve
+    jump beginning
     
     python:
         if not debug:
@@ -700,11 +689,5 @@ label progress_0:
             jump afternoon_1
         "No":
             $ renpy.jump(last_label)
-
-label afternoon_1:
-
-    l "asdfdasfasd"
-
-    # This ends the game.
 
     return

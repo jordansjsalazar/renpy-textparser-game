@@ -1,32 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/commands.rpy", line 735, in script
-    $ rendernpc()
-  File "game/commands.rpy", line 735, in <module>
-    $ rendernpc()
-  File "game/script.rpy", line 348, in rendernpc
-    renpy.show(lst[1], at_list=["right"])
-TypeError: 'str' object is not callable
+  File "game/script.rpy", line 9, in script
+    init python:
+  File "game/script.rpy", line 572, in <module>
+    met = [npcs["namara"]]
+TypeError: list indices must be integers or slices, not str
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/commands.rpy", line 735, in script
-    $ rendernpc()
+  File "game/script.rpy", line 9, in script
+    init python:
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/commands.rpy", line 735, in <module>
-    $ rendernpc()
-  File "game/script.rpy", line 348, in rendernpc
-    renpy.show(lst[1], at_list=["right"])
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/exports/displayexports.py", line 489, in show
-    img = i(img) # type: ignore
-TypeError: 'str' object is not callable
+  File "game/script.rpy", line 572, in <module>
+    met = [npcs["namara"]]
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/revertable.py", line 214, in __getitem__
+    rv = list.__getitem__(self, index)
+TypeError: list indices must be integers or slices, not str
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Mon Sep 21 01:10:48 2026
+Wed Sep 23 02:38:36 2026
