@@ -358,6 +358,7 @@ init python:
             events_check(lst[0])
             events_check(lst[1])
             events_check(lst[2])
+        return lst
 
 #NPC
 

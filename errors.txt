@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/events.rpy", line 34: expected statement.
-    renpy.jump("guest_cabin")
-                             ^
+File "game/commands.rpy", line 650: expected an indented block
+    if "chel" in rendernpc():
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Sep 23 02:40:39 2026
+Thu Sep 24 12:49:42 2026

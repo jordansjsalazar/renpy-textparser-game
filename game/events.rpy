@@ -22,6 +22,9 @@
     l "All right, all right. I'll just put away my things and then get right on the case."
     y "That's the spirit!"
     l "Yeah, yeah."
+    y "Oh! By the way, the gates to the military campus will be fully closed tomorrow because of the holiday."
+    l "What? What holiday?"
+    y "Every Sunday! It's the holy day. They don't staff the gates."
     hide l
     hide y
     
