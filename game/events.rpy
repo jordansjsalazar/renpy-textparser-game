@@ -1,7 +1,20 @@
 ﻿label beginning:
 
+    scene bg wall with dissolve
+    show guard at center
+    g "Halt! Nobody can enter the military campus this week without proper authorization."
+    l "Yes, I have a letter from Young Namara."
+    g "Oh, so you do. My apologies, sir. Please come inside."
+    scene bg path_town_2 with dissolve
+    pause 0.2
+    scene bg path_town_1 with dissolve
+    pause 0.2
+    scene bg path_manor with dissolve
+    pause 0.2
     scene bg parlor with dissolve
     show namara at center
+    y "Ah! You made it. I'm glad. Erm, please sit down!"
+    l_int "He gestured to a chair and poured me a cup of tea as I took a seat."
     y "So as you know, we're looking to expand the mining operation soon. Maybe in the fall."
     y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
     y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
@@ -22,9 +35,6 @@
     l "All right, all right. I'll just put away my things and then get right on the case."
     y "That's the spirit!"
     l "Yeah, yeah."
-    y "Oh! By the way, the gates to the military campus will be fully closed tomorrow because of the holiday."
-    l "What? What holiday?"
-    y "Every Sunday! It's the holy day. They don't staff the gates."
     hide l
     hide y
     

@@ -593,6 +593,8 @@ define s = Character("Shera", callback=voice, cb_file="bleep010.ogg", what_prefi
 define i = Character("Sosi", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
 define d = Character("Doctor", callback=voice, cb_file="bleep030.ogg", what_prefix='\"', what_suffix='\"')
 
+define g = Character("Guard", callback=voice, cb_file="bleep019.ogg", what_prefix='\"', what_suffix='\"')
+
 # The game starts here.
 
 label start:
