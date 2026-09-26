@@ -42,6 +42,7 @@ label cmd:
     "Additionally, you can {b}use{/b} objects from your {b}inventory{/b} on objects in the environment."
     "NPCs in the area will not be visible on screen until you {b}talk to{/b} them, so you should {b}look{/b} to see who's around sometimes."
     "You can choose to progress time by simply pressing enter."
+    $ renpy.say(narrator, "Hint: " + current_hint)
     $ renpy.jump(last_label)
 
 label progress:
@@ -74,7 +75,7 @@ label talk_chel_about_bia:
 
     c "Yeah, she's Moa's sister. They both work in town at the Herons' shop."
     c "Nice girls, both of them."
-    c "...By the way, y'know, villagers can be gossipy... I wouldn't believe everything people tell you, necessarily."
+    c "...By the way, y'know, people around here can be gossipy... I wouldn't believe everything people tell you, necessarily. You know?"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_chel_about_moa:
@@ -86,13 +87,13 @@ label talk_chel_about_moa:
 label talk_chel_about_heron:
 
     c "Old Heron is one of the most respected merchants in town. Everyone knows him."
-    c "I've done business with him myself, from time to time. He's a good dude."
+    c "I've done business with him myself sometimes! He's a good dude."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_chel_about_namara:
 
     c "Oh yeah, he's cool. I mean, you two are friends, right?"
-    c "You probably know him a lot better than I do. I mean, he was away from the town for so long and just got back recently."
+    c "You probably know him a lot better than I do! I mean, he was away from the town for so long and just got back recently."
     c "I like hanging out with him, but he's so quiet. Sometimes I feel like I don't know anything about him."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -121,6 +122,16 @@ label talk_chel_about_doctor:
     c "That guy is a life saver. He works really hard and he always has medicines in stock, for every kind of sickness."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label talk_chel_about_magic:
+
+    c "I'm not really much of an enchanter, so I don't know much. Occasionally something rare comes across Old Heron's desk and he puts it in storage."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_chel_about_caves:
+
+    c "I don't go in the caves, like, ever. Shera does, though."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 
 #TALK TO MOA
 label talk_moa:
@@ -131,7 +142,6 @@ label talk_moa:
 label look_at_moa:
 
     "Moa is a local shop girl. She's pretty short and doesn't seem very muscular."
-    "You've gathered from your short time here that Moa has a good reputation in town."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_moa_about_chel:
@@ -183,6 +193,16 @@ label talk_moa_about_doctor:
     m "I hardly ever see him, he's always at the clinic. Seems like a really hardworking person!"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label talk_moa_about_magic:
+
+    m "Yeah, Old Heron says we have some magical stuff in the back."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_moa_about_caves:
+
+    m "I hate those caves... It's so creepy in there."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 
 #TALK TO BIA
 label talk_bia:
@@ -193,7 +213,6 @@ label talk_bia:
 label look_at_bia:
 
     "Bia is a local shop girl. She's tall, but not muscular."
-    "Bia seems to be a bit infamous for petty crime and leading young men astray."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_bia_about_chel:
@@ -250,6 +269,19 @@ label talk_bia_about_doctor:
     b "He's good at what he does. If a bit judgmental, maybe."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label talk_bia_about_magic:
+
+    b "You could say I've dabbled."
+    l "Oh? What kinds of magic?"
+    b "I perform rituals sometimes. You can find all sorts of ingredients in the woods by the cave."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_bia_about_caves:
+
+    b "Oh, yes, I go in the caves sometimes."
+    b "It's a nice spot to go and be alone with your thoughts."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 
 #TALK TO OLD HERON
 label talk_heron:
@@ -260,7 +292,6 @@ label talk_heron:
 label look_at_heron:
 
     "Old Heron is the owner of the jewelry store, along with his wife. He appears quite feeble."
-    "He's respected amongst the townsfolk."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_heron_about_chel:
@@ -315,6 +346,18 @@ label talk_heron_about_doctor:
 
     o "Yes, I see him at the clinic sometimes. Although you know, despite my age, I'm quite healthy!"
     o "I hardly ever see the doctor anywhere but the clinic. I hope he isn't overworking himself..."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_heron_about_magic:
+
+    o "Yes, we are holding onto two or three magical items currently. They're in the back right now."
+    o "I don't intend to sell them unless I find a buyer who I can trust. Too dangerous."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_heron_about_caves:
+
+    o "Those caves are just horrible. I'm glad they're going to start mining in there, though."
+    o "I wouldn't mind if they brought some new life into our little town."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 
@@ -385,6 +428,21 @@ label talk_namara_about_doctor:
     y "Let's see... I see him a couple times a year for a check-up. He seems very... professional?"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label talk_namara_about_magic:
+
+    y "It's been a local legend ever since I was a kid that the spirit of this mountain grants wishes."
+    y "Also, people say that something deep inside the mountain is angry. They say that if you go too deep into the caves, it swallows you up."
+    l "The wish-granting spirit almost sounds a little credible, but the caves thing sounds like a boogeyman."
+    l "You know, like, don't go in the caves, kids. The scary cave man will eat you."
+    y "...I'm inclined to agree, personally."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_namara_about_caves:
+
+    y "We have miners come in sometimes and work for a few months, but not on a big scale."
+    y "The main entrance to the mines is actually on the other side... But sometimes they go through the caves, too."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 
 #TALK TO LADY HERON
 label talk_lady:
@@ -395,7 +453,6 @@ label talk_lady:
 label look_at_lady:
 
     "Lady Heron is the owner of the jewelry store along with her husband. She's healthy for her age, but still not strong."
-    "She's respected by most of the townsfolk."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_chel:
@@ -449,6 +506,20 @@ label talk_lady_about_doctor:
     h "He's a handsome fellow! And we're lucky to have the clinic so close by. If anything ever happens, he's just right there!"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label talk_lady_about_magic:
+
+    h "Oh, I'm reading about local spirits all the time in the Namaras' library!"
+    h "Not that I mean to, but, it comes up so often."
+    h "Have you heard there's one around here that grants wishes?"
+    h "His name is Ixca. Apparently the ritual to summon him is very complicated, though!"
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_lady_about_caves:
+
+    h "I don't make a habit of wandering around up there."
+    h "Even when I visit the manor, I almost never walk in those woods. They're quite spooky! Too much excitement for these old bones!"
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 
 #TALK TO SHERA
 label talk_shera:
@@ -459,7 +530,6 @@ label talk_shera:
 label look_at_shera:
 
     "Shera is Chel's apprentice. She's average height and pretty muscular."
-    "You think she's friends with Moa."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_shera_about_chel:
@@ -511,6 +581,16 @@ label talk_shera_about_doctor:
     s "asdf"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label talk_shera_about_magic:
+
+    s "Oh, I don't care about that kinda stuff. I mean, enchantments are cool. I can do a few!"
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_shera_about_caves:
+
+    s "Yeah, I go in there sometimes, but I don't tend to find much."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 
 #TALK TO SOSI
 label talk_sosi:
@@ -521,42 +601,43 @@ label talk_sosi:
 label look_at_sosi:
 
     "Sosi runs the flower shop, apparently. He's tall but pretty skinny."
-    "It seems like he doesn't get out much since he runs this place alone, so the only people he knows are the other shopkeepers, but they seem to like him okay."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_chel:
 
-    i "asdf"
+    i "Ah, Chel. He's quite handsome, wouldn't you agree?"
+    l "Yeah, I guess so."
+    i "Heehee."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_bia:
 
-    i "asdf"
+    i "She's fun. We go for drinks sometimes."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_moa:
 
-    i "asdf"
+    i "Oh, Bia's sister. Yes, she's come in sometimes."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_heron:
 
-    i "asdf"
+    i "Old Heron and his wife come in here a lot. They have good taste, both of them."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_namara:
 
-    i "asdf"
+    i "Oh, right, the one who moved back recently. I don't think I've even met him."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_lady:
 
-    i "asdf"
+    i "She is classy, isn't she?"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_shera:
 
-    i "asdf"
+    i "She and Moa are basically inseparable, so I don't know her well."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_sosi:
@@ -566,7 +647,17 @@ label talk_sosi_about_sosi:
 
 label talk_sosi_about_doctor:
 
-    i "asdf"
+    i "He certainly is... friendly."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_sosi_about_magic:
+
+    i "Oh, about magic? Interesting. There's supposed to be spirit magic here, right? In the mountain?"
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_sosi_about_caves:
+
+    i "I'd like to explore those caves one day, but I wouldn't go in by myself."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 
@@ -579,32 +670,32 @@ label talk_doctor:
 label look_at_doctor:
 
     "The doctor runs the clinic. He's short but quite muscular."
-    "He seems very busy here in the clinic, but you haven't heard a bad word about him."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_doctor_about_chel:
 
-    d "asdf"
+    d "Chel! That boy works too hard, if you ask me. He's always coming in here for some painkiller or other!"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_doctor_about_bia:
 
-    d "asdf"
+    d "I don't know Bia that well, but she seems like a fine young lady!"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_doctor_about_moa:
 
-    d "asdf"
+    d "She's a good egg!"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_doctor_about_heron:
 
-    d "asdf"
+    d "Oh, yes. Looking after the Herons is almost half my job!"
+    d "Old Heron seems to be still ticking just fine. He's got a few more years in him yet!"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_doctor_about_namara:
 
-    d "asdf"
+    d "He hasn't come by here recently."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_doctor_about_lady:
@@ -623,6 +714,16 @@ label talk_doctor_about_sosi:
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_doctor_about_doctor:
+
+    d "asdf"
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_doctor_about_magic:
+
+    d "asdf"
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label talk_doctor_about_caves:
 
     d "asdf"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))

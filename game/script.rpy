@@ -415,6 +415,9 @@ init python:
         npc.add_topic("shera")
         npc.add_topic("sosi")
         npc.add_topic("doctor")
+        
+        npc.add_topic("magic")
+        npc.add_topic("caves")
     
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
     "shop_chel":Area("shop", "shop_chel"),
@@ -578,6 +581,8 @@ init python:
         return st
     
     met = ["namara"]
+    
+    current_hint = "You could ask the villagers about {b}magic{/b} and the {b}caves{/b}."
     
     debug = False
 
