@@ -168,19 +168,21 @@ init python:
             areas["storage"].remove_object("necklace")
         if store.time == 38:
             areas["shop_flowers"].remove_interactable("plant")
-        if store.time == 40:
+            areas["shop_flowers"].add_interactable("broken_glass")
+            areas["shop_flowers"].add_name("broken_glass", "glass")
+        if store.time == 41:
             areas["outhouse"].add_object("gravel")
-        if store.time == 48:
+        if store.time == 47:
             areas["kitchen_heron"].remove_object("knife")
-        if store.time == 49:
+        if store.time == 48:
             areas["kitchen_heron"].remove_object("salt")
-        if store.time == 50:
+        if store.time == 49:
             areas["kitchen_heron"].remove_object("flint and steel")
         if store.time == 60:
             areas["waterfall"].add_object("body")
-        if store.time == 70:
+        if store.time == 69:
             areas["fields"].remove_interactable("wheelbarrow")
-        if store.time == 79:
+        if store.time == 80:
             areas["waterfall"].remove_object("body")
         if store.time == 87:
             areas["cave"].add_interactable("cave_salt")
@@ -586,7 +588,7 @@ init python:
     
     current_hint = "You could ask the villagers about {b}magic{/b} and the {b}caves{/b}."
     
-    debug = True
+    debug = False
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')

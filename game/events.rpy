@@ -62,7 +62,7 @@
     pause 0.2
     scene bg guest_cabin with dissolve
     
-    l "I decided to turn in early. I woke up shortly after sunrise the next morning."
+    l_int "I decided to turn in early. I woke up shortly after sunrise the next morning."
     
     jump guest_cabin
 

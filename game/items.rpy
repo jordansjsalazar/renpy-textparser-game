@@ -46,6 +46,14 @@ label interact_backyard_outhouse:
     "You use the outhouse."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
+label look_at_broken_glass:
+    "There are shards of glass all over the display area of the flower shop."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label interact_broken_glass:
+    "You touch a piece of the glass. It's thick and sharp."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
 label look_path_gravel:
     "There's a pile of gravel on the side of the road. Probably the town is planning to re-pave the main dirt road with gravel."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))

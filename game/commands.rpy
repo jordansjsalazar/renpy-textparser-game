@@ -59,8 +59,32 @@ label talk_chel:
 
 label look_at_chel:
 
-    "Chel Arn is a journeyman blacksmith. He's short, but well muscled – thanks to his work, obviously."
-    "You don't know him very well, but you know he's a friend of Young Namara."
+    python:
+        if store.time < 44 or 50 < store.time < 63:
+            renpy.say(narrator, "Chel is working at the forge.")
+        if store.time == 44:
+            renpy.say(narrator, "Chel is running into the shop to answer the bell.")
+        if store.time == 45:
+            renpy.say(sosi, "Chel! My store was just robbed!")
+            renpy.say(chel, "Robbed? Nobody is supposed to be up here anyway!")
+            renpy.say(chel, "Don't worry, we'll find the thief!")
+        if 45 < store.time < 48 or store.time == 49 or 61 < store.time < 71 or 84 < store.time < 90 or 94 < store.time < 97 or 97 < store.time < 100:
+            renpy.say(narrator, "Chel is walking somewhere.")
+            if 45 < store.time < 48 or 97 < store.time < 100:
+                renpy.say(narrator, "It looks like he's searching for something.")
+        if store.time == 48:
+            renpy.say(heron, "Oh dear! What are you boys doing?")
+            renpy.say(sosi, "Somebody stole the display plant out of my store!")
+            renpy.say(lady, "Goodness! So they did! Smashed the window and everything.")
+            renpy.say(heron, "We'll help you look for it.")
+            renpy.say(chel, "I guess you've got it covered, then. I'm gonna head back to the shop - we're kinda running behind or I would stay and help.")
+            renpy.say(chel, "But I'll keep an eye out, and let me know if you need anything, okay?")
+        if 89 < store.time < 95:
+            renpy.say(narrator, "Chel is bathing in the waterfall.")
+        if store.time == 97:
+            renpy.say(narrator, "He's noticed something on the ground and is following it.")
+        if store.time == 100:
+            renpy.say(narrator, "He's noticed the body in the cave.")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_chel_about_chel:
