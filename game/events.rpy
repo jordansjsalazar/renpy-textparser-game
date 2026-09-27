@@ -2,9 +2,11 @@
 
     scene bg wall with dissolve
     show guard at center
-    g "Halt! Nobody can enter the military campus this week without proper authorization."
+    g "Halt!"
+    l "Is there a problem?"
+    g "Regrettably, yes. Outsiders are forbidden to enter the mountain this week without proper authorization."
     l "Yes, I have a letter from Young Namara."
-    g "Oh, so you do. My apologies, sir. Please come inside."
+    g "Oh, so you do. My apologies, sir! Please come inside."
     scene bg path_town_2 with dissolve
     pause 0.2
     scene bg path_town_1 with dissolve
@@ -15,9 +17,9 @@
     show namara at center
     y "Ah! You made it. I'm glad. Erm, please sit down!"
     l_int "He gestured to a chair and poured me a cup of tea as I took a seat."
-    y "So as you know, we're looking to expand the mining operation soon. Maybe in the fall."
-    y "But a lot of the villagers think the mountain has some crazy magic inside, and, well, I don't think they think that for no reason."
-    y "So I was just wondering if you could maybe ask around, some of the old timers have some stories and maybe you could tell if they were true."
+    y "So as you know, I'm looking to expand the mining operation soon. Maybe in the fall."
+    y "But a lot of the villagers think the mountain has some crazy magic buried inside, and, well, I don't think they think that for no reason."
+    y "So I was just wondering if you could maybe ask around, some of the people here have some stories and maybe you could tell if they were true."
     y "I mean, you were always much better at that kind of stuff than me."
     menu:
         "Investigating magic, you mean.":
@@ -34,7 +36,23 @@
     y "You can stay in the guest cabin. It's just South and then East of here."
     l "All right, all right. I'll just put away my things and then get right on the case."
     y "That's the spirit!"
-    l "Yeah, yeah."
+    l "Oh, by the way. Why are outsiders not allowed in?"
+    y "Oh no, did the guards hassle you? I'm sorry!"
+    y "Yeah, it's because of the time of year, with the stars and stuff. This week is the only week that certain rituals are possible."
+    y "They don't let anyone in the mountain when it happens, except if they live or work in the village."
+    l "How does that work? Don't people need to... go shopping or whatever?"
+    y "Well, the shopping district here is pretty small."
+    y "Only a few people actually live inside the gates anymore... Most of the townsfolk live in the lowlands, by the riverbed."
+    y "I mean, my family stayed here because of the mines. And I came back to help them."
+    y "Aside from us, there's the blacksmith {b}Chel{/b}, his apprentice {b}Shera{/b} - Oh, actually, she lives in the lowlands too. But she works here."
+    y "There used to be one old farmer up here, but he passed away. His daughters {b}Moa{/b} and {b}Bia{/b} stayed, in the old farmhouse."
+    y "There's a couple shopkeepers, {b}Sosi{/b}, {b}Old Heron{/b} and his wife {b}Lady Heron{/b}. And the doctor."
+    y "Those are the only people who are here right now. Sorry, I should have warned you!"
+    y "In a couple days the gates will reopen and you can go back into the village and talk to more people."
+    l "It's fine, I'll just talk tomorrow with the people who are here."
+    y "That would be great! Thank you!"
+    y "And if you want to investigate the caves, you can... Maybe after the gates open up one of the miners could accompany you?"
+    l "Yeah, we'll see."
     hide l
     hide y
     
@@ -43,6 +61,8 @@
     scene bg path_manor with dissolve
     pause 0.2
     scene bg guest_cabin with dissolve
+    
+    l "I decided to turn in early. I woke up shortly after sunrise the next morning."
     
     jump guest_cabin
 
@@ -99,6 +119,7 @@ label meet_lady:
     $ renpy.jump(area)
 
 label ending_1:
+
     "Suddenly you hear a long, resonant scream from up the mountain!"
     "Along with a throng of villagers, you run up to the source of the noise."
     "It seems that the group is heading up to the cave."
@@ -107,145 +128,10 @@ label ending_1:
     l "What happened?"
     c "There was so much blood..."
     l "Yeah, it looks like a body was dragged through here."
+    l_int "He recoiled."
     c "I'm not going back in that cave. But you can look, Lani. Aren't you an investigator or something?"
     l "Not really. I mean, I can take a look, sure."
-    
-    scene bg cave
-    l "Huh."
-    l "Does anyone here know the cave system well? It looks like the trail leads down here."
-    c "Shera does. Should I go get her?"
-    l "Yeah, actually, you should probably try to round up everyone who was in town today, if possible."
-    o "What's happening? What did you find?"
-    
-    scene bg forest_path
-    h "We were all looking for Moa, and Young Namara suddenly collapsed. He's in the clinic now."
-    l "What happened to Moa?"
-    h "Young Namara said he was very worried about her all of a sudden. He came to us thinking she might be in the shop."
-    o "We told him it wasn't her turn to watch the shop anymore, but he was very agitated."
-    o "Apparently he had some reason to believe something happened to her."
-    h "The three of us were searching for quite a while. It did appear that some of her things had been disturbed, in her room."
-    l "Interesting. Disturbed how?"
-    o "Regrettably, I'm not sure. Young Namara was in her room while we were in the front room. He didn't tell us exactly what was missing."
-    h "The two of us had never seen inside the girls' house before. We weren't quite sure what was meant to be where."
-    l "Don't worry, that's okay."
-    l "What happened to Young Namara?"
-    h "It was bizarre! He was talking to us from the other room, then we heard a loud sound, so we ran in and he was just out on the floor!"
-    o "He truly wasn't conscious. I told Pari to go to the clinic while I waited with Young Namara."
-    h "He's with the doctor now. It seems like he's stable, but..."
-    l "And nobody's seen Bia?"
-    h "She left with Moa after their shift. That's the last time I saw either of them!"
-    o "Oh, dear, we must tell him about the incident!"
-    h "Right, right! It must be related."
-    h "Shortly after the girls started their shift, we went to the flower shop together. But when we got there..."
-    o "The window had been smashed! Someone stole one of the plants that was in the display."
-    l "Ah, right. That is odd."
-    h "We talked to Sosi, but he didn't see who it was. He just heard the noise, and by the time he turned around, the plant was gone."
-    o "He seemed more upset about the window than anything. As he should be! Those plate glass windows are expensive!"
-    l "Where is he now?"
-    h "I can go look. And then, if you don't mind, I think my husband and I should just rest. We've had enough running around all day for these old bones."
-    l "Yeah, of course. Thanks for your information."
-    "The two hobble back down the hill."
-    "The rest of the people who had gathered here are shifting anxiously, not talking much."
-    "Nobody you question has been near the caves all day, and they mostly seem to have good alibis."
-    "This being a small town, many of them had either seen one another shortly before Chel screamed or had come up the mountain together just now."
-    
-    c "I'm back. I radioed Shera, so she should be up soon."
-    l "Where is she now?"
-    c "She lives in the lowlands. It could take her a while to get up here."
-    l "Ah, I don't think you would have any new information, but just in case - did you know of Young Namara having any health conditions?"
-    c "Health conditions?"
-    l "Yeah. Apparently he fainted today."
-    l "I don't remember him being sickly or anything, but I guess I don't pay attention to stuff like that."
-    c "No, I don't know about any health conditions. Is he okay?"
-    l "Yeah, he's at the clinic."
-    c "...Is there anything else I can tell you?"
-    l "Trying to clear yourself of suspicion?"
-    c "Maybe a little bit, haha. Ha..."
-    l "Well, I do intend to ask around about people's whereabouts today. So that would be helpful, yes."
-    c "Okay. First, I woke up and ate breakfast. Then I was setting up the forge, then Shera came."
-    c "We worked through the morning, then I went to the clinic."
-    c "I needed to get some vitamins. The doctor can confirm."
-    l "All right, I'll make sure to mention it to him later."
-    c "So when I got back, Shera wasn't at the forge. She usually goes to Old Heron's shop for lunch when Moa's there, so I figured she had just gone there."
-    c "Soon she came back, and she said that's where she was... Damn, maybe I should have grilled her about it."
-    l "It's okay, you couldn't have known anything was happening."
-    c "Actually, I did. She told me that before she even left, Old Heron and Lady Heron had come to the shop to tell her there was a robbery."
-    c "Apparently one of Sosi's plants was stolen?"
-    l "Yeah, the Herons told me about that."
-    l "So after they talked to Sosi, they went to your shop?"
-    c "They probably wanted to warn me that there was a criminal on the loose, or maybe see if I had seen anyone suspicious around."
-    c "Since I was out, they just told Shera. And then she went to their place for lunch, allegedly."
-    l "I see. So what did you do after Shera got back?"
-    c "Well, not long after that, she went home. I did a bit more work, and then..."
-    c "I realized I had picked up the wrong thing from the clinic. I hurried there to explain to the doctor, and thankfully he was still there."
-    l "Oh. Are there that many kinds of vitamins?"
-    c "Apparently!"
-    c "After that, I was just at home until I went up to the waterfall."
-    l "Waterfall?"
-    c "Yeah, the waterfall north of the forest path."
-    l "How do you get there? I didn't know there was a waterfall."
-    c "Um, well... I guess you go north, and then..."
-    c "You pass two houses on the way there."
-    c "And when you see the second house, you go north."
-    c "Sorry, my sense of direction isn't great."
-    l "Hmm. Okay."
-    c "Well, when I was there, I saw some tread marks like you would see from a cart."
-    c "I thought maybe whoever had taken the plant had stashed it there, and had just retrieved it."
-    c "Instead of washing my clothes in the waterfall, I followed the tracks. I thought maybe I could catch the thief, you know?"
-    l "It's good that you followed them, I mean, you found whatever happened here."
-    c "Yeah... So that's where I was today."
-    l "All right."
-    l "I guess I could find the doctor and ask him to corroborrate."
-    c "Yeah, he's probably tied up with Namara right now, but I'm sure he wouldn't mind."
-    l "Can you stay and guard the entrance to the cave?"
-    c "You got it, boss. You can count on me!"
-    l "Thanks."
-    
-    scene bg clinic
-    l "Hey, Doctor."
-    d "Ah, Lani! Are you here to see Young Namara? I've put him in one of the back rooms."
-    l "No, there's no time for that now. I need to ask you some questions."
-    d "What's wrong? Did something happen?"
-    l "Yes. In the cave, we found evidence of a death."
-    l "I won't say a murder, but... I think it was probably a murder."
-    d "Oh no! Who... Who was it?"
-    l "We have to wait for Shera to come back. The bloodstains lead down into the cave."
-    d "Wow... That's awful. I mean, I've seen the Herons recently, and Young Namara..."
-    d "They said they were looking for Moa. Do you think..."
-    l "It certainly sounds like something happened to Moa. Bia is also missing."
-    d "I see. Well, I'll do whatever I can to help."
-    l "Right. So, was Chel here today?"
-    d "Yes, he was. He came by twice."
-    d "Once around noon, and once in the evening."
-    d "Both visits were quick."
-    l "Right, he said he was just here to buy some vitamins."
-    d "My professional code says that I can't confirm the purpose of anyone's visits to the clinic. But I can assure you, they were short visits."
-    l "All right. Thanks."
-    l "Shera might be back by now. I had better get going."
-    d "Yes, if you could, please send someone down to monitor Young Namara. That way I can be there to examine whoever the bloodstains belong to, if they find them."
-    l "That's a great idea. Will do. Thanks!"
-    
-    scene forest_path
-    c "Good timing! Shera's in there."
-    l "Oh, good."
-    scene cave
-    s "Hi, Lani!"
-    l "Hello. Are you ready to go in?"
-    s "Not quite yet! I have some equipment to set up. Good to be prepared, y'know?"
-    s "I brought another lantern in case you want to come as well."
-    l "Yes, thanks. I'll be back in a second."
-    "Outside, I called for someone to take over for the doctor at the clinic. One of the townsfolk assented and went down."
-    s "All right, let's go then!"
-    
-    scene lantern
-    "You follow Shera as she strolls briskly through the caves, nearly as chipper as ever."
-    l "It keeps going that way."
-    s "Oh, I see."
-    s "Man, you don't even need me for this!"
-    l "Don't be stupid. I don't know how to tell which paths are safe."
-    s "Oh, right. Smart."
-    s "I wouldn't worry, though. I mean, the whole cave system is used for mining. It's pretty safe."
-    l ""
+    c "Man, I wish Shera was still here. She could have taken you deeper into the cave, but she went home and they're definitely not gonna let her back in now."
     
     "Rollback to get a new ending."
     $ renpy.jump("ending_1")

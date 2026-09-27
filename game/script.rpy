@@ -420,7 +420,7 @@ init python:
         npc.add_topic("caves")
     
     areas = {"backyard_chel":Area("backyard", "backyard_chel"),
-    "shop_chel":Area("shop", "shop_chel"),
+    "shop_chel":Area("smithy", "shop_chel"),
     "kitchen_chel":Area("kitchen", "kitchen_chel"),
     "bathroom_chel":Area("bathroom", "bathroom_chel"),
     "bedroom_chel":Area("bedroom", "bedroom_chel"),
@@ -435,7 +435,6 @@ init python:
     "path_town_2":Area("path", "path_town_2"),
     "path_manor":Area("path", "path_manor"),
     
-    "bar":Area("bar", "bar"),
     "fields":Area("fields", "fields"),
     "shop_flowers":Area("shop", "shop_flowers"),
     "clinic":Area("clinic", "clinic"),
@@ -499,11 +498,10 @@ init python:
     create_path(areas["path_town_1"], areas["shop_heron"])
     create_path(areas["path_town_1"], areas["path_town_2"])
     
-    create_path(areas["bar"], areas["path_town_2"])
     create_path(areas["fields"], areas["path_town_2"])
     create_path(areas["shop_flowers"], areas["path_town_2"])
-    create_path(areas["clinic"], areas["path_town_2"])
     
+    create_path(areas["clinic"], areas["fields"])
     create_path(areas["fields"], areas["farmhouse"])
     create_path(areas["bedroom_farmhouse"], areas["farmhouse"])
     
@@ -512,14 +510,18 @@ init python:
     areas["path_manor"].add_west(areas["forest_path"])
     areas["path_town_1"].add_south(areas["path_town_2"])
     areas["path_town_2"].add_south(areas["fields"])
-    areas["fields"].add_east(areas["farmhouse"])
+    areas["farmhouse"].add_west(areas["fields"])
     areas["farmhouse"].add_east(areas["bedroom_farmhouse"])
+    areas["fields"].add_west(areas["clinic"])
     
     areas["guest_cabin"].add_west(areas["path_manor"])
     areas["guest_cabin"].add_east(areas["cabin_backyard"])
     
     areas["path_town_1"].add_west(areas["shop_chel"])
     areas["path_town_1"].add_east(areas["shop_heron"])
+    
+    areas["path_town_2"].add_west(areas["shop_flowers"])
+    areas["path_town_2"].add_east(areas["outhouse"])
     
     areas["shop_chel"].add_west(areas["backyard_chel"])
     areas["shop_chel"].add_north(areas["kitchen_chel"])
@@ -599,6 +601,7 @@ define i = Character("Sosi", callback=voice, cb_file="bleep003.ogg", what_prefix
 define d = Character("Doctor", callback=voice, cb_file="bleep030.ogg", what_prefix='\"', what_suffix='\"')
 
 define g = Character("Guard", callback=voice, cb_file="bleep019.ogg", what_prefix='\"', what_suffix='\"')
+define ? = Character("???", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
 
 # The game starts here.
 
