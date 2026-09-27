@@ -164,26 +164,26 @@ init python:
     
     def time_check():
         store.time += 1
-        if store.time == 22:
+        if store.time == 31:
             areas["storage"].remove_object("necklace")
-        if store.time == 29:
-            areas["path_town_1"].remove_interact("plant")
-        if store.time == 32:
-            areas["path_town_1"].add_object("gravel")
-        if store.time == 47:
-            areas["kitchen_heron"].remove_object("knife")
+        if store.time == 38:
+            areas["shop_flowers"].remove_interactable("plant")
+        if store.time == 40:
+            areas["outhouse"].add_object("gravel")
         if store.time == 48:
-            areas["kitchen_heron"].remove_object("salt")
+            areas["kitchen_heron"].remove_object("knife")
         if store.time == 49:
+            areas["kitchen_heron"].remove_object("salt")
+        if store.time == 50:
             areas["kitchen_heron"].remove_object("flint and steel")
         if store.time == 60:
             areas["waterfall"].add_object("body")
         if store.time == 70:
-            areas["fields"].remove_interact("wheelbarrow")
+            areas["fields"].remove_interactable("wheelbarrow")
         if store.time == 79:
             areas["waterfall"].remove_object("body")
         if store.time == 87:
-            areas["cave"].add_interact("cave_salt")
+            areas["cave"].add_interactable("cave_salt")
             areas["cave"].add_name("cave_salt", "salt")
         if store.time == 100:
             renpy.jump("ending_1")
@@ -289,7 +289,7 @@ init python:
             self.interactables[name] = Interactable(name)
         
         def remove_interactable(self, name):
-            self.interactables.remove(name)
+            self.interactables.pop(name)
         
         def add_key(self, e, k):
             if self.has_interact(e):
@@ -586,7 +586,7 @@ init python:
     
     current_hint = "You could ask the villagers about {b}magic{/b} and the {b}caves{/b}."
     
-    debug = False
+    debug = True
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')
@@ -601,7 +601,8 @@ define i = Character("Sosi", callback=voice, cb_file="bleep003.ogg", what_prefix
 define d = Character("Doctor", callback=voice, cb_file="bleep030.ogg", what_prefix='\"', what_suffix='\"')
 
 define g = Character("Guard", callback=voice, cb_file="bleep019.ogg", what_prefix='\"', what_suffix='\"')
-define ? = Character("???", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
+define ixca = Character("???", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
+define x = Character("Ixca", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
 
 # The game starts here.
 
@@ -609,6 +610,8 @@ label start:
 
     python:
         if debug:
+            for i in range(100):
+                time_check()
             renpy.jump("guest_cabin")
     
     "This game uses a text prompt mechanic. You can always type {b}\"h\"{/b}, {b}\"help\"{/b}, or {b}\"cmd\"{/b} for a full list of commands."

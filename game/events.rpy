@@ -73,6 +73,13 @@ label meet_bia:
     $ met.append("bia")
     $ renpy.jump(area)
 
+label meet_moa:
+    
+    m "Oh, hello! You're Namara's friend, right?"
+    m "I'm Moa. Nice to meet you!"
+    $ met.append("moa")
+    $ renpy.jump(area)
+
 label meet_shera:
     
     s "Hello! I haven't seen you before! New in town?"

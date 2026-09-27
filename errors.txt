@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/commands.rpy", line 650: expected an indented block
-    if "chel" in rendernpc():
+File "game/script.rpy", line 604: expected 'word' not found.
+    define ? = Character("???", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
+           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Sep 24 12:49:42 2026
+Sun Sep 27 11:38:07 2026
