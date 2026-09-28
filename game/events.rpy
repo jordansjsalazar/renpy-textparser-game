@@ -1,5 +1,5 @@
 ﻿label beginning:
-
+    
     scene bg wall with dissolve
     show guard at center
     g "Halt!"
@@ -64,6 +64,7 @@
     
     l_int "I decided to turn in early. I woke up shortly after sunrise the next morning."
     
+    $ config.rollback_enabled = False
     jump guest_cabin
 
 label meet_bia:
@@ -127,18 +128,69 @@ label meet_lady:
 
 label ending_1:
 
-    "Suddenly you hear a long, resonant scream from up the mountain!"
-    "Along with a throng of villagers, you run up to the source of the noise."
-    "It seems that the group is heading up to the cave."
+    "Suddenly a scream comes from up the mountain."
     
     scene bg forest_path
+    show chel at center
     l "What happened?"
     c "There was so much blood..."
-    l "Yeah, it looks like a body was dragged through here."
-    l_int "He recoiled."
-    c "I'm not going back in that cave. But you can look, Lani. Aren't you an investigator or something?"
-    l "Not really. I mean, I can take a look, sure."
+    hide chel
+    scene bg cave with dissolve
+    pause 0.2
+    scene bg forest_path with dissolve
+    show chel at right
+    show lani at left
+    l "Yeah, it looks like a body was dragged through there."
+    c "Oh-kay! I'm not going in there. But you can look, Lani. Aren't you an investigator or something?"
+    l "Not really. I mean, I can take a look, sure, but I'm not a crime investigator."
     c "Man, I wish Shera was still here. She could have taken you deeper into the cave, but she went home and they're definitely not gonna let her back in now."
+    l "It's fine, it's fine. I was supposed to have a look at the cave soon anyway."
+    hide chel
+    hide lani
+    scene bg path_manor with dissolve
+    pause 0.2
+    scene bg guest_cabin with dissolve
+    pause 0.2
+    scene bg path_manor with dissolve
+    pause 0.2
+    scene bg forest_path with dissolve
+    show chel at left
+    show sosi at right
+    l "Got a lantern."
+    c "Good call."
+    i "You're going in there? Good luck."
+    c "Oh, right. Sosi was just telling me that Moa is missing."
+    i "And Namara collapsed. Lady Heron went to get the doctor."
+    l "Collapsed? Oh, shit."
+    l "What about Bia?"
+    i "Nobody's seen her, either."
+    c "So I guess the girls must have been dragged into the cave..."
+    l "Let's find out."
+    hide chel
+    hide sosi
+    l_int "I went in. There was a passageway at the back where the blood trail led deeper in."
+    l_int "It was extremely dim in the tunnel. I felt along the wall to continue deeper."
+    l_int "Fortunately I didn't encounter any turns while I was following the right wall. I kept going further in."
+    l_int "The trail of blood led pretty far. Eventually I found Moa's body."
+    scene cg ending_1
+    l_int "I went up to dislodge the corpse, hoping to take it back for an autopsy."
+    l_int "As I went closer, a wall of earth formed into a barrier between me and it."
+    l_int "Suddenly I felt a blast of energy, surging from beneath my feet up through the top of my skull."
     
+    ixca "Hello, Lani."
+    l "A spirit? To what do I owe the pleasure?"
+    ixca "Yes, I am the spirit of Ba Meniri."
+    l "...So? Care to explain?"
+    ixca "I regret to inform you that the fate of this mountain has been sealed."
+    ixca "In six months, the mining operation will begin. I will attempt to stop the humans from finding what is buried here."
+    ixca "They will fight off my army golems and erode my physical and spiritual barriers. I will be forced to end humanity's presence in the region with a flood."
+    l "Oh."
+    l "I'm not going to be here in six months. So, what exactly are you asking me to do?"
+    ixca "There is something you can do now to prevent this end."
+    $ config.rollback_enabled = True
+    ixca "I am granting you the power to rewind time. It extends only to the events of today. Use it wisely."
+    ixca "You can save the humans of Ba Meniri. I am trusting you."
+    scene bg clouds
+    show ixca at center
     "Rollback to get a new ending."
     $ renpy.jump("ending_1")

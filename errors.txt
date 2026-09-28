@@ -2,11 +2,8 @@
 errors listed below, and try again.
 
 
-The label look_at_glass is defined twice, at File "game/items.rpy", line 49:
-label look_at_glass:
-and File "game/items.rpy", line 103:
-label look_at_glass:
-
+File "game/commands.rpy", line 316: expected an indented block
+    if store.time == 89:
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Sep 27 12:37:40 2026
+Mon Sep 28 02:12:10 2026

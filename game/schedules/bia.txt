@@ -44,7 +44,7 @@ outhouse
 path_town_2
 path_town_1
 shop_heron
-storage
+kitchen_heron
 kitchen_heron
 kitchen_heron
 kitchen_heron

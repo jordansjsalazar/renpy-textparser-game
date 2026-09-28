@@ -74,6 +74,9 @@ label interact_plant:
 
 label look_wheelbarrow:
     "The wheelbarrow is lined with a blanket."
+    python:
+        if store.time > 78:
+            renpy.say(narrator, "The blanket is stained with blood.")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label interact_wheelbarrow:
@@ -149,6 +152,15 @@ label look_at_knife:
 
 label take_knife:
     "The Herons will probably notice their knife going missing, and you haven't asked them if you can take it."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label look_at_bag:
+    "A cloth bag, for carrying groceries and whatnot."
+    $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
+
+label take_bag:
+    "Took the bag."
+    $ areas[area].take_object("bag")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
     
 label look_at_flint:

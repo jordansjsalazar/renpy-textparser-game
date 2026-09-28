@@ -1,28 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/commands.rpy", line 1074, in script
-    $ rendernpc()
-ScriptError: could not find label 'meet_moa'.
+  File "game/events.rpy", line 161, in script
+    i "You're going in there? Good luck."
+Exception: Sayer b'i' is not a function or string.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/main.py", line 652, in main
-    run(restart)
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/execution.py", line 958, in run_context
-    context.run()
-  File "game/commands.rpy", line 1074, in script
-    $ rendernpc()
-  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'meet_moa'.
+  File "game/events.rpy", line 161, in script
+    i "You're going in there? Good luck."
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 2586, in execute
+    Say.execute(self)
+  File "/Users/ululation/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 600, in execute
+    raise Exception("Sayer %s is not a function or string." % self.who.encode("utf-8"))
+Exception: Sayer b'i' is not a function or string.
 
 macOS-15.3.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 textparsergame 1.0
-Sun Sep 27 11:54:50 2026
+Mon Sep 28 02:16:08 2026

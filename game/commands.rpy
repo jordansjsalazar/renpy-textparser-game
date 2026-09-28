@@ -236,7 +236,94 @@ label talk_bia:
 
 label look_at_bia:
 
-    "Bia is a local shop girl. She's tall, but not muscular."
+    python:
+        if store.time < 18:
+            renpy.say(narrator, "Bia is minding the shop.")
+        if 17 < store.time < 22 or 23 < store.time < 28 or store.time == 34 or 42 < store.time < 46 or store.time == 50 or 51 < store.time < 58 or 60 < store.time < 69 or 79 < store.time < 85 or store.time == 89 or store.time > 93:
+            renpy.say(narrator, "Bia is walking somewhere.")
+        if store.time < 22:
+            renpy.say(narrator, "Bia seems to have noticed something under Moa's pillow.")
+        if store.time < 23:
+            renpy.say(narrator, "Bia seems to have taken something from Moa's bed.")
+        if store.time == 28:
+            renpy.say(moa, "Hey, Bia. What's up? I thought your shift was over?")
+            renpy.say(bia, "Yes, it is. I was wondering if you'd like to go up to the waterfall later.")
+            renpy.say(moa, "Hmm? Uh, sure!")
+            renpy.say(bia, "Thank you. I thought it might be nice for us to... hang out.")
+            renpy.say(bia, "I'll go into the back and make us some sandwiches. Is that all right?")
+            renpy.say(lady, "It's all right, just clean everything you use. I think we might have some tomatoes if you want them.")
+        if store.time == 29:
+            renpy.say(moa, "Are the tomatoes still ripe? I stopped buying them at the market a couple weeks ago.")
+            renpy.say(lady, "These might be the last good tomatoes of the season! They'll probably go bad soon if we don't eat them, so you girls enjoy.")
+            renpy.say(narrator, "Bia has slipped into the other room while Moa and Lady Heron are chatting.")
+        if store.time == 30:
+            renpy.say(narrator, "Bia is examining a necklace on the shelf.")
+        if store.time == 31:
+            renpy.say(narrator, "Holding the necklace, she's muttering something under her breath.")
+        if store.time == 32:
+            renpy.say(narrator, "She's pocketed the necklace.")
+        if store.time == 33:
+            renpy.say(bia, "I forgot bread. Silly me. I'll go buy some and meet you back here after your shift.")
+        if store.time == 35:
+            renpy.say(narrator, "Bia is holding some gravel from the mound on the path.")
+        if store.time == 36:
+            renpy.say(narrator, "She scoops the gravel into her drawstring pouch, filling it up all the way, and ties it off.")
+        if store.time == 37:
+            renpy.say(narrator, "Bia is holding the pouch by the strings and aiming it at the display window.")
+        if store.time == 38:
+            renpy.say(narrator, "Bia is holding the plant from the display window.")
+        if store.time == 39:
+            renpy.say(narrator, "She's quickly fleeing the scene.")
+        if store.time == 40:
+            renpy.say(narrator, "She deposits the gravel into the chute of the outhouse.")
+        if store.time == 41:
+            renpy.say(narrator, "She peers through the window, watching the road.")
+        if store.time == 42:
+            renpy.say(narrator, "Bia cautiously exits the outhouse.")
+        if store.time == 46:
+            renpy.say(narrator, "Bia grabs the cloth bag.")
+        if store.time == 47:
+            renpy.say(narrator, "Bia has taken the knife.")
+        if store.time == 48:
+            renpy.say(narrator, "Bia has taken the salt.")
+        if store.time == 49:
+            renpy.say(narrator, "Bia has taken the flint and steel.")
+        if store.time == 51:
+            renpy.say(bia, "Ready to go?")
+            renpy.say(moa, "Yup!")
+        if store.time == 58:
+            renpy.say(narrator, "Bia has taken the knife from the bag.")
+        if store.time == 59:
+            renpy.say(narrator, "Bia has stabbed Moa in the neck.")
+        if store.time == 60:
+            renpy.say(narrator, "Bia stands under the waterfall, washing the fresh blood from her clothes and body.")
+        if store.time == 69:
+            renpy.say(narrator, "Bia takes the wheelbarrow.")
+        if 69 < store.time < 78 or 79 < store.time < 90:
+            renpy.say(narrator, "Bia is pushing a wheelbarrow.")
+        if store.time == 78:
+            renpy.say(narrator, "Bia is scooping up her sister's body using the blanket from the wheelbarrow.")
+        if store.time == 79:
+            renpy.say(narrator, "Bia is using the blanket to carry her sister's body into the wheelbarrow.")
+        if store.time == 85:
+            renpy.say(narrator, "Bia has parked the wheelbarrow and is dumping her sister's body on the cave floor.")
+        if store.time == 86:
+            renpy.say(narrator, "Bia is drawing a circle on the ground using the salt from her bag.")
+        if store.time == 87:
+            renpy.say(narrator, "Bia has taken the plant and placed it on the ground.")
+        if store.time == 88:
+            renpy.say(narrator, "Bia is gathering twigs from the ground.")
+        if store.time == 89:
+            renpy.say(narrator, "Bia is entering the cave.")
+        if store.time == 90:
+            renpy.say(narrator, "Bia is positioning the body.")
+        if store.time == 91:
+            renpy.say(narrator, "Bia is arranging the kindling.")
+        if store.time == 92:
+            renpy.say(narrator, "Bia is lighting the fire.")
+        if store.time == 93:
+            renpy.say(narrator, "Bia is completing the ritual.")
+        
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_bia_about_chel:
@@ -1038,6 +1125,10 @@ label look_bar:
 
 #OUTHOUSE
 label outhouse:
+    python:
+        if 39 < store.time < 43:
+            renpy.say(narrator, "The outhouse is locked.")
+            renpy.jump("path_town_2")
     scene bg outhouse
     $ area = "outhouse"
     $ last_label = area

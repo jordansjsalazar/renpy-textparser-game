@@ -172,6 +172,8 @@ init python:
             areas["shop_flowers"].add_name("broken_glass", "glass")
         if store.time == 41:
             areas["outhouse"].add_object("gravel")
+        if store.time == 46:
+            areas["kitchen_heron"].remove_object("bag")
         if store.time == 47:
             areas["kitchen_heron"].remove_object("knife")
         if store.time == 48:
@@ -567,6 +569,7 @@ init python:
     areas["kitchen_heron"].add_object("salt")
     areas["kitchen_heron"].add_object("knife")
     areas["kitchen_heron"].add_object("flint")
+    areas["kitchen_heron"].add_object("bag")
     
     
     
@@ -588,7 +591,7 @@ init python:
     
     current_hint = "You could ask the villagers about {b}magic{/b} and the {b}caves{/b}."
     
-    debug = False
+    debug = True
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')
@@ -602,9 +605,9 @@ define s = Character("Shera", callback=voice, cb_file="bleep010.ogg", what_prefi
 define i = Character("Sosi", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
 define d = Character("Doctor", callback=voice, cb_file="bleep030.ogg", what_prefix='\"', what_suffix='\"')
 
-define g = Character("Guard", callback=voice, cb_file="bleep019.ogg", what_prefix='\"', what_suffix='\"')
-define ixca = Character("???", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
-define x = Character("Ixca", callback=voice, cb_file="bleep027.ogg", what_prefix='\"', what_suffix='\"')
+define g = Character("Guard", callback=voice, cb_file="bleep006.ogg", what_prefix='\"', what_suffix='\"')
+define ixca = Character("???", callback=voice, cb_file="bleep002.ogg", what_prefix='\"', what_suffix='\"')
+define x = Character("Ixca", callback=voice, cb_file="bleep002.ogg", what_prefix='\"', what_suffix='\"')
 
 # The game starts here.
 
