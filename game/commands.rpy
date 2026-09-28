@@ -706,7 +706,7 @@ label talk_shera_about_caves:
 #TALK TO SOSI
 label talk_sosi:
 
-    i "asdf"
+    sosi "asdf"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label look_at_sosi:
@@ -716,59 +716,59 @@ label look_at_sosi:
 
 label talk_sosi_about_chel:
 
-    i "Ah, Chel. He's quite handsome, wouldn't you agree?"
+    sosi "Ah, Chel. He's quite handsome, wouldn't you agree?"
     l "Yeah, I guess so."
-    i "Heehee."
+    sosi "Heehee."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_bia:
 
-    i "She's fun. We go for drinks sometimes."
+    sosi "She's fun. We go for drinks sometimes."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_moa:
 
-    i "Oh, Bia's sister. Yes, she's come in sometimes."
+    sosi "Oh, Bia's sister. Yes, she's come in sometimes."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_heron:
 
-    i "Old Heron and his wife come in here a lot. They have good taste, both of them."
+    sosi "Old Heron and his wife come in here a lot. They have good taste, both of them."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_namara:
 
-    i "Oh, right, the one who moved back recently. I don't think I've even met him."
+    sosi "Oh, right, the one who moved back recently. I don't think I've even met him."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_lady:
 
-    i "She is classy, isn't she?"
+    sosi "She is classy, isn't she?"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_shera:
 
-    i "She and Moa are basically inseparable, so I don't know her well."
+    sosi "She and Moa are basically inseparable, so I don't know her well."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_sosi:
 
-    i "asdf"
+    sosi "asdf"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_doctor:
 
-    i "He certainly is... friendly."
+    sosi "He certainly is... friendly."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_magic:
 
-    i "Oh, about magic? Interesting. There's supposed to be spirit magic here, right? In the mountain?"
+    sosi "Oh, about magic? Interesting. There's supposed to be spirit magic here, right? In the mountain?"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_sosi_about_caves:
 
-    i "I'd like to explore those caves one day, but I wouldn't go in by myself."
+    sosi "I'd like to explore those caves one day, but I wouldn't go in by myself."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 

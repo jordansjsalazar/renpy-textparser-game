@@ -602,7 +602,7 @@ define c = Character("Chel", callback=voice, cb_file="bleep019.ogg", what_prefix
 define y = Character("Young Namara", callback=voice, cb_file="bleep017.ogg", what_prefix='\"', what_suffix='\"')
 define h = Character("Lady Heron", callback=voice, cb_file="bleep001.ogg", what_prefix='\"', what_suffix='\"')
 define s = Character("Shera", callback=voice, cb_file="bleep010.ogg", what_prefix='\"', what_suffix='\"')
-define i = Character("Sosi", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
+define sosi = Character("Sosi", callback=voice, cb_file="bleep003.ogg", what_prefix='\"', what_suffix='\"')
 define d = Character("Doctor", callback=voice, cb_file="bleep030.ogg", what_prefix='\"', what_suffix='\"')
 
 define g = Character("Guard", callback=voice, cb_file="bleep006.ogg", what_prefix='\"', what_suffix='\"')

@@ -98,8 +98,8 @@ label meet_chel:
     
 label meet_sosi:
     
-    i "Oh, hello."
-    i "I don't believe we've met... I'm Sosi. Can I help you find anything?"
+    sosi "Oh, hello."
+    sosi "I don't believe we've met... I'm Sosi. Can I help you find anything?"
     $ met.append("sosi")
     $ renpy.jump(area)
 
@@ -158,12 +158,12 @@ label ending_1:
     show sosi at right
     l "Got a lantern."
     c "Good call."
-    i "You're going in there? Good luck."
+    sosi "You're going in there? Good luck."
     c "Oh, right. Sosi was just telling me that Moa is missing."
-    i "And Namara collapsed. Lady Heron went to get the doctor."
+    sosi "And Namara collapsed. Lady Heron went to get the doctor."
     l "Collapsed? Oh, shit."
     l "What about Bia?"
-    i "Nobody's seen her, either."
+    sosi "Nobody's seen her, either."
     c "So I guess the girls must have been dragged into the cave..."
     l "Let's find out."
     hide chel
@@ -177,6 +177,8 @@ label ending_1:
     l_int "As I went closer, a wall of earth formed into a barrier between me and it."
     l_int "Suddenly I felt a blast of energy, surging from beneath my feet up through the top of my skull."
     
+    scene bg clouds
+    show ixca at center
     ixca "Hello, Lani."
     l "A spirit? To what do I owe the pleasure?"
     ixca "Yes, I am the spirit of Ba Meniri."
@@ -190,7 +192,5 @@ label ending_1:
     $ config.rollback_enabled = True
     ixca "I am granting you the power to rewind time. It extends only to the events of today. Use it wisely."
     ixca "You can save the humans of Ba Meniri. I am trusting you."
-    scene bg clouds
-    show ixca at center
     "Rollback to get a new ending."
     $ renpy.jump("ending_1")
