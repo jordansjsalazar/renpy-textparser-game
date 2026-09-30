@@ -43,7 +43,7 @@ kitchen_heron
 kitchen_heron
 kitchen_heron
 kitchen_heron
-bedroom_heron
+kitchen_heron
 shop_heron
 path_town_1
 path_town_2

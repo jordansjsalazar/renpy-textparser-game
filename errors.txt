@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/commands.rpy", line 316: expected an indented block
-    if store.time == 89:
+File "game/events.rpy", line 196: expected ':' not found.
+    label ending_fin
+                    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Sep 28 02:12:10 2026
+Mon Sep 28 13:48:53 2026
