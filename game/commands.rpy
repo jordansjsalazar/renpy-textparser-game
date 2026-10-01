@@ -440,11 +440,15 @@ label look_at_heron:
 
     python:
         if store.time < 11:
-            renpy.say(narrator, "Old Heron is cleaning artifacts.")
+            renpy.say(narrator, "Old Heron is dusting off the shop's back inventory.")
         if 10 < store.time < 18:
             renpy.say(narrator, "Old Heron is eating breakfast.")
-        if 17 < store.time < 21 or 25 < store.time < 29 or store.time == 37 or 45 < store.time < 48:
+        if 17 < store.time < 21 or 25 < store.time < 29 or store.time == 37 or 45 < store.time < 48 or 48 < store.time < 60 or store.time == 61:
             renpy.say(narrator, "Old Heron is walking somewhere.")
+            if 48 < store.time < 60:
+                renpy.say(narrator, "It looks like he's searching for something.")
+        if 61 < store.time < 74:
+                renpy.say(narrator, "Old Heron is keeping a watchful eye over the shop.")
         if 20 < store.time < 26:
             renpy.say(o, "What do you think about these, dear?")
             if store.time == 21:
@@ -466,6 +470,13 @@ label look_at_heron:
             renpy.say(o, "We'll help you look for it.")
             renpy.say(c, "I guess you've got it covered, then. I'm gonna head back to the shop - we're kinda running behind or I would stay and help.")
             renpy.say(c, "But I'll keep an eye out, and let me know if you need anything, okay?")
+        if store.time == 60:
+            renpy.say(h, "I'm sorry, dear, but we didn't find a thing!")
+            renpy.say(sosi, "Hmm. Me neither. Thanks, anyway.")
+            renpy.say(sosi, "I guess it has to turn up eventually. I mean, the guard didn't see anyone leave with it, and I told him not to let anyone out if they have one of my plants.")
+            renpy.say(o, "So the guard was helpful? Good!")
+            renpy.say(h, "I guess it's a good thing this week is high security!")
+        
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_heron_about_chel:
@@ -477,7 +488,7 @@ label talk_heron_about_bia:
 
     o "Well, she's not the worst employee in the world."
     o "I think she's a bit... troubled."
-    o "My wife caught her stealing from the store once. I could hardly believe it at first, but of course Pari would never lie to me."
+    o "My wife caught her stealing from the store once. I could hardly believe it at first, but of course Mina would never lie to me."
     o "Since then she's been a bit better-behaved. Oh, did we ever give her a stern warning."
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -512,7 +523,7 @@ label talk_heron_about_shera:
 label talk_heron_about_sosi:
 
     o "Sosi is a newcomer to town, and he's already so successful!"
-    o "Reminds me of Pari, back in the day. You know we met in the city?"
+    o "Reminds me of Mina, back in the day. You know we met in the city?"
     o "But she agreed to move back here with me. And she took to the small town life like a duck to water!"
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
@@ -635,8 +646,12 @@ label look_at_lady:
             renpy.say(narrator, "Lady Heron is preparing food.")
         if 10 < store.time < 18:
             renpy.say(narrator, "Lady Heron is eating breakfast.")
-        if 17 < store.time < 21 or 25 < store.time < 28 or store.time == 34 or 45 < store.time < 48:
+        if 17 < store.time < 21 or 25 < store.time < 28 or store.time == 34 or 45 < store.time < 48 or 48 < store.time < 60 or store.time == 61:
             renpy.say(narrator, "Lady Heron is walking somewhere.")
+            if 48 < store.time < 60:
+                renpy.say(narrator, "It looks like she's searching for something.")
+        if 61 < store.time < 74:
+                renpy.say(narrator, "Lady Heron is sitting in a rocking chair, reading a thick book with an embossed cover.")
         if 20 < store.time < 26:
             renpy.say(o, "What do you think about these, dear?")
             if store.time == 21:
@@ -661,6 +676,12 @@ label look_at_lady:
             renpy.say(o, "We'll help you look for it.")
             renpy.say(c, "I guess you've got it covered, then. I'm gonna head back to the shop - we're kinda running behind or I would stay and help.")
             renpy.say(c, "But I'll keep an eye out, and let me know if you need anything, okay?")
+        if store.time == 60:
+            renpy.say(h, "I'm sorry, dear, but we didn't find a thing!")
+            renpy.say(sosi, "Hmm. Me neither. Thanks, anyway.")
+            renpy.say(sosi, "I guess it has to turn up eventually. I mean, the guard didn't see anyone leave with it, and I told him not to let anyone out if they have one of my plants.")
+            renpy.say(o, "So the guard was helpful? Good!")
+            renpy.say(h, "I guess it's a good thing this week is high security!")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_lady_about_chel:
@@ -738,8 +759,8 @@ label talk_shera:
 label look_at_shera:
 
     python:
-        if store.time < 18:
-            renpy.say(narrator, "Bia is minding the shop.")
+        if store.time < 12:
+            renpy.say(narrator, "Shera is working at the forge.")
         if 17 < store.time < 22 or 23 < store.time < 28 or store.time == 34 or 42 < store.time < 46 or store.time == 50 or 51 < store.time < 58 or 60 < store.time < 69 or 79 < store.time < 85 or store.time == 89 or store.time > 93:
             renpy.say(narrator, "Bia is walking somewhere.")
         elif store.time == 37:
@@ -837,6 +858,12 @@ label look_at_sosi:
             renpy.say(o, "We'll help you look for it.")
             renpy.say(c, "I guess you've got it covered, then. I'm gonna head back to the shop - we're kinda running behind or I would stay and help.")
             renpy.say(c, "But I'll keep an eye out, and let me know if you need anything, okay?")
+        elif store.time == 60:
+            renpy.say(h, "I'm sorry, dear, but we didn't find a thing!")
+            renpy.say(sosi, "Hmm. Me neither. Thanks, anyway.")
+            renpy.say(sosi, "I guess it has to turn up eventually. I mean, the guard didn't see anyone leave with it, and I told him not to let anyone out if they have one of my plants.")
+            renpy.say(o, "So the guard was helpful? Good!")
+            renpy.say(h, "I guess it's a good thing this week is high security!")
         elif 17 < store.time < 22 or 23 < store.time < 28 or store.time == 34 or 42 < store.time < 46 or store.time == 50 or 51 < store.time < 58 or 60 < store.time < 69 or 79 < store.time < 85 or store.time == 89 or store.time > 93:
             renpy.say(narrator, "Sosi is walking somewhere.")
         else:

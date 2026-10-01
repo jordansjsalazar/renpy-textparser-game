@@ -16,9 +16,9 @@ init python:
         if not interact:
             return
 
-        if event == "show_done":
-            renpy.sound.play(file, loop=True, channel="beep")
-        elif event == "slow_done":
+        if event == "show":
+            renpy.sound.play(file, channel="beep", loop=True)
+        elif event == "slow_done" or event == "end":
             renpy.sound.stop(fadeout=1, channel="beep")
 
 # VARS
