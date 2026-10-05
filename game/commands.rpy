@@ -558,10 +558,14 @@ label talk_namara:
 label look_at_namara:
 
     python:
-        if store.time < 18:
-            renpy.say(narrator, "Bia is minding the shop.")
-        if 17 < store.time < 22 or 23 < store.time < 28 or store.time == 34 or 42 < store.time < 46 or store.time == 50 or 51 < store.time < 58 or 60 < store.time < 69 or 79 < store.time < 85 or store.time == 89 or store.time > 93:
-            renpy.say(narrator, "Bia is walking somewhere.")
+        if store.time < 34:
+            renpy.say(narrator, "Namara is sitting at his desk, reading some files.")
+        if 33 < store.time < 36 or 51 < store.time < 60 or store.time == 34 or 42 < store.time < 46 or store.time == 50 or 51 < store.time < 58 or 60 < store.time < 69 or 79 < store.time < 85 or store.time == 89 or store.time > 93:
+            renpy.say(narrator, "Namara is walking somewhere.")
+        if 35 < store.time < 47:
+            renpy.say(narrator, "Namara is cooking a big lunch.")
+        if 46 < store.time < 52:
+            renpy.say(narrator, "Namara is eating.")
     $ renpy.jump(inp("Type \'help\', \'cmd\' or \'h\' for a list of commands."))
 
 label talk_namara_about_chel:
@@ -761,8 +765,10 @@ label look_at_shera:
     python:
         if store.time < 12:
             renpy.say(narrator, "Shera is working at the forge.")
-        if 17 < store.time < 22 or 23 < store.time < 28 or store.time == 34 or 42 < store.time < 46 or store.time == 50 or 51 < store.time < 58 or 60 < store.time < 69 or 79 < store.time < 85 or store.time == 89 or store.time > 93:
-            renpy.say(narrator, "Bia is walking somewhere.")
+        if 11 < store.time < 23 or 23 < store.time < 28 or store.time == 34 or 42 < store.time < 46 or store.time == 50 or 51 < store.time < 58 or 60 < store.time < 69 or 79 < store.time < 85 or store.time == 89 or store.time > 93:
+            renpy.say(narrator, "Shera is walking somewhere.")
+        elif store.time == 16 or store.time == 17:
+            renpy.say(narrator, "Shera is gathering thick fallen sticks.")
         elif store.time == 37:
             renpy.say(m, "Hey, ready?")
             renpy.say(s, "Yep! Let's go!")
