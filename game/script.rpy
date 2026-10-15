@@ -466,8 +466,9 @@ init python:
     "bathroom_namara":Area("bathroom", "bathroom_namara"),
     
     "guest_cabin":Area("cabin", "guest_cabin"),
-    "cabin_backyard":Area("backyard", "cabin_backyard")
+    "cabin_backyard":Area("backyard", "cabin_backyard"),
     
+    "-":Area("-", "-")
     }
     
     create_path(areas["forest_path"], areas["path_manor"])
@@ -591,7 +592,7 @@ init python:
     
     current_hint = "You could ask the villagers about {b}magic{/b} and the {b}caves{/b}."
     
-    debug = True
+    debug = False
 
 define l = Character("Lani", callback=voice, cb_file="bleep008.ogg", what_prefix='\"', what_suffix='\"')
 define l_int = Character("Lani", what_prefix='(', what_suffix=')')

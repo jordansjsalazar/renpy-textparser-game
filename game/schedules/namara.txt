@@ -92,10 +92,10 @@ fields
 farmhouse
 farmhouse_bedroom
 farmhouse_bedroom
-collapsed
-collapsed
-collapsed
-collapsed
-collapsed
-collapsed
-collapsed
+-
+-
+-
+-
+-
+-
+-

@@ -19,7 +19,7 @@
     l_int "He gestured to a chair and poured me a cup of tea as I took a seat."
     y "So as you know, I'm looking to expand the mining operation soon. Maybe in the fall."
     y "But a lot of the villagers think the mountain has some crazy magic buried inside, and, well, I don't think they think that for no reason."
-    y "So I was just wondering if you could maybe ask around, some of the people here have some stories and maybe you could tell if they were true."
+    y "So I was just wondering if you could maybe ask around. Some of the people here have some stories and maybe you could tell if they were true."
     y "I mean, you were always much better at that kind of stuff than me."
     menu:
         "Investigating magic, you mean.":
@@ -46,7 +46,7 @@
     y "I mean, my family stayed here because of the mines. And I came back to help them."
     y "Aside from us, there's the blacksmith {b}Chel{/b}, his apprentice {b}Shera{/b} - Oh, actually, she lives in the lowlands too. But she works here."
     y "There used to be one old farmer up here, but he passed away. His daughters {b}Moa{/b} and {b}Bia{/b} stayed, in the old farmhouse."
-    y "There's a couple shopkeepers, {b}Sosi{/b}, {b}Old Heron{/b} and his wife {b}Lady Heron{/b}. And the doctor."
+    y "There's a couple shopkeepers, {b}Sosi{/b}, {b}Old Heron{/b} and his wife {b}Lady Heron{/b}. And the {b}doctor{/b}."
     y "Those are the only people who are here right now. Sorry, I should have warned you!"
     y "In a couple days the gates will reopen and you can go back into the village and talk to more people."
     l "It's fine, I'll just talk tomorrow with the people who are here."
