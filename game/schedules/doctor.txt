@@ -46,6 +46,11 @@ clinic
 clinic
 clinic
 clinic
+-
+-
+-
+-
+-
 clinic
 clinic
 clinic
@@ -94,8 +99,3 @@ clinic
 clinic
 clinic
 clinic
-clinic
-clinic
-clinic
-clinic
-path_town_2

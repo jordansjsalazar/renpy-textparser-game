@@ -79,8 +79,8 @@ path_town_1
 path_town_2
 fields
 farmhouse
-farmhouse_bedroom
-farmhouse_bedroom
+bedroom_farmhouse
+bedroom_farmhouse
 farmhouse
 fields
 fields
