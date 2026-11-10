@@ -66,12 +66,12 @@ storage
 storage
 shop_heron
 shop_heron
+storage
+storage
 shop_heron
-shop_heron
-shop_heron
-shop_heron
-shop_heron
-shop_heron
+storage
+storage
+storage
 shop_heron
 shop_heron
 shop_heron
