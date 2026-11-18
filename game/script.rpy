@@ -371,6 +371,7 @@ init python:
         name = ""
         locations = []
         current_location = ""
+        look_at_text = []
         topics = []
         
         def __init__(self, name):
@@ -382,6 +383,10 @@ init python:
                 self.locations.append(word.decode("utf-8").strip())
             file.close()
             self.current_location = self.locations[0]
+            file = renpy.open_file("look_at_text/" + self.name + ".txt")
+            for word in file:
+                self.look_at_text.append(word.decode("utf-8").strip())
+            file.close()
         
         def has_topic(self, e):
             for i in self.topics:
@@ -395,6 +400,9 @@ init python:
     def events_check(npc):
         if not npc in met:
             renpy.jump("meet_" + npc)
+    
+    def say_look_at_text(npc):
+        renpy.say("narrator", npc.look_at_text[store.time])
 
 # GAME SETUP
 
