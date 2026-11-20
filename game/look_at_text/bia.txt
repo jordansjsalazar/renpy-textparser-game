@@ -1,25 +1,25 @@
 -
 -
-bedroom_farmhouse
-bedroom_farmhouse
-bedroom_farmhouse
-farmhouse
-fields
-path_town_2
-path_town_1
-path_manor
-forest_path
-fp_1
-fp_2
-fp_3
-waterfall
-waterfall
-waterfall
-waterfall
-fp_3
-fp_2
-fp_1
-forest_path
+Bia is waking up.
+Bia is combing her hair.
+Bia is getting ready.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is hiding behind a rock.
+Bia is hiding behind a rock.
+Bia is hiding behind a rock.
+Bia is hiding behind a rock.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
+Bia is walking somewhere.
 cave
 cave
 cave

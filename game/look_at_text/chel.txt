@@ -1,65 +1,65 @@
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is walking somewhere.
+Chel is eating.
+Chel is eating.
+Chel is eating.
+Chel is walking somewhere.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
 shop_chel
-kitchen_chel
-kitchen_chel
-kitchen_chel
 shop_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-shop_chel
-shop_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-backyard_chel
-shop_chel
-path_town_1
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is working at the forge.
+Chel is walking somewhere.
+Chel is walking somewhere.
 shop_heron
 shop_heron
 shop_heron
@@ -72,30 +72,30 @@ shop_heron
 storage
 storage
 storage
-shop_heron
-path_town_1
-shop_chel
-kitchen_chel
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
 bedroom_chel
 bedroom_chel
 bedroom_chel
-kitchen_chel
+Chel is walking somewhere.
 bathroom_chel
 bathroom_chel
-kitchen_chel
-shop_chel
-path_town_1
-path_manor
-forest_path
-fp_1
-fp_2
-fp_3
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
 waterfall
 waterfall
 waterfall
 waterfall
-fp_3
-fp_2
-fp_1
-forest_path
-forest_path
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.
+Chel is walking somewhere.

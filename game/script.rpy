@@ -193,6 +193,7 @@ init python:
             renpy.jump("ending_1")
         for npc in npcs:
             npc.current_location = npc.locations[store.time]
+            npc.current_action = npc.look_at_text[store.time]
         #if debug:
             #renpy.say(narrator, str(time))
     
@@ -372,6 +373,7 @@ init python:
         locations = []
         current_location = ""
         look_at_text = []
+        current_action = ""
         topics = []
         
         def __init__(self, name):
@@ -402,7 +404,7 @@ init python:
             renpy.jump("meet_" + npc)
     
     def say_look_at_text(npc):
-        renpy.say("narrator", npc.look_at_text[store.time])
+        renpy.say("narrator", npc.current_action)
 
 # GAME SETUP
 

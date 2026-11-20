@@ -1,101 +1,101 @@
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-path_town_2
-path_town_2
-path_town_1
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is walking somewhere.
+Sosi is walking somewhere.
+Sosi is walking somewhere.
 shop_chel
 shop_chel
 shop_chel
 shop_chel
-path_town_1
-shop_flowers
-shop_flowers
+Sosi is walking somewhere.
+Sosi is minding the shop.
+Sosi is going into the back room.
 -
 -
 -
 -
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
-shop_flowers
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
+Sosi is minding the shop.
