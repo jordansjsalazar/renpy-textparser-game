@@ -378,6 +378,7 @@ init python:
         
         def __init__(self, name):
             self.name = name
+            
             self.locations = []
             self.current_location = ""
             file = renpy.open_file("schedules/" + self.name + ".txt")
@@ -385,10 +386,14 @@ init python:
                 self.locations.append(word.decode("utf-8").strip())
             file.close()
             self.current_location = self.locations[0]
+            
+            self.look_at_text = []
+            self.current_action = ""
             file = renpy.open_file("look_at_text/" + self.name + ".txt")
             for word in file:
                 self.look_at_text.append(word.decode("utf-8").strip())
             file.close()
+            self.current_action = self.look_at_text[0]
         
         def has_topic(self, e):
             for i in self.topics:
